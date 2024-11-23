@@ -1,0 +1,75 @@
+{% assign product = section.settings.product %}
+<div class="carlos-w-full" data-color-scheme="primary">
+  <div class="carlos-container carlos-x-padding">
+    <div class="carlos-section-border"></div>
+  </div>
+  <div class="carlos-container carlos-x-padding py-4">
+    <div class="carlos-flex carlos-flex-gap-[15px]">
+      <div class="carlos-w-half carlos-mb-[10px]">
+        <img
+          src="{{ product.featured_image | image_url }}"
+          width="100%"
+          height="100%"
+          loading="ladzy"
+          style="aspect-ratio: 1; object-fit: cover; background: #f2f3f0;">
+      </div>
+      <div class="carlos-w-half">
+        <div class="carlos-flex carlos-flex-column carlos-flex-gap-[10px] carlos-h-full">
+          <div class="carlos-text-lg" style="line-height: 1.1;">{{ product.title }}</div>
+          {% render 'okendo-reviews-product-rating-summary', product: product %}
+          <p class="carlos-text-md">{{ product.metafields.carlos.product_info }}</p>
+          <div class="custom-buy-button-now">
+            <a
+              href="https://tryeterna.com/cart/45737737093400:1?discount=ETERNITY25"
+              class="carlos-hide-mobile custom-btn-to-checkout px-2 py-4 w-full bg-scheme-accent text-scheme-accent-overlay carlos-bold carlos-uppercase carlos-flex carlos-justify-center carlos-align-center"
+              style="margin-top: auto; cursor: pointer">
+              <span class="btn-txt-disscount">
+                AUTOSHIP (SAVE 25%) <br>$59.25
+                <s>$88
+                <br><br>
+                </s>
+                Use Code ETERNITY25
+                <br><br>
+                Buy Now
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a
+        href="https://tryeterna.com/cart/45737737093400:1?discount=ETERNITY25"
+        class="carlos-hide-desktop cutom-text-mobile-btn-checkout px-2 py-4 w-full bg-scheme-accent text-scheme-accent-overlay carlos-bold carlos-uppercase carlos-flex carlos-justify-center carlos-align-center"
+        style="margin-top: auto; cursor: pointer">
+           <span class="btn-txt-disscount">
+              AUTOSHIP (SAVE 25%) <br>$59.25
+              <s>$88
+              <br><br>
+              </s>
+              Use Code ETERNITY25
+              <br><br>
+              Buy Now
+            </span>
+      </a>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Blog Product",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Product"
+    }
+  ]
+}
+{% endschema %}

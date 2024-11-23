@@ -1,0 +1,118 @@
+<div id="{{ section.id }}" class="carlos-w-full">
+  <div class="carlos-flex carlos-flex-wrap">
+    <div class="carlos-w-half carlos-relative">
+      <img src="{{ section.settings.image | img_url: "master" }}" width="100%" height="100%" style="height: 100%; object-fit: cover; aspect-ratio: 1;">
+      <div class="carlos-inside-padding carlos-absolute" style="bottom: 10%; left: 10%; transform: translate(-10%, -10%);">
+        <img src="{{ section.settings.logo | img_url: "master" }}" width="100%" height="100%" style="object-fit: contain; max-width: 150px; margin-left: 2px;">
+        <div class="carlos-text-xl carlos-text-white carlos-bold">
+          {{ section.settings.title }}
+        </div>
+      </div>
+    </div>
+    <div class="carlos-w-half carlos-flex carlos-flex-column carlos-space-between">
+      {% for block in section.blocks %}
+        <div class="carlos-flex carlos-row carlos-flex-gap-[10px] carlos-align-center carlos-border-bottom carlos-h-full" style="padding: 12px 15px;">
+          <div class="carlos-icon">
+            <img src="{{ block.settings.icon | img_url: "master" }}" width="100%" height="100%">
+          </div>
+          <div class="carlos-flex-1">
+            <div class="carlos-text-md {% if block.settings.uppercase %} carlos-uppercase{% endif %}">{{ block.settings.title }}</div>
+            <div>
+              {{ block.settings.text }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .carlos-icon {
+    max-width: 70px;
+  }
+
+  .carlos-icon[mobile] {
+    max-width: 50px;
+  }
+
+  .carlos-icon {
+    max-width: 50px;
+  }
+  
+  .carlos-secondary-bg {
+    background: var(--color-secondary-background);
+  }
+
+  #{{ section.id }} .carlos-border-bottom:last-of-type {
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    #{{ section.id }} .carlos-border-left {
+      border: none;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Half and icons",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "limit": 9,
+      "settings": [
+        {
+          "id": "icon",
+          "type": "image_picker",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "uppercase",
+          "label": "Make Uppercase"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add heading description.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Half and icons"
+    }
+  ]
+}
+{% endschema %}

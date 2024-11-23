@@ -1,0 +1,15 @@
+{%- if layout == 'theme' -%}
+<script>
+window.baseAssetsUrl = '{{ 'theme.min.js' | asset_url | split: 'assets/theme.min.js' | first }}';
+</script>
+<script type="module" src="{{ 'theme.min.js' | asset_url }}" defer="defer"></script>
+<script>
+window.baseAssetsUrl = '{{ 'carlos.js' | asset_url | split: 'assets/carlos.js' | first }}';
+</script>
+<script type="module" src="{{ 'carlos.js' | asset_url }}" defer="defer"></script>
+{%- endif -%} {%- if layout == 'giftcard' -%}
+<script>
+window.baseAssetsUrl = '{{ 'giftcard.min.js' | asset_url | split: 'assets/giftcard.min.js' | first }}';
+</script>
+<script type="module" src="{{ 'giftcard.min.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}

@@ -1,0 +1,243 @@
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<div class="home-page-banner-main" id="scroll_btl">
+  <div class="all_items">
+    <div class="home_left_content_all">
+      <h2 class="home_title">{{ section.settings.title }}</h2>
+      <p class="home_content">{{ section.settings.content }}</p>
+      <p class="home_content2">{{ section.settings.content2 }}</p>
+      <a class="home_btn" href="{{ section.settings.link }}">{{ section.settings.link_name }}</a>
+    </div>
+    <div class="home_right_content_all">
+      <div class="home_image" id="rotate_home"> 
+      {% if section.settings.image != blank %}
+        <img class="home_img" src="{{ section.settings.image | img_url:' ' }}" loading="lazy" height="100%" width="100%" alt="banner_img">
+      {% endif %}
+      </div>
+    </div>
+     <div class="home_right_content_all_mb">
+      <div class="home_image_mb" id="rotate_home_mb"> 
+        <picture>
+         <img class="home_img_mb" src="{{ section.settings.img_mb | img_url:' ' }}" loading="lazy" height="100%" width="100%" alt="banner_img">
+        </picture>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script defer>
+
+  window.addEventListener('load', function() {
+    gsap.registerPlugin(ScrollTrigger);
+  
+  gsap.to(".home_image",{
+     transform:"rotate(0)translateX(-50%)",
+    width:418,
+    height:418,
+   scrollTrigger:{
+      trigger:".home_right_content_all",
+      scroller: "body",
+      // markers:true, 
+     scrub:true,
+     start:"top 20%",
+     end:"bottom 0%",
+     pin:true,
+   }
+  });
+
+  });
+
+  
+   document.addEventListener("DOMContentLoaded", function() {
+   // Get the image element
+   var homeImage = document.querySelector(".home_image"); // Adjust the selector based on your HTML structure
+ 
+   // Add scroll event listener
+   document.addEventListener("scroll", function() {
+     // Get the current scroll position
+     var scrollPosition = window.scrollY;
+ 
+     // Check if the scroll position is within the specified range (500px to 1000px)
+     if (scrollPosition >= 600 && scrollPosition <= 1800) {
+       // Add the class to the image
+       homeImage.classList.add("your-class-name"); // Replace "your-class-name" with the actual class name
+     } else {
+       // Remove the class if the scroll position is outside the range
+       homeImage.classList.remove("your-class-name");
+     }
+   });
+ });
+
+   document.addEventListener("DOMContentLoaded", function() {
+   // Get the image element
+   var disapear = document.querySelector(".home_image"); // Adjust the selector based on your HTML structure
+   var clickable_element = $("div#template--19352879399192__169242ad-f9e8-498e-9282-bdae36d8829f .product-display a.product-display-wrapper");  
+     
+   // Add scroll event listener
+   document.addEventListener("scroll", function() {
+     // Get the current scroll position
+     var scrollPosition = window.scrollY;
+ 
+     // Check if the scroll position is within the specified range (500px to 1000px)
+     if (scrollPosition >= 1100 && scrollPosition <= 2000) {
+       // Add the class to the image
+       disapear.classList.add("disapear_img"); // Replace "your-class-name" with the actual class name
+       setTimeout(function(){
+         clickable_element.addClass("pointer-reset");
+       }, 1000);
+     } else {
+       // Remove the class if the scroll position is outside the range
+       disapear.classList.remove("disapear_img");
+       clickable_element.removeClass("pointer-reset");
+     }
+   });
+ });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+   // Find the second anchor tag inside the product-display
+   var secondAnchor = document.querySelector('.product-display-wrapper:nth-child(2)');
+
+   if (secondAnchor) {
+       // Find the second image inside .carlos-flex.carlos-relative.carlos-product-image
+       var secondImag = secondAnchor.querySelector('.carlos-flex.carlos-relative.carlos-product-image img:nth-child(2)');
+
+       if (secondImag) {
+           // Add scroll event listener
+           document.addEventListener("scroll", function() {
+               // Get the current scroll position
+               var scrollPosition = window.scrollY;
+
+               // Check if the scroll position is within the specified range (1100px to 2000px)
+               if (scrollPosition >= 1100 && scrollPosition <= 2000) {
+                   // Add the class to the image
+                   secondImag.classList.add("disapear_img1"); // Replace "your-class-name" with the actual class name
+               } else {
+                   // Remove the class if the scroll position is outside the range
+                   secondImag.classList.remove("disapear_img1");
+               }
+           });
+       }
+   }
+});
+
+  // on mobile js
+  
+  window.addEventListener('load', function() {
+    
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to(".home_image_mb",{
+     transform:"rotate(0)",
+    width:312,
+    height:312,
+   scrollTrigger:{
+      trigger:".home_right_content_all_mb",
+      scroller: "body",
+      // markers:true, 
+     scrub:true,
+     start:"top 20%",
+     end:"bottom 0%",
+     pin:true,
+   }
+  });
+  });
+
+document.addEventListener("DOMContentLoaded", function() {
+   // Find the second anchor tag inside the product-display
+   var secondAnchor = document.querySelector('.product-display-wrapper:nth-child(1)');
+
+   if (secondAnchor) {
+       // Find the second image inside .carlos-flex.carlos-relative.carlos-product-image
+       var secondImag = secondAnchor.querySelector('.carlos-flex.carlos-relative.carlos-product-image img:nth-child(2)');
+
+       if (secondImag) {
+           // Add scroll event listener
+           document.addEventListener("scroll", function() {
+               // Get the current scroll position
+               var scrollPosition = window.scrollY;
+
+               // Check if the scroll position is within the specified range (1100px to 2000px)
+               if (scrollPosition >= 1050 && scrollPosition <= 2000) {
+                   // Add the class to the image
+                   secondImag.classList.add("disapear_img2"); // Replace "your-class-name" with the actual class name
+               } else {
+                   // Remove the class if the scroll position is outside the range
+                   secondImag.classList.remove("disapear_img2");
+               }
+           });
+       }
+   }
+});
+
+  document.addEventListener("DOMContentLoaded", function() {
+   // Get the image element
+   var disapear = document.querySelector(".home_image_mb"); // Adjust the selector based on your HTML structure
+     
+   // Add scroll event listener
+   document.addEventListener("scroll", function() {
+     // Get the current scroll position
+     var scrollPosition = window.scrollY;
+ 
+     // Check if the scroll position is within the specified range (500px to 1000px)
+     if (scrollPosition >= 1000 && scrollPosition <= 2000) {
+       // Add the class to the image
+       disapear.classList.add("disapear_img_mb"); // Replace "your-class-name" with the actual class name
+     } else {
+       // Remove the class if the scroll position is outside the range
+       disapear.classList.remove("disapear_img_mb");
+     }
+   });
+ });
+  
+
+                             
+</script>
+{% schema %}
+  {
+    "name": "Home Page Banner",
+    "settings": [
+      {
+        "type":"text",
+        "id":"title",
+        "label":"Add Heading"
+      },
+      {
+        "type":"textarea",
+        "id":"content",
+        "label":"Add Content"
+      },
+      {
+        "type":"textarea",
+        "id":"content2",
+        "label":"Add Content"
+      },
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"Add Image"
+      },
+      {
+        "type":"image_picker",
+        "id":"img_mb",
+        "label":"Add Mobile Image"
+      },
+      {
+        "type":"url",
+        "id":"link",
+        "label":"Add Link"
+      },
+      {
+        "type":"text",
+        "id":"link_name",
+        "label":"Add Link Name"
+      }
+    ],
+    "presets":[
+      {
+        "name":"Home Page Banner",
+        "category":"custom"
+      }
+    ]
+  }
+{% endschema %}

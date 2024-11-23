@@ -1,0 +1,109 @@
+<div class="sticky-atc-container" data-color-scheme="primary">
+  <div class="sticky-atc-details">
+    <div class="sticky-atc-image">
+      <img src="{{ product.featured_image | img_url: 'master' }}" width="100%" height="100%" loading="lazy">
+    </div>
+    <div class="sticky-atc-product-info">
+      <div class="carlos-text-sm carlos-bold">{{ product.title }}</div>
+      <div>{{ product.metafields.carlos.product_info }}</div>
+    </div>
+  </div>
+  <div class="sticky-atc-btn">
+    <button
+      class="add-to-cart carlos-modal-btn px-2 py-4 w-full bg-scheme-accent text-scheme-accent-overlay carlos-bold carlos-uppercase carlos-flex carlos-justify-center carlos-flex-row carlos-align-center carlos-flex-gap-[5px]"
+      data-modal-id="{{ product.id }}">
+      <span class="add-to-cart-text">Add to cart</span>
+      <span class="add-to-cart-separator"></span>
+      <span class="add-to-cart-price">
+      {% for variant in product.variants %}
+        {% if variant.title contains 'onetime / 1' %}
+          {{ variant.price | money_without_trailing_zeros }}
+        {% endif %}
+      {% endfor %}
+      </span>
+    </button>
+    {% render 'quick-add-modal', product: product, sticky_atc: true %}
+  </div>
+</div>
+
+<script defer >
+  $(document).ready(function() {
+    var $atc_button = $("#addToCartButton");
+    var $sticky_atc = $('.sticky-atc-container');
+    var scrolledPast = false;
+
+    $(window).scroll(function(){
+      var scrollPosition = $(window).scrollTop();
+      var buttonOffsetTop = $atc_button.offset().top + $atc_button.outerHeight();
+
+      if (scrollPosition > buttonOffsetTop && !scrolledPast) {
+        $sticky_atc.css('bottom', '0px');
+        $('footer').css('padding-bottom', $sticky_atc.outerHeight() + 30 + 'px');
+        scrolledPast = true;
+      } else if (scrollPosition <= buttonOffsetTop && scrolledPast) {
+        $sticky_atc.css('bottom', '-' + $sticky_atc.outerHeight() - 30 + 'px');
+        $('footer').css('padding-bottom', '0px');
+        scrolledPast = false;
+      }
+    });
+
+    $('.sticky-atc-btn button').click(function(e) {
+      e.preventDefault();
+      if(!$(this).hasClass('add-to-cart-modal')){
+        $('.buy-box .carlos-onetime .buy-box-button').click();
+        $('.sticky-atc-container .quick-add-variant label input[data-type="onetime"]').closest('label').click();
+      }
+    });
+});
+</script>
+
+<style>
+  .sticky-atc-container {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    padding: 12.5px;
+    border-top: 1px solid #EAE7DF;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background: white;
+    align-items: flex-start;
+    z-index: 20;
+    transition: 0.3s ease-in-out;
+  }
+
+  .sticky-atc-details {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+  }
+
+  .sticky-atc-image {
+    position: relative;
+    min-width: 100px;
+    width: 8vw;
+  }
+
+  .sticky-atc-image img {
+    position: absolute;
+    width: 100%;
+    bottom: -10px;
+  }
+
+  .sticky-atc-btn {
+    min-width: 200px;
+    width: fit-content;
+  }
+
+  @media (max-width: 768px) {
+    .sticky-atc-container {
+      flex-direction: column;
+    }
+
+    .sticky-atc-btn {
+      width: 100%;
+    }
+  }
+</style>

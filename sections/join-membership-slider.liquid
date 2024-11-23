@@ -1,0 +1,80 @@
+<section class="join-membership">
+  <div class="carlos-container">
+    <div class="mp-perks-content">
+      <div class="membership-text">{{ section.settings.heading }}</div>
+      <div class="mp-perks-slider">
+        <div class="swiper-mem">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="slider-text swiper-slide slides-text">{{ block.settings.Slide_text }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.4/swiper-bundle.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.4/swiper-bundle.min.js" defer></script>  
+<script defer> 
+   jQuery(document).ready(function() {
+    /* $('.mp-perks-slider').slick({
+      autoplay: true,
+      autoplaySpeed: 1000,
+      vertical: true,
+      verticalSwiping: true,
+      arrows: false,
+      dot: false,
+      centerMode:true,
+      slidesToShow:1,
+      slidesToScroll:1
+    }); */
+
+    var mySwiper = new Swiper('.swiper-mem', {
+      allowTouchMove: false,
+      cssMode: false,
+      direction: 'vertical',
+      effect: 'slide',
+      breakpoints: {
+          641: {
+              height: 43
+          }
+      },
+      height: 30,
+      autoHeight: true,
+      loop: true,
+      speed: 500,
+      autoplay: {
+          delay: 1500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false
+      }
+    });
+  });
+</script>
+{% schema %}
+  {
+    "name": "Join Membership",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slider",
+        "name": "slider",
+        "settings": [
+          {
+            "type": "text",
+            "id": "Slide_text",
+            "label": "Slide Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

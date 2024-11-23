@@ -1,0 +1,111 @@
+<div id="muscles-function" class="carlos-w-full">
+  <div>
+    <div class="carlos-flex carlos-flex-wrap">
+      <div class="carlos-w-half">
+        {% if section.settings.image != blank %}
+          <div class="caelos-gif-custom" style="max-width:487px; margin-left: auto; margin-right: auto;">
+            <img class="hiw-img" src="{{  section.settings.image | img_url: 'master' }}" width="100%" height="100%" loading="lazy" style="object-fit: cover;">
+          </div>
+        {% endif %}
+      </div>
+      <div class="carlos-w-half carlos-flex carlos-justify-between carlos-flex-column" style="max-width:552px;">
+        <div class="heading text" style="padding-top: 25px;">
+          {% if section.settings.title != blank %}
+          <h2>{{ section.settings.title }}</h2>
+            {% endif %}
+          {% if section.settings.description != blank %}
+          <p>{{ section.settings.description }}</p>
+            {% endif %}
+        </div>     
+        <div class="tab-teaser">
+            <div class="tab-menu">
+                <ul>
+                    <li><a href="#" class="active" data-rel="tab-1">{{ section.settings.musciles }}</a></li>
+                    <li><a href="#" data-rel="tab-2" class="">{{ section.settings.skin }}</a></li>
+                </ul>
+            </div>
+    
+            <div class="tab-main-box">
+                <div class="tab-box" id="tab-1" style="display:block;">
+                    <img src="{{ section.settings.iamge_2 | img_url: 'master' }}" width="100%" height="100%"/>
+                </div>
+                <div class="tab-box" id="tab-2">
+                    <img src="{{ section.settings.iamge_3 | img_url: 'master' }}" width="100%" height="100%"/>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hiw-img {
+    max-height: 600px;
+  }
+
+  @media (max-width: 768px) {
+    .hiw-img {
+      min-height: 100%;
+      aspect-ratio: 1;
+    }
+  }
+</style>
+
+<script defer>
+  jQuery(document).ready(function(){
+    $(".tab-menu li a").on("click", function () {
+        var target = $(this).attr("data-rel");
+        $(".tab-menu li a").removeClass("active");
+        $(this).addClass("active");
+        $("#" + target)
+        .fadeIn("slow")
+        .siblings(".tab-box")
+        .hide();
+        return false;
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Muscles Function",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Left Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "musciles",
+      "label": "Title 1"
+    },
+    {
+      "type": "text",
+      "id": "skin",
+      "label": "Title 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "iamge_2",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "iamge_3",
+      "label": "Image"
+    }
+  ]
+}
+{% endschema %}

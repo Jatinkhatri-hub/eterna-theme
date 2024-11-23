@@ -1,0 +1,74 @@
+<style>
+   section.meet-founder-section {
+    border-bottom: 1px solid #000;
+    padding: 70px 0px;
+  }
+  .meet-founder-section .right-side-img img {
+    width: 387px;
+    height: 387px;
+  }
+</style>
+
+<section class="meet-founder-section" style="background-image: url({{ section.settings.background_img |img_url : 'master' }})">
+  <div class="container">
+    <div class="carlos-flex carlos-flex-wrap">
+      <div class="carlos-w-half">
+      {% if section.settings.image != blank  %}
+        <div class="right-side-img">
+          <img src="{{ section.settings.image | img_url: 'master' }}" height="100%" width="100%"/>
+        </div>
+      {% endif %}
+      </div>
+      <div class="carlos-w-half" style="text-align: left;">
+      {% if section.settings.title %}
+        <div class="title-meet-founder" style="padding-bottom: 8px;">
+          <p>{{ section.settings.title }}</p>
+        </div>
+      {% endif %}
+        <div class="why-text-description">
+        {% for block in section.blocks %}
+          {% if block.settings.description %}
+            <p>{{ block.settings.description }}</p>
+          {% endif %}
+        {% endfor %}
+        </div> 
+      </div>     
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Meet Our Founder",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_img",
+        "label": "Background image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Left Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "founders_description",
+        "type": "founders_description",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+          }          
+        ]
+      }
+    ]
+  }
+{% endschema %}

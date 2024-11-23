@@ -1,0 +1,111 @@
+{%  assign product_handle = section.settings.prosuct_select %}
+
+{% assign product = all_products[product_handle] %}
+
+<div id="{{ section.id }}" class="carlos-w-full">
+  <div class="carlos-section-border"></div>
+  <div class="carlos-container">
+    <div class="carlos-flex carlos-flex-wrap">
+      <div class="carlos-w-1/3 carlos-x-padding pb-theme pt-theme carlos-mobile-text-center">
+        <div class="carlos-text-xl carlos-mb-[15px]">
+          {{ product.metafields.carlos.ingredients.value.heading }}
+        </div>
+        <div>
+          {{ product.metafields.carlos.ingredients.value.description }}
+        </div>
+      </div>
+      <div class="carlos-w-2/3 carlos-x-padding pb-theme pt-theme carlos-flex carlos-flex-wrap carlos-text-center ingredients">
+        {% assign ingredient_counter = 0 %}
+        {% assign ingredient_img = product.metafields.arena.ingredient_image_url %}
+        {% assign ingredient_title = product.metafields.arena.ingredient_name %}
+        {% assign ingredient_text = product.metafields.arena.about_ingredient %}
+
+        {% for ingredient in ingredient_img %}
+          {% assign i = forloop.index0 %}
+          
+          {% if ingredient != blank and ingredient_title[i] != blank %}
+          {% assign ingredient_counter = ingredient_counter | plus: 1 %}
+          {% if ingredient_counter == 1 %}
+            <div class="ingredients-group carlos-w-full">
+            {% endif %}
+            <div>
+              <img class="ingredient-image" src="{{ ingredient }}">
+              <div class="carlos-text-sm carlos-uppercase">
+              {{ ingredient_title[i] }}
+              </div>
+              <div style="color: gray;">
+              {{ ingredient_text[i] }}
+              </div>
+            </div>
+          {% if ingredient_counter == 2 or forloop.last %}
+            </div>
+            {% assign ingredient_counter = 0 %}
+            {% endif %}
+          {% endif %}
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ingredients-group.slick-slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  /* .ingredient-image {
+    max-height: 150px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  } */
+  
+  .ingredient-image {
+    object-fit: contain;
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .ingredients-group.slick-slide {
+      display: block;
+    }
+  }
+</style>
+
+<script defer>
+  $(document).ready(function() {
+    $('.ingredients').slick({
+      arrows: false,
+      dots: false,
+      swipeToSlide: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 0.5,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToScroll: 1,
+          }
+        }
+      ]
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product Ingredient",
+  "settings": [
+    {
+      "type": "product",
+      "id": "prosuct_select",
+      "label": "Product Select"
+    }
+  ]
+}
+{% endschema %}

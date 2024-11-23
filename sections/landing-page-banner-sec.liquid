@@ -1,0 +1,97 @@
+<section class="landing-banner_sec">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    <div class="carlos-flex">
+      <div class="text-content">
+        {% if section.settings.name != blank %}
+              <h2 class="product-title">{{ section.settings.name }}</h2>
+          {% endif %}
+         {% if section.settings.text_area != blank %}
+              <p class="short-detail">{{ section.settings.text_area }}</p>
+           {% endif %}
+              {% if section.settings.btn_name !=blank %}
+              <div class="custom_buynow_btn">
+                <a href="{{ section.settings.btn_url }}" class="buynow-btn">{{ section.settings.btn_name }}</a>
+              </div>
+                {% endif %}
+              {% if section.settings.review != blank %}
+                <div class="custom-rating">
+                  <img src="{{ section.settings.rating_image | img_url: 'master' }}" width="100%" height="100%"/>
+                  <p>{{ section.settings.review }}</p>
+                </div>
+              {% endif %}
+              <div class="community-recmnded">
+                {% if section.settings.number != blank and section.settings.recomend_title != blank and section.settings.sub-title %}
+                <div class="numbrse">
+                  <span class="number_recomend">{{ section.settings.number }}</span>
+                </div>
+                <div class="rtext-recmnd">
+                  <p class="title">{{ section.settings.recomend_title }}</p><p class="sb-title">{{ section.settings.sub-title }}</p>
+                </div>
+                {% endif %}
+              </div>
+          </div>
+          {% if section.settings.back_image != blank %}
+        <div class="bg-img">
+        <img src="{{ section.settings.back_image | img_url: 'master' }}" width="100%" height="100%"/>
+      </div>
+        {% endif %}
+    </div>           
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Banner Sec",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "back_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "name",
+        "label": "Product Name"
+      },
+      {
+        "type": "textarea",
+        "id": "text_area",
+        "label": "short_description"
+      },
+      {
+        "type": "text",
+        "id": "btn_name",
+        "label": "Button Name"
+      },
+      {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Button Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "rating_image",
+        "label": "Rating Image"
+      },
+      {
+        "type": "text",
+        "id": "review",
+        "label": "review"
+      },
+      {
+        "type": "text",
+        "id": "number",
+        "label": "Number"
+      },
+      {
+        "type": "text",
+        "id": "recomend_title",
+        "label": "Recomended Title"
+      },
+      {
+        "type": "text",
+        "id": "sub-title",
+        "label": "Sub Title"
+      }
+    ]
+  }
+{% endschema %}

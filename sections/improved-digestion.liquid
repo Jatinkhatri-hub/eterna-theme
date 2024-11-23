@@ -1,0 +1,42 @@
+<section class="improve-degisetion">
+  <div class="container">
+    <div class="heading">
+     <h3>{{ section.settings.heading }}</h3> 
+    </div>
+    <div class="content-text">
+      <p>{{ section.settings.content }}</p>
+      <p>{{ section.settings.content_2 }}</p>
+      <div class="quote-div">
+        <p><i>{{ section.settings.quote }}</i></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Improved Digestion",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "html",
+        "id": "content",
+        "label": "Content1"
+      },
+      {
+        "type": "html",
+        "id": "content_2",
+        "label": "Content 2"
+      },
+      {
+        "type": "text",
+        "id": "quote",
+        "label": "Quote"
+      }
+    ]
+  }
+{% endschema %}

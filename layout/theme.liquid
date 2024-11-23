@@ -1,0 +1,329 @@
+<!doctype html>
+<html class="no-js supports-no-cookies" lang="{{ request.locale.iso_code }}">
+<head>
+<link rel='preconnect dns-prefetch' href='https://api.config-security.com/' crossorigin />
+<link rel='preconnect dns-prefetch' href='https://conf.config-security.com/' crossorigin />
+<link rel='preconnect dns-prefetch' href='https://whale.camera/' crossorigin />
+<script>
+</script>
+{% render 'replo-head' %}
+<link rel='preconnect dns-prefetch' href='https://triplewhale-pixel.web.app/' crossorigin />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_accent }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+    <!-- Twitter conversion tracking base code -->
+    <script>
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+    twq('config','ok3z4');
+    </script>
+    <!-- End Twitter conversion tracking base code -->
+
+  <!-- Twitter conversion tracking event code -->
+<script type="text/javascript">
+  // Insert Twitter Event ID
+  twq('event', 'tw-ok3z4-ok4dh', {
+    value: null, // use this to pass the value of the conversion (e.g. 5.00)
+    currency: null, // use this to pass the currency of the conversion with an ISO 4217 code (e.g. ‘USD’)
+    contents: [ // use this to pass an array of products or content
+        // add all items to the array
+        // use this for the first item
+        {
+          content_type: null,
+          content_id: null,
+          content_name: null,
+          content_price: null,
+          num_items: null,
+          content_group_id: null
+        },
+        // use this for the second item
+        {
+          content_type: null,
+          content_id: null,
+          content_name: null,
+          content_price: null,
+          num_items: null,
+          content_group_id: null
+        }], 
+    conversion_id: null // use this to pass a unique ID for the conversion event for deduplication (e.g. order id '1a2b3c')
+  });
+</script>
+<!-- End Twitter conversion tracking event code -->
+  
+  <!-- Twitter conversion tracking event code -->
+<script type="text/javascript">
+  // Insert Twitter Event ID
+  twq('event', 'tw-ok3z4-ok4dv', {
+    value: null, // use this to pass the value of the conversion (e.g. 5.00)
+    currency: null, // use this to pass the currency of the conversion with an ISO 4217 code (e.g. ‘USD’)
+    contents: [ // use this to pass an array of products or content
+        // add all items to the array
+        // use this for the first item
+        {
+          content_type: null,
+          content_id: null,
+          content_name: null,
+          content_price: null,
+          num_items: null,
+          content_group_id: null
+        },
+        // use this for the second item
+        {
+          content_type: null,
+          content_id: null,
+          content_name: null,
+          content_price: null,
+          num_items: null,
+          content_group_id: null
+        }], 
+    conversion_id: null, // use this to pass a unique ID for the conversion event for deduplication (e.g. order id '1a2b3c')
+    email_address: null, // use this to pass a user’s email address
+    phone_number: null // phone number in E164 standard
+  });
+</script>
+<!-- End Twitter conversion tracking event code -->
+ 
+
+{% if template.name == 'index' %} 
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+  {% else %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  {% endif %}
+
+  
+  {% if template.name == 'product' %} 
+     <script src="{{ "product_swiper.js" | asset_url }}" defer></script>
+  {% else %}
+    <script src="{{ "swiper.js" | asset_url }}" defer></script>
+  {% endif %}    
+  
+  <script src="{{ 'ls.blur-up.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'custom.js' | asset_url }}" defer></script> 
+
+  {% if template.name == 'index' %}
+    <script src="{{ "script.js" | asset_url }}" defer></script>
+  {% endif %}
+  
+  {{ 'swiper.css' | asset_url | stylesheet_tag: preload: true }}
+  {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
+  {{ 'custom-product.css' | asset_url | stylesheet_tag: preload: true }}
+  {{ 'mystyle.css' | asset_url | stylesheet_tag: preload: true }} 
+  {{ 'style.css' | asset_url | stylesheet_tag: preload: true }}
+  {{ 'landing-page.css' | asset_url | stylesheet_tag: preload: true }}
+  {% if template == 'page.landing-page' %}
+    {{ 'landing-page-new.css' | asset_url | stylesheet_tag: preload: true }}
+  {% endif %}
+  {% if template == "page.MSA landing page" %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    {{ 'msa_landing.css' | asset_url | stylesheet_tag: preload: true }}
+  {% endif %}
+  
+
+  {%- liquid
+    assign body_font = settings.font_body
+    assign heading_font = settings.font_heading
+    assign body_font_bolder = body_font | font_modify: 'weight', 'bolder'
+    assign body_font_bold = body_font | font_modify: 'weight', 'bold'
+    assign body_font_italic = body_font | font_modify: 'style', 'italic'
+    assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+  -%}
+
+  {% comment %}theme-check-disable UndefinedObject{% endcomment %}
+  {{ preload_tags }}
+  {% comment %}theme-check-enable UndefinedObject{% endcomment %}
+
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {%- endif -%}
+
+  {%- capture seo_title -%}
+    {{ page_title }}
+    {%- if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif -%}
+    {%- if current_page != 1 -%}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {%- endif -%}
+    {%- if template == 'password' -%}
+      {{ shop.name }}
+    {%- else -%}
+      {%- unless page_title contains shop.name -%}
+        &ndash; {{ shop.name }}
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endcapture -%}
+  <title>{{ seo_title | strip }}</title>
+
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+
+  <!-- Start IE11 compatibility -->
+  <script>
+    if (!!window.MSInputMethodContext && !!document.documentMode) {
+      // CSSVar Polyfill
+      document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\x2fscript>');
+
+      document.documentElement.className = document.documentElement.className.replace('js', 'no-js');
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var elsToLazyload = document.querySelectorAll('.lazyload');
+        for (var i = 0; i < elsToLazyload.length; i++) {
+          var elToLazyLoad = elsToLazyload[i];
+          elToLazyLoad.removeAttribute('src');
+          var src = elToLazyLoad.getAttribute('data-src').replace('_{width}x.', '_600x.');
+          elToLazyLoad.setAttribute('src', src);
+          elToLazyLoad.classList.remove('lazyload');
+          elToLazyLoad.classList.add('lazyloaded');
+        }
+      });
+    }
+  </script>
+  <!-- End IE11 compatibility -->
+  {% render 'css-variables' %}
+  <style>
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+      }
+    }
+  </style>
+  {% render 'critical-css' %}
+  {% render 'social-meta-tags' %}
+  {% render 'style-tags', layout: 'theme' %}
+
+  {% if template contains 'customers' %}
+    <script src="{{ "shopify_common.js" | shopify_asset_url }}" defer="defer"></script>
+  {% endif %}
+
+  <style>
+    {{ heading_font | font_face: font_display: 'swap' }}
+    {{ body_font | font_face: font_display: 'swap' }}
+    {{ body_font_bold | font_face: font_display: 'swap' }}
+    {{ body_font_bolder | font_face: font_display: 'swap' }}
+    {{ body_font_italic | font_face: font_display: 'swap' }}
+    {{ body_font_bold_italic | font_face: font_display: 'swap' }}
+  </style>
+
+  {% render 'script-tags', layout: 'theme' %}
+
+  {{ content_for_header }}
+
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "l0qloui6cp");
+</script>
+  
+</head>
+
+<body id="{{ page_title | handle }}" class="template-{{ template.name | handle }} {% if settings.buttons_show_arrow %}show-button-arrows{% endif %}">
+  {%- liquid
+    if settings.ajax_cart_method == 'drawer'
+      render 'cart-drawer'
+    endif
+    render 'availability-drawer'
+  -%}
+  <div class="relative">
+    {% assign check_handle = page_title | handle %}
+    {% if check_handle == "eterna-founders-story-subs" %}
+      {% sections 'header-group-new' %}
+    {% elsif check_handle == 'landing-page'%}
+      {% sections 'header-group-landing-page' %}
+     {% elsif check_handle == 'msa-landing-page' %}
+      {% section 'header-msa' %}
+      {% else %}
+      {% sections 'header-group' %}
+    {% endif %}
+
+    <main role="main" id="MainContent">
+      {{ content_for_layout }}
+    </main>
+   
+    {% if template == 'page.landing-page' %}
+      {% sections 'footer-group-landing' %}
+    {% else %}
+      {%- sections 'footer-group' -%}
+    {% endif %}
+  </div>
+
+  {%- sections 'popup-group' -%}
+
+  <div id="screenreader-announce" class="visually-hidden" aria-live="polite" role="status"></div>
+
+  <ul hidden>
+    <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
+    <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
+  </ul>
+
+  <script>
+    window.theme = {
+      strings: {
+        loading: {{ 'general.search.loading' | t | json }},
+        itemCountOne: {{ 'cart.popup.cart_count.one' | t | json }},
+        itemCountOther: {{ 'cart.popup.cart_count.other' | t | json }},
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        regularPrice: {{ 'products.product.regular_price' | t | json }},
+        salePrice: {{ 'products.product.sale_price' | t | json }},
+        sale: {{ 'products.product.on_sale' | t | json }},
+        unitPrice: {{ 'products.product.unit_price_label' | t | json }},
+        unitPriceSeparator: {{ 'general.accessibility.unit_price_separator' | t | json }},
+        cartEmpty: {{ 'cart.general.empty' | t | json }},
+        cartCookies: {{ 'cart.general.cookies_required' | t | json }},
+        update: {{ 'cart.label.update' | t | json }},
+        quantity: {{ 'cart.label.quantity' | t | json }},
+        discountedTotal: {{ 'cart.label.discounted_total' | t | json }},
+        regularTotal: {{ 'cart.label.regular_total' | t | json }},
+        priceColumn: {{ 'cart.label.price_column' | t | json }},
+        addedToCart: {{ 'cart.popup.added_to_cart' | t | append: '!' | json }},
+        cartAddError: {{ 'cart.general.cart_add_error' | t | json }},
+        cartError: {{ 'cart.general.cart_error' | t | json }},
+        cartQuantityError: {{ 'cart.general.cart_quantity_error_html' | t | json }}
+      },
+      routes: {
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}',
+        predictive_search_url: '{{ routes.predictive_search_url }}'
+      },
+      moneyFormat: {% if settings.currency_code_enabled == true %}{{ shop.money_with_currency_format | json }}{% else %}{{ shop.money_format | json }}{% endif %},
+      cartItemCount: {{ cart.item_count | json }},
+      cartMethod: {{ settings.ajax_cart_method | json }}
+    };
+  </script>
+  {% if template.name != 'index' %}
+   {% render 'popup-custom' %}
+  {% endif %}
+  
+  {% render 'carlos-cart' %}
+  {% if template.name == 'product' or template == 'page.landing-page' %}
+    {% render 'product_video_script' %}
+  {%  endif %}
+  {% if template == "page.MSA landing page" %}
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,131 @@
+<section class="feel-the-power">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    <div class="carlos-w-full power-left">
+      {% if section.settings.img != blank %}
+        <div class="power_image">
+          <img src="{{ section.settings.img | img_url: "master" }}" width="100%" height="100%"/>
+        </div>
+      {% endif %}
+    </div>
+    <div class="carlos-w-full power-right">
+      <div class="power-top-content">
+        {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+          {% endif %}
+        {% if section.settings.description %}
+        <p>{{ section.settings.description }}</p>
+          {% endif %}
+        <div class="power-table">
+          <table class="power-table-data">
+              <thead>
+                <tr>
+                  <th class="name_aa">{{ section.settings.table_heading2 }}</th>
+                  <th class="image_qq"><img src="{{ section.settings.table_heading1 | img_url: 'master'}}" width="100%" height="100%"/></th>
+                  <th class="cost_bq">{{ section.settings.table_heading3 }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for block in section.blocks %}
+                  <tr>
+                    <td>{{ block.settings.data_name }}</td>
+                    <td><img src="{{ block.settings.image_icon | img_url: 'master' }}" width="100%" height="100%"/></td>
+                    <td>{{ block.settings.price }}</td>
+                  </tr>
+                {% endfor %}
+              
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>{{ section.settings.table_foot1 }}</td>
+                  <td>{{ section.settings.table_foot2 }}</td>
+                  <td>{{ section.settings.table_foot3 }}</td>
+                </tr>
+              </tfoot>
+            </table>
+          <p>{{ section.settings.note }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Feel The Power",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "img",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "image_picker",
+        "id": "table_heading1",
+        "label": "logo Image"
+      },
+      {
+        "type": "text",
+        "id": "table_heading2",
+        "label": "Table Heading2"
+      },
+      {
+        "type": "text",
+        "id": "table_heading3",
+        "label": "Table Heading3"
+      },
+      {
+        "type": "text",
+        "id": "table_foot1",
+        "label": "Table foo1"
+      },
+      {
+        "type": "text",
+        "id": "table_foot2",
+        "label": "Table foot2"
+      },
+      {
+        "type": "text",
+        "id": "table_foot3",
+        "label": "Table foot3"
+      },
+      {
+        "type": "text",
+        "id": "note",
+        "label": "Note"
+      }
+    ],
+    "blocks":[
+      {
+        "type": "table_data",
+        "name": "Table Data",
+        "settings": [
+          {
+            "type": "text",
+            "id": "data_name",
+            "label": "Data Name"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_icon",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "price",
+            "label": "Price"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

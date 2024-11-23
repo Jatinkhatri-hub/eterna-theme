@@ -1,0 +1,272 @@
+{% comment %}theme-check-disable TemplateLength{% endcomment %}
+{%- liquid
+  assign section_color = section.settings.color_scheme
+  assign enable_video_looping = section.settings.enable_video_looping
+  assign two_images_per_row = section.settings.two_images_per_row
+  assign first_image_full_width = false
+  if section.settings.first_image_full_width and section.settings.two_images_per_row
+    assign first_image_full_width = true
+  endif
+  
+  case section.settings.desktop_image_width
+    when 'one-third'
+      assign content_width_desktop = 'lg:col-span-8'
+      if section.settings.desktop_image_position == 'right'
+        assign image_width_desktop = 'lg:col-start-9 lg:col-end-13'
+      else
+        assign image_width_desktop = 'lg:col-span-4'
+      endif
+    when 'one-half'
+      assign content_width_desktop = 'lg:col-span-6'
+      if section.settings.desktop_image_position == 'right'
+        assign image_width_desktop = 'lg:col-start-7 lg:col-end-13'
+      else
+        assign image_width_desktop = 'lg:col-span-6'
+      endif
+    when 'three-fifths'
+      assign content_width_desktop = 'lg:col-span-5'
+      if section.settings.desktop_image_position == 'right'
+        assign image_width_desktop = 'lg:col-start-6 lg:col-end-13'
+      else
+        assign image_width_desktop = 'lg:col-span-7'
+      endif
+    when 'two-thirds'
+      assign content_width_desktop = 'lg:col-span-4'
+      if section.settings.desktop_image_position == 'right'
+        assign image_width_desktop = 'lg:col-start-5 lg:col-end-13'
+      else
+        assign image_width_desktop = 'lg:col-span-8'
+      endif
+  endcase
+
+  if two_images_per_row == true and product.media.size > 1
+    assign left_over = product.media.size | modulo: 2
+  endif
+
+  assign negative_margin = false
+  if settings.fill_image_to_border_edge
+    assign negative_margin = true
+  endif
+
+-%}
+
+<section class="product-page-gap grid grid-cols-1 lg:grid-cols-12 lg:bg-border grid-flow-row-dense lg:gap-gutter border-t-grid border-grid-color carlos-container" x-data="ThemeSection_{{ section.id | handleize | replace: '-', '_' }}()" x-init="mounted()" data-section-id="{{ section.id }}" data-alpine-id="{{ section.id | handleize | replace: '-', '_' }}" data-section-type="product" data-enable-history-state="true" data-enable-image-zoom={{ section.settings.enable_image_zoom | json }} data-variant-image-behaviour="{{ section.settings.variant_image_behaviour }}" data-color-scheme="{{ section_color }}" style="background: transparent;">
+  {%- liquid
+    assign current_variant = product.selected_or_first_available_variant
+    assign featured_media = current_variant.featured_media | default: product.featured_media
+    assign has_interactive_media = false
+    assign image_index = 0
+    assign product_video = product.metafields.custom.product_video
+  -%}
+  {%- for media in product.media -%}
+    {%- if media.media_type != 'image' -%}
+      {%- assign has_interactive_media = true -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+  <div class="relative carlos-x-padding carlos-mobile-no-x-padding {% if product.media.size > 1 %}pb-8{% endif %} {% comment %}lg:pb-0{% endcomment %} pb-theme product-media-container bg-scheme-background text-scheme-text {{ image_width_desktop }} {% unless settings.fill_image_to_border_edge %}border-b-grid border-grid-color lg:border-0{% endunless %}" data-product-single-media-group>
+  <div class="splide_gallery splide--product lg:sticky lg:top-sticky-header  {% if negative_margin %}lg:-mb-theme-width{% endif %}" data-drag-disabled="{{ has_interactive_media }}" {% if product.media.size > 1 %}data-slideshow-enabled="true"{% endif %}>
+    <div class="transition-max-height splide__track {% if settings.fill_image_to_border_edge %}{% comment %}border-b-grid border-grid-color{% endcomment %} lg:border-0{% endif %} {% unless settings.fill_image_to_border_edge %}lg:p-4{% endunless %} {% if negative_margin %}{% comment %}lg:border-b-grid lg:border-grid-color{% endcomment %}{% endif %}">
+      <style>@media (min-width: 769px){.splide__list{gap: 5px; background-color: transparent;}} @media (max-width: 1024px){.product-block-area{padding-top:0;}}</style>
+      <ul class="product_main_list lg:w-full lg:grid {% if two_images_per_row and product.media.size > 1 %}lg:grid-cols-2{% else %}lg:grid-cols-1{% endif %} {% if settings.fill_image_to_border_edge %}lg:gap-gutter lg:bg-border{% else %}lg:gap-4{% endif%}">
+        
+        {% if product_video != null %}
+            <li  class="product_slide_item {% if left_over > 0 or first_image_full_width %}col-span-2{% endif %} bg-scheme-background" style="margin-bottom: 52px;" data-index="0" data-first-media>
+              {%- render 'product-video-media',
+                media: featured_media,
+                product_video: product_video, 
+                image_index: image_index,
+                section_color: section_color,
+                enable_video_looping: enable_video_looping
+              -%}
+            {% if left_over > 0 or first_image_full_width %}
+              {% render 'recommended-by', product: product %}
+            {% endif %}
+            </li>
+        {% else %}  
+          {%- if featured_media != null -%}
+            {%- assign media = featured_media -%}
+            <li  class="product_slide_item {% if left_over > 0 or first_image_full_width %}col-span-2{% endif %} bg-scheme-background" data-index="0" data-first-media>
+              {%- render 'product-media',
+                media: media,
+                image_index: image_index,
+                section_color: section_color,
+                enable_video_looping: enable_video_looping
+              -%}
+            {% if left_over > 0 or first_image_full_width %}
+              {% render 'recommended-by', product: product %}
+            {% endif %}
+            </li>
+            {%- if media.media_type == 'image' -%}
+              {%- assign image_index = image_index | plus: 1 -%}
+            {%- endif -%}
+          {%- endif -%}
+        {% endif %}  
+        {% for media in product.media %}
+            {%- liquid
+              assign full_width_image = false
+              if left_over > 0 and forloop.first and featured_media == null
+                assign full_width_image = true
+              elsif first_image_full_width and forloop.first and featured_media == null
+                assign full_width_image = true
+              elsif first_image_full_width and forloop.last and left_over == 0
+                assign full_width_image = true
+              elsif first_image_full_width and product.media.size == 2
+                assign full_width_image = true
+              endif
+            -%}
+            {%- unless media.id == featured_media.id -%}
+            <li {% if featured_media == null and forloop.first %}data-first-media{% endif %} class="{% if full_width_image %}col-span-2{% endif %} splide__slide bg-scheme-background" data-index="{% if featured_media == null %}{{ forloop.index0 }}{% else %}{{ forloop.index }}{% endif %}">
+              {%- render 'product-media',
+                media: media,
+                image_index: image_index,
+                section_color: section_color,
+                enable_video_looping: enable_video_looping
+              -%}
+            </li>
+            {%- if media.media_type == 'image' -%}
+              {%- assign image_index = image_index | plus: 1 -%}
+            {%- endif -%}
+            {% endunless %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% assign first_3d_model = product.media | where: "media_type", "model" | first %}
+      
+      {%- if first_3d_model -%}
+        
+      {%- endif -%}
+    </div> 
+  </div>
+ <div class="product_thumb_nail_slider">
+       <ul class="single__product_thumb_list">  
+        {% assign image_index = 0 %} 
+        {%- if featured_media != null -%}
+            {%- assign media = featured_media -%}
+            <li  class="{% if left_over > 0 or first_image_full_width %}col-span-2{% endif %} bg-scheme-background">
+              {%- render 'product-media',
+                media: media,
+                image_index: image_index,
+                section_color: section_color,
+                enable_video_looping: enable_video_looping
+              -%}
+            </li>
+            {%- if media.media_type == 'image' -%}
+              {%- assign image_index = image_index | plus: 1 -%}
+            {%- endif -%}
+        {%- endif -%} 
+        {% for media in product.media %}
+            {%- liquid
+              assign full_width_image = false
+              if left_over > 0 and forloop.first and featured_media == null
+                assign full_width_image = true
+              elsif first_image_full_width and forloop.first and featured_media == null
+                assign full_width_image = true
+              elsif first_image_full_width and forloop.last and left_over == 0
+                assign full_width_image = true
+              elsif first_image_full_width and product.media.size == 2
+                assign full_width_image = true
+              endif
+            -%}
+            {%- unless media.id == featured_media.id -%}
+            <li {% if featured_media == null and forloop.first %}data-first-media{% endif %} class="{% if full_width_image %}col-span-2{% endif %} splide__slide bg-scheme-background" data-index="{% if featured_media == null %}{{ forloop.index0 }}{% else %}{{ forloop.index }}{% endif %}">
+              {%- render 'product-media',
+                media: media,
+                image_index: image_index,
+                section_color: section_color,
+                enable_video_looping: enable_video_looping
+              -%}
+            </li>
+            {%- if media.media_type == 'image' -%}
+              {%- assign image_index = image_index | plus: 1 -%}
+            {%- endif -%}
+            {% endunless %}
+          {% endfor %}
+        </ul>
+     </div>  
+  <div class="product-content-container bg-scheme-background text-scheme-text carlos-x-padding {{ content_width_desktop }}" x-ref="productContent">
+    <div class="lg:sticky lg:top-sticky-header py-theme product-block-area">
+      {%- render 'product-form', product: product, section: section, section_color: section_color -%}
+      
+    </div>
+  </div>
+  
+  {% unless product == empty %}
+    <script type="application/json" data-product-json>
+      {{ product | json }}
+    </script>
+    <script type="application/json" data-selected-variant-json>
+      {{ current_variant | json }}
+    </script>
+    <script type="application/json" data-featured-media-id>
+      {{ featured_media.id | json }}
+    </script>
+    {% if section.settings.enable_image_zoom %}
+    {% assign product_image_media = product.media | where: 'media_type', 'image' %}
+    <script type="application/json" data-product-images>
+    {
+      {% for media in product_image_media %}
+        "{{ media.id }}": {
+          "fullSizeUrl": {{ media | img_url: 'master' | json }},
+          "width": {{ media.width | json }},
+          "height": {{ media.height | json }},
+          "aspectRatio": {{ media.aspect_ratio | json }},
+          "alt": {{ media.alt | json }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    }
+    </script>
+    {% endif %}
+    <script type="application/json" id="ModelJson-{{ section.id }}">
+        {{ product.media | where: 'media_type', 'model' | json }}
+    </script>
+  {% endunless %}
+</section>
+
+
+{%- if section.settings.enable_image_zoom -%}
+  {% render 'photoswipe',product: product %}
+{%- endif -%}
+
+{%- if section.settings.override_header_footer_color_scheme -%}
+  {%- render 'header-footer-color-scheme-override', section_color: section_color,product: product -%}
+{%- endif -%}
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "url": {{ shop.url | append: product.url | json }},
+  {%- if product.featured_media -%}
+    {%- assign media_size = product.featured_media.preview_image.width | append: 'x' -%}
+    "image": [
+      {{ product.featured_media | img_url: media_size | prepend: "https:" | json }}
+    ],
+  {%- endif -%}
+  "description": {{ product.description | strip_html | json }},
+  {%- if current_variant.sku != blank -%}
+    "sku": {{ current_variant.sku | json }},
+  {%- endif -%}
+  "brand": {
+    "@type": "Thing",
+    "name": {{ product.vendor | json }}
+  },
+  "offers": [
+    {%- for variant in product.variants -%}
+      {
+        "@type" : "Offer",
+        {%- if variant.sku != blank -%}
+          "sku": {{ variant.sku | json }},
+        {%- endif -%}
+        "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+        "price" : {{ variant.price | divided_by: 100.00 | json }},
+        "priceCurrency" : {{ cart.currency.iso_code | json }},
+        "url" : {{ shop.url | append: variant.url | json }}
+      }{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+  ]
+}
+</script>

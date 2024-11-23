@@ -1,0 +1,121 @@
+<div class="membership_faq-sec">
+  <div class="carlos-container">
+    <div class="membership_faq-wrapper">
+      <h3>{{ section.settings.title }}</h3>
+      {% if section.settings.sub_title %}
+        {{ section.settings.sub_title }}
+      {% endif %}  
+    </div>
+    {% for block in section.blocks %}
+      <div class="mp_faq_que" {% if forloop.index == 1 %}style="border-top: 1px solid #45523e3b;"{% endif %}>
+        <div class="carlos-flex carlos-space-between faq-question accordion">
+          <h2 class="carlos-text-md">
+            <span>
+              {{ block.settings.heading }}
+            </span>
+          </h2>
+          <div class="et-faq-question-header-icon"><span class="h"></span><span class="v"></span></div>
+        </div>
+        <div class="accordion-content" id="{{ block.id }}">
+          <p class="carlos-text-sm" style="margin: 10px 0;">{{ block.settings.content }}</p>
+          {{ block.settings.page.content }}
+        </div>
+      </div>
+    {% endfor %}
+    <div class="mm-faq-bottom">
+      <div class="mm-faq-join text-center">
+        <a class="main-img-btn carlos-btn-white carlos-pointer" {% if section.settings.link != blank %}href="{{ section.settings.link }}"{% endif %} data-pid="{{ product.id }}">
+          <span>{{ section.settings.join_button_txt }} </span>
+          {% if section.settings.join_product != blank %}
+            {% assign selling_plan = product.metafields.carlos.selling_plan %}
+            <span class="mm-monthly-price">
+            {% if selling_plan == "m" %}
+              {{ section.settings.join_product.selling_plan_groups[0].selling_plans[0].price_adjustments[0].value | money }}/{{ product.metafields.carlos.selling_plan }}
+            {% endif %}
+            {% if selling_plan == "yr" %}
+              {{ section.settings.join_product.selling_plan_groups[0].selling_plans[1].price_adjustments[0].value | money }}/{{ product.metafields.carlos.selling_plan }}
+            {% endif %}
+            </span>
+          {% endif %}
+        </a>
+      </div>
+      <div class="join-bnr-prcing">
+        <div class="mp-benefits-cta-price">{{ section.settings.mm_join_price }}</div>
+        <div class="mp-benefits-cta-login"><span>{{ section.settings.join_already_member }}&nbsp;</span><a class="login-mm" href="/account/login">Log in</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Main FAQ",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Frequently Asked Questions",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_title",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "product",
+      "id": "join_product",
+      "label": "Membership Product"
+    },
+    {
+      "type": "url",
+      "id": "join_button_link",
+      "label": "URL"
+    },
+    {
+      "type": "text",
+      "id": "join_button_txt",
+      "label": "Button Name"
+    },
+    {
+      "type": "text",
+      "id": "mm_join_price",
+      "label": "Benefit Price"
+    },
+    {
+      "type": "text",
+      "id": "join_already_member",
+      "label": "Already Member"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Collapsible tab",
+          "label": "Heading",
+          "info": "Include a heading that expands the content"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Tab content"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Tab content from page"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

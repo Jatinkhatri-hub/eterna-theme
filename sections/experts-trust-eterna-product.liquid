@@ -1,0 +1,504 @@
+<style>
+  .experts-trust .carlos-container1 {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  section.experts-trust {
+    padding-top: 0px!important;
+  }
+  .circular-images {
+    margin-left: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    overflow: hidden;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: #FFFFFF;
+  }
+  .circular-images img {
+    /* border-radius: 50%;
+    border-width: 2px; 
+    padding: 1px; */
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+  .images-slide {
+    display: flex;
+  }
+  .experts-trust .circle-grid-inner {
+    width: 66px;
+    height: 66px;
+  }
+  section.experts-trust .circular-anime-wrap {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: fill;
+    height: fill;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  section.experts-trust .circular-img-wrap {
+    margin-left: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    overflow: hidden;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: #ffffff;
+  }
+  section.experts-trust .circular-img-wrap .circular-thumbnail.et-img-grid {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0.6;
+  }
+  .circular-progress .progress {
+    stroke-dasharray: 296 296;
+    stroke-dashoffset: 296;
+    animation: grow 5s ease-out infinite;
+    stroke: #272724;
+  }
+  .circular-progress .c1{
+     stroke: #fff;
+  }
+
+  @keyframes grow {
+    100% { stroke-dashoffset: 0; }
+  }
+  .css-99xs04 {
+    padding-top: clamp(40px, calc(37.57px + 0.65vw), 50px);
+    padding-bottom: clamp(40px, calc(37.57px + 0.65vw), 50px);
+  }
+  .css-1cfpnbg {
+    display: grid; 
+   /* grid-template-columns: [full-start] minmax(clamp(24px, calc(15.26px + 2.33vw), 60px),1fr) [main-start] minmax(0,1800px) [main-end] minmax(clamp(24px, calc(15.26px + 2.33vw), 60px),1fr) [full-end]; */
+    width: 100%;
+    -webkit-margin-start: auto;
+    margin-inline-start: auto;
+    -webkit-margin-end: auto;
+    margin-inline-end: auto;
+  }
+  .css-guj348 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: main;
+    grid-gap: clamp(12px, calc(9.09px + 0.78vw), 24px);
+    grid-row-gap: 32px;
+  }
+  .css-k2k23a {
+    font-weight: 400;
+    font-size: clamp(34px, calc(29.63px + 1.17vw), 52px);
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+    grid-column: span 12;
+  }
+  .css-hhoafb {
+    grid-column: span 3;
+  }
+  .css-653mqc {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    grid-column: 5/-1;
+  }
+  .css-18e4g9f {
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+  .css-1uaztwl {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .css-1l4m4qm {
+    position: relative;
+    width: 66px;
+    height: 66px;
+    -webkit-tap-highlight-color: transparent;
+    background: transparent;
+    padding: 0;
+  }
+  .css-1mpy608 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: fill;
+    height: fill;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  .css-1howmyc {
+    margin-left: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    overflow: hidden;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: #FFFFFF;
+  }
+  .css-focs6t {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0.6;
+  }
+  .css-dd6hdl {
+    font-weight: 300;
+    font-size: clamp(22px, calc(20.06px + 0.52vw), 30px);
+    line-height: 1.44;
+    margin-bottom: 20px;
+  }
+  .css-1927cn6 {
+    font-weight: 400;
+    font-size: clamp(16px, calc(15.76px + 0.06vw), 17px);
+    line-height: 1.5;
+    letter-spacing: 0.005em;
+    margin-bottom: 0 !important;
+  }
+  .css-1s3i9wd {
+    font-weight: 400;
+    font-size: clamp(16px, calc(15.76px + 0.06vw), 17px);
+    line-height: 1.5;
+    letter-spacing: 0.005em;
+    color: rgba(0, 0, 0, 0.54);
+  }
+  .ex-buttons.active .motion-thumbnail {
+    opacity: 1;
+  }
+  .active-animate .css-focs6t{
+    opacity:1;
+  }
+  @media only screen and (max-width:959px){
+    .css-hhoafb, 
+    .css-653mqc {
+      grid-column: span 12;
+    }
+    section.experts-trust {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .css-1l4m4qm {
+      width: 54px;
+      height: 54px;
+    }
+  }
+   @media only screen and (max-width:1024px){
+     .css-1cfpnbg{
+       padding: 0px 20px;
+     }
+   }
+  @media only screen and (max-width:345px){
+    .css-1l4m4qm {
+      width: 50px;
+      height: 50px;
+    }
+  }
+</style>
+<section class="experts-trust" style="display:none;">
+  <div class="carlos-container">
+    <div class="expert-heading">
+      <h2 class="expert-text">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="images-slide">
+      <div class="main-image">
+        <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 124.771% 0px 0px;"></span>
+          <img class="blur-up lazyload" id="largeImage" src="{{ section.settings.image | img_url: 'master' }}" height="100%" width="100%" alt="default-img" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
+        </span>
+      </div>
+      <div class="colmn-2 expert-text">
+        <div class="right-colmn">
+          <div class="small-imgs"  style="display: flex">
+            {% for block in section.blocks %}
+              <div class="circle-grid-inner" data-index="{{ forloop.index }}">
+                <div class="circular-circle-grid" data-index="{{ forloop.index }}">
+                  <!--<svg width="100%" height="100%" viewBox="0 0 100 100">
+                    <circle class="bg"></circle>
+                    <circle class="fg"></circle>
+                  </svg> -->
+                  <svg width="100%" height="100%" viewBox="0 0 100 100">
+                    <circle class="c1" fill="transparent" cx="50" cy="50" r="49" stroke-width="1" transform="rotate(-90 50 50)" stroke="rgba(0, 0, 0, 0.12)"></circle>
+                    <circle class="progress" cx="50" cy="50" r="49" transform="rotate(-90 50 50)" pointer-events="all" stroke="#fff" stroke-width="1" fill="none"></circle>
+                  </svg>
+                </div>
+                <div class="circular-images">
+                  <img class="blur-up lazyload" src="{{ block.settings.image | img_url: 'master' }}" data-large-img="{{ block.settings.image | img_url: 'master' }}" height="100%" width="100%" data-review='{{ block.settings.reviews }}' data-name="{{ block.settings.name }}" data-address="{{ block.settings.address }}">
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="reviews-text" id="description">
+            <p class="text-review">{{ section.settings.reviews }}</p>
+            <p class="text-name">{{ section.settings.name }}</p>
+            <p class="text-address">{{ section.settings.address }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+<section class="experts-trust">        
+  <div class="carlos-container1">
+    <div class="css-99xs04">
+      <div class="css-1cfpnbg">
+        <div class="css-guj348">
+          <h2 class="chakra-heading css-k2k23a">{{ section.settings.heading }}</h2>
+          <div class="css-hhoafb circle-main-cnt">
+            <div class="css-0" style="opacity: 1;">
+              <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
+                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span>
+                <!--<img alt="img" id="largeImage" sizes="(min-width: 960px) 25vw, 100vw" src="{{ section.settings.image | img_url: 'master' }}" decoding="async" data-nimg="responsive" class="round" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">-->
+                <img alt="img" id="largeImage" sizes="(min-width: 960px) 25vw, 100vw" src="{{ section.settings.image | img_url: 'master' }}" decoding="async" data-nimg="responsive" class="round" style="position: static; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height:auto; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
+              </span>
+            </div>
+          </div>
+          <div class="css-653mqc">
+            <div class="css-18e4g9f">
+            <div class="chakra-stack css-1uaztwl">
+              {% for block in section.blocks %}
+                {% assign image = block.settings.image %}
+                <button data-index="{{ forloop.index }}" class="{% if forloop.index == 1 %}active-animate{% endif %} css-1l4m4qm ex-buttons" data-large-img="{{ block.settings.image | img_url: 'master' }}" data-review='{{ block.settings.reviews }}' data-name="{{ block.settings.name }}" data-address="{{ block.settings.address }}">
+                  <div class="data-review-content-pdev" style="display:none">
+                    <p class="chakra-text et-text-review css-dd6hdl">{{ block.settings.reviews }}</p>
+                    <p class="chakra-text et-text-name css-1927cn6">{{ block.settings.name }}</p>
+                    <p class="chakra-text et-text-address css-1s3i9wd">{{ block.settings.address }}</p>
+                  </div>
+                  <div class="css-1mpy608">
+                    <svg width="100%" height="100%" viewBox="0 0 100 100">
+                      <circle class="c1" stroke="rgba(0, 0, 0, 0.12)" fill="transparent" cx="50" cy="50" r="49" stroke-width="1"></circle>
+                      <circle class="c2" stroke="transparent" cx="50" cy="50" r="49" fill="transparent" stroke-width="1" pathLength="100" stroke-dasharray="0 100"></circle>
+                    </svg>
+                  </div>
+                  <div class="css-1howmyc">
+                    <div class="motion-thumbnail css-focs6t">
+                      <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
+                        <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
+                          {% assign sizes = '(min-width: 960px) 48px, 60px' %}
+                          <img src="{{ block.settings.circle_image | img_url: 'master' }}"
+                          	sizes="{{ sizes }}"
+                          	alt="{{ image.alt | escape }}"
+                          style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
+                        </span>
+                      </div>
+                    </div>
+                  </button>
+                {% endfor %}
+              </div>
+              <div class="css-0 circle-cnt" style="opacity: 1;">
+                <p class="chakra-text et-text-review css-dd6hdl">{{ section.settings.reviews }}</p>
+                <p class="chakra-text et-text-name css-1927cn6">{{ section.settings.name }}</p>
+                <p class="chakra-text et-text-address css-1s3i9wd">{{ section.settings.address }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script defer>
+  
+  /* jQuery('.circular-images img').click(function(){
+    $('body').addClass('circle-clicked');
+    $('.main-image').css('opacity', '0.6233');
+    $('.experts-trust .circle-grid-inner .circular-circle-grid svg').removeClass('circular-progress');
+    $('.experts-trust .circle-grid-inner .circular-circle-grid svg .progress').css('stroke', '#fff');
+    $(this).closest('.circle-grid-inner').find('svg .progress').css('stroke', '#272724');
+    $('.experts-trust .circle-grid-inner .circular-circle-grid .circular-images img').removeClass('active');
+    $(this).addClass('active');
+    $('#largeImage').attr('src',$(this).attr('data-large-img').replace('thumb','large'));
+    $('#description .text-review').html($(this).attr('data-review'));
+    $('#description .text-name').html($(this).attr('data-name'));
+    $('#description .text-address').html($(this).attr('data-address'));
+    setTimeout(function(){
+       $('.main-image').css('opacity', '1');
+    }, 1000);
+
+  }); */
+
+  jQuery(document).ready(function($){
+    $('.experts-trust .ex-buttons').on('click', function(){
+      $('.css-0').fadeTo('300', 0);
+      var large_img = $(this).attr('data-large-img');
+      var review_content = $(this).find('.data-review-content-pdev').html();
+      var review = $(this).attr('data-review');
+      var name = $(this).attr('data-name')
+      var address = $(this).attr('data-address');
+      $('button.ex-buttons').removeClass('active-animate');
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+      $('button.ex-buttons svg circle.c2').attr('stroke', 'transparent');
+      $('button.ex-buttons svg circle.c2').attr('stroke-dasharray', '0 100');
+      $(this).find('svg circle.c2').attr('stroke', '#272724');
+      $(this).find('svg circle.c2').attr('stroke-dasharray', '100 100');
+
+      setTimeout(function(){
+        $('.circle-main-cnt #largeImage').attr('src', large_img);
+        /* $('.circle-cnt .et-text-review').html(review);
+        $('.circle-cnt .et-text-name').html(name);
+        $('.circle-cnt .et-text-address').html(address); */
+        $('.circle-cnt').html(review_content);
+        $('.css-0').fadeTo('slow', 1);
+      }, 500);
+
+    })
+
+    
+    function circle_spin_animation(){
+        var value = 0;
+        var duration = 50000; 
+        var increment = 100 / (duration / 1000);
+        var index = $('button.ex-buttons.active-animate').attr('data-index');
+        var total_slides = $('button.ex-buttons').length;
+        var next_slide_index = 0;
+        if(index < total_slides){
+          next_slide_index = parseInt(index) + parseInt(1);
+        }else if(index == total_slides){
+          next_slide_index = 1;
+        }
+        $('button.ex-buttons svg circle.c2').attr('stroke-dasharray', '0 100');
+        $('button.ex-buttons svg circle.c2').attr('stroke', 'transparent');
+        var interval = setInterval(function(){
+          if($('button.ex-buttons').hasClass('active-animate')){
+            value += increment;
+            value = parseInt(value);
+            $('button.ex-buttons.active-animate svg circle.c2').attr('stroke', '#272724');
+            $('button.ex-buttons.active-animate svg circle.c2').attr('stroke-dasharray', parseInt(value)+' '+'100');  
+            
+            if (value > 100) {
+              clearInterval(interval);
+            }else if(value > 99 && value < 101){
+              $('button.ex-buttons.active-animate svg circle.c2').attr('stroke-dasharray', '0 100');
+              $('button.ex-buttons.active-animate svg circle.c2').attr('stroke', 'transparent');
+              var large_img = $('button.ex-buttons[data-index="'+next_slide_index+'"]').attr('data-large-img');
+              var review_content = $('button.ex-buttons[data-index="'+next_slide_index+'"]').find('.data-review-content-pdev').html();
+              var review = $('button.ex-buttons[data-index="'+next_slide_index+'"]').attr('data-review');
+              var name = $('button.ex-buttons[data-index="'+next_slide_index+'"]').attr('data-name')
+              var address = $('button.ex-buttons[data-index="'+next_slide_index+'"]').attr('data-address');
+              $('.css-0').fadeTo('300', 0);
+
+              setTimeout(function(){
+                $('.circle-main-cnt #largeImage').attr('src', large_img);
+                /*$('.circle-cnt .et-text-review').html(review);
+                $('.circle-cnt .et-text-name').html(name);
+                $('.circle-cnt .et-text-address').html(address); */
+                $('.circle-cnt').html(review_content);                
+                $('.css-0').fadeTo('slow', 1);
+              }, 500);
+
+              $('button.ex-buttons[data-index="'+index+'"]').removeClass('active-animate');
+              $('button.ex-buttons[data-index="'+next_slide_index+'"]').addClass('active-animate');
+
+              circle_spin_animation();
+    
+            }
+          }
+        }, 80); 
+    }
+
+
+    circle_spin_animation();
+
+  })
+
+</script>
+{% schema %}
+  {
+    "name": "Experts Trust Eterna",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Main Images"
+          },
+          {
+            "type": "textarea",
+            "id": "reviews",
+            "label": "Reviews"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name"
+          },
+          {
+            "type": "text",
+            "id": "address",
+            "label": "Address"
+          }
+      
+    ],
+    "blocks": [
+      {
+        "name": "sliders",
+        "type": "sliders",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Main Images"
+          },
+          {
+            "type": "image_picker",
+            "id": "circle_image",
+            "label": "Circle Image"
+          },
+          {
+            "type": "textarea",
+            "id": "reviews",
+            "label": "Reviews"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name"
+          },
+          {
+            "type": "text",
+            "id": "address",
+            "label": "Address"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

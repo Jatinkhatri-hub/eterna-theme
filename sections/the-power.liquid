@@ -1,0 +1,87 @@
+<div id="{{ section.id }}" class="carlos-w-full">
+  <div class="carlos-container pb-theme pt-theme">
+    <div class="carlos-flex desktop-justify-center carlos-align-end" style="overflow: hidden;">
+      <div
+        class="carlos-x-padding carlos-uppercase desktop-text-center mobile-bottom-margin carlos-text-xl"
+        style="width: 65%;">
+        {{ product.metafields.carlos.the_power.value.headline }}
+      </div>
+      <div class="carlos-hide-desktop" style="width: 45%;">
+        <img
+          src="{{ product.featured_media | img_url: 'master' }}"
+          width="100%"
+          height="100%"
+          loading="lazy"
+          style="filter: drop-shadow(3px 3px 10px #00000080); min-width: 270px; margin-left: -45px; margin-top: 5px; transform: rotate(315deg);">
+      </div>
+    </div>
+    <div class="carlos-x-padding">
+      <div class="carlos-mb-[15px] desktop-text-center">{{ product.metafields.carlos.the_power.value.description }}</div>
+      <div class="carlos-flex" style="margin-right: 10px;">
+        <img
+          class="carlos-hide-mobile carlos-w-half"
+          src="{{ product.featured_media | img_url: 'master' }}"
+          width="100%"
+          height="100%"
+          loading="lazy"
+          style="filter: drop-shadow(3px 3px 10px #00000080);">
+        <div class="carlos-flex carlos-flex-column carlos-w-half" style="gap: 15px; justify-content: center;">
+          {% for item in product.metafields.carlos.the_power.value.list_items %}
+            <div class="carlos-flex" style="gap: 10px;">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="#011627"
+                style="width: 24px;">
+                <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"></path>
+              </svg>
+              <div class="carlos-flex-1">
+                <div class="carlos-bold carlos-uppercase">
+                  {{ item.title }}
+                </div>
+                <div>
+                  {{ item.text }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @media (min-width: 769px) {
+    .desktop-justify-center {
+      justify-content: center;
+    }
+
+    .desktop-text-center {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mobile-bottom-margin {
+      margin-bottom: 35px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "The Power | JSON",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [],
+  "presets": [
+    {
+      "name": "The Power | JSON"
+    }
+  ]
+}
+{% endschema %}

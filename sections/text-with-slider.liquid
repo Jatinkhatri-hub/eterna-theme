@@ -1,0 +1,185 @@
+<div id="{{ section.id }}" class="carlos-w-full carlos-text-black pb-theme pt-theme">
+  <div class="carlos-container">
+    <div class="carlos-flex carlos-flex-wrap">
+      <div class="carlos-w-2/5 carlos-x-padding">
+        <div class="carlos-border-top carlos-border-bottom carlos-text-xl pb-theme pt-theme">
+          {{ section.settings.title }}
+        </div>
+        <div class="pb-theme pt-theme carlos-text-md">
+          {{ section.settings.text }}
+        </div>
+      </div>
+      <div class="carlos-w-3/5">
+        <div id="{{ section.id }}-slider" class="slider-swiper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide carlos-bg-nr carlos-bg-cover carlos-br-sm carlos-relative"
+              style="background-image: url('{{ block.settings.image | img_url: 'master' }}');">
+            <img class="carlos-hide-desktop" src="{{ block.settings.image | img_url: 'master' }}"  loading="lazy" width="100%" height="100%" style="object-fit: cover; aspect-ratio: 2;" />
+              <div class="carlos-flex carlos-flex-wrap carlos-relative carlos-bg-white carlos-border-black carlos-border carlos-h-full carlos-align-center">
+                <div style="background: white; border-radius: 100%; padding: 10px; width: fit-content; border: 1px solid black; font-size: 24px; position: absolute; top: -25px; left: 25px;">{% if forloop.index < 10 %}0{{ forloop.index }}{% else %}{{ forloop.index }}{% endif %}</div>
+                <div class="carlos-w-half carlos-h-full">
+                  <img src="{{ block.settings.icon | img_url: 'master' }}" loading="lazy" width="100%" height="100%" alt="text_img" style="height: 100%; object-fit: contain; width: 225px; margin: auto; aspect-ratio: 1;">
+                </div>
+                <div class="carlos-w-half carlos-h-full carlos-flex carlos-flex-column carlos-p-md slider-content carlos-space-between">
+                  <div class="carlos-bold carlos-mb-[15px]" style="font-size: var(--carlos-fontSizes-lg);">{{ block.settings.title }}</div>
+                  <div class="carlos-mb-[15px] carlos-flex-1">{{ block.settings.text }}</div>
+                  <a href="{{ block.settings.cta_link }}" class="carlos-btn-black carlos-uppercase carlos-btn-arrow carlos-bold carlos-ws-nowrap carlos-inline-block" style="width: fit-content; font-size: var(--carlos-fontSizes-xs);">
+                  {{- block.settings.cta_text -}}
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #{{ section.id }} .slick-slide {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  #{{ section.id }}-slider .swiper-slide {
+    padding: 100px 50px 50px;
+    max-height: 610px;
+  }
+
+  #{{ section.id }} .slick-slide:first-of-type {
+    margin-left: 1.5rem
+  }
+  
+ #{{ section.id }} .slick-slide:last-of-type {
+   margin-right: 1.5rem
+ }
+  
+  .slider-content {
+    border-left: 1px solid black;
+  }
+
+  @media (min-width: 769px) {
+    #{{ section.id }} .swiper-slide {
+      aspect-ratio: 0.825;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #{{ section.id }} .slick-slide {
+      margin-left: 0.3rem;
+      margin-right: 0.3rem;
+    }
+
+    #{{ section.id }}-slider .swiper-slide {
+      padding: 0;
+      max-height: none;
+      background-image: none!important;
+    }
+
+    #{{ section.id }} .slick-slide:first-of-type {
+      margin-left: 0.3rem
+    }
+  
+    #{{ section.id }} .slick-slide:last-of-type {
+      margin-right: 0.3rem
+    }
+    
+    .slider-content {
+      border-left: none;
+      min-height: 275px;
+    }
+  }
+</style>
+
+
+
+
+{% schema %}
+{
+  "name": "Text with Slider",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "I'm a heading."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Add heading description.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "limit": 12,
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Background Image"
+        },
+        {
+          "id": "icon",
+          "type": "image_picker",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "I'm a heading."
+        },
+        {
+          "type": "checkbox",
+          "id": "uppercase",
+          "label": "Make Uppercase"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add heading description.</p>"
+        },
+        {
+          "type":      "header",
+          "content":   "Call to action button"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text with Slider",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

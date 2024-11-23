@@ -1,0 +1,87 @@
+{% assign review_value = product.metafields.reviews.rating.value %}
+{% assign review_count = product.metafields.reviews.rating_count %}
+<div id="{{ section.id }}" class="carlos-w-full">
+  <div class="carlos-container carlos-flex carlos-flex-wrap pb-theme pt-theme">
+    <div class="carlos-w-1/3 carlos-x-padding">
+      <div class="carlos-text-lg carlos-bold carlos-mb-[15px]">
+        {{ section.settings.title }}
+      </div>
+      <div class="carlos-flex carlos-align-baseline carlos-mb-[15px]">
+        <div class="carlos-text-lg carlos-bold">
+        {{ review_value }}
+        </div>
+        <div>/5</div>
+        <div class="oke-stars" style="margin-left: 25px;">
+          <div class="oke-stars-background">
+            <svg height="18" viewBox="0 0 87.11111111111111 16" aria-hidden="true" style="width: unset; height: unset;">
+              <use x="0" href="#oke-star-empty"></use>
+              <use x="17.77777777777778" href="#oke-star-empty"></use>
+              <use x="35.55555555555556" href="#oke-star-empty"></use>
+              <use x="53.333333333333336" href="#oke-star-empty"></use>
+              <use x="71.11111111111111" href="#oke-star-empty"></use>
+            </svg>
+          </div>
+          <div class="oke-stars-foreground">
+            <svg height="18" viewBox="0 0 87.11111111111111 16" aria-hidden="true" style="width: unset; height: unset;">
+              <use x="0" href="#oke-star-filled"></use>
+              <use x="17.77777777777778" href="#oke-star-filled"></use>
+              <use x="35.55555555555556" href="#oke-star-filled"></use>
+              <use x="53.333333333333336" href="#oke-star-filled"></use>
+              <use x="71.11111111111111" href="#oke-star-filled"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="carlos-mb-[5px]" style="color: #757575;">
+        This product is rated {{ review_value }} out of 5 stars. We have collected more than {{ review_count }} reviews.
+      </div>
+      <a class="carlos-write-review carlos-underline" href="https://okendo.reviews/?subscriberId=13226728-34c2-4166-b17c-bfc8a95d255b&productId=shopify-{{ product.id }}&locale=en" target="_blank" rel="noopener" style="color: black; --carlos-underline: black;">Write a review</a>
+    </div>
+    <div class="carlos-w-2/3 carlos-x-padding">
+      {% render 'okendo-reviews-widget', product: product %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .oke-w-reviewMinimal .oke-media-image {
+    border-radius: 4px;
+  }
+</style>
+
+<script defer>
+  $(document).ready(function() {
+  var checkExist = setInterval(function() {
+    if (document.querySelector('.okeReviews')) {
+      clearInterval(checkExist);
+      okeStars();
+    }
+  }, 100);
+
+  function okeStars() {
+    var okeStarsWidth = $('#{{ section.id }} .oke-w-header .oke-w-ratingAverageModule-rating .oke-stars-foreground').css('width');    
+    $('#{{ section.id }} .oke-stars-foreground').css('width', okeStarsWidth);
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Reviews",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews"
+    }
+  ]
+}
+{% endschema %}

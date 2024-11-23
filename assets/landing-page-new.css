@@ -1,0 +1,1757 @@
+#shopify-section-sections--22370520367384__header {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background-color: #fff;
+}
+
+.header_row {
+  display: flex;
+  justify-content: space-between;
+}
+.custom_buynow_btn a.buynow-btn {
+  color: #fff;
+  font-family: Space Grotesk !important;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  align-items: center;
+  padding: 15px 45px;
+  background: #175d90;
+  border-radius: 30px;
+  display: inline-block;
+}
+.landing-banner_sec {
+  position: relative;
+  text-align: center;
+}
+.text-content span.bstseller {
+  font-size: 28px;
+  line-height: 32.18px;
+  font-weight: 400;
+  padding-bottom: 10px;
+}
+.text-content h2.product-title {
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 82.64px;
+  text-transform: uppercase;
+  margin-left: -4px;
+}
+.text-content p.short-detail {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #242427;
+}
+.text-content .custom_buynow_btn {
+  margin: 40px 0;
+}
+.custom-rating {
+  display: flex;
+}
+.custom-rating img {
+  width: 15%;
+  max-width: 15%;
+  margin: auto 0;
+}
+.custom-rating p {
+  margin-left: 10px;
+}
+span.number_recomend {
+  padding: 16px 14px;
+  background: rgba(23, 93, 144, 0.15);
+  color: #175d90;
+  font-size: 35px;
+  line-height: 30px;
+  font-weight: 700;
+  display: inline-block;
+}
+.community-recmnded {
+  display: flex;
+  margin-top: 25px;
+  align-items: center;
+}
+.rtext-recmnd {
+  text-align: left;
+  margin-left: 18px;
+}
+.rtext-recmnd p {
+  margin-bottom: 2px !important;
+}
+.rtext-recmnd p.title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22.97px;
+}
+.rtext-recmnd p.sb-title {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19.14px;
+}
+.verified {
+  display: flex;
+  text-align: center;
+}
+.verified img {
+  max-width: 18px;
+  max-height: 18px;
+}
+section.verified-buyer {
+  background: rgba(16, 16, 16, 0.05);
+  text-align: center;
+}
+.verified_review img {
+  max-width: 33.45px;
+  max-height: 26px;
+}
+.notice-result .timeline.mobile-view {
+  display: none;
+}
+
+/* 10-04-2024 start here  */
+#shopify-section-sections--22370520367384__header
+  section.landing-header
+  .custom-logo-image {
+  flex: 0 0 25%;
+  max-width: 20%;
+}
+#shopify-section-sections--22370520367384__header
+  section.landing-header
+  .custom_buynow_btn {
+  flex: 0 0 75%;
+  max-width: 75%;
+  text-align: right;
+}
+#shopify-section-template--22370001387800__main {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 42.24%,
+    #e8eff4 47.76%,
+    #175d90 98.8%
+  );
+}
+#shopify-section-template--22370001387800__main
+  .landing-banner_sec
+  .text-content {
+  width: 70%;
+  text-align: left;
+  padding-right: 20%;
+}
+#shopify-section-template--22370001387800__main .bg-img {
+  width: 30%;
+}
+#shopify-section-template--22370001387800__main .carlos-flex {
+  align-items: center;
+}
+#shopify-section-template--22370001387800__verified_buyer .content-buyer {
+  max-width: 730px;
+  margin: 0 auto;
+  text-align: center;
+}
+#shopify-section-template--22370001387800__verified_buyer .verified {
+  justify-content: center;
+  align-items: center;
+}
+#shopify-section-template--22370001387800__verified_buyer .verified p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  color: #175d90;
+}
+#shopify-section-template--22370001387800__verified_buyer
+  .verified
+  p:last-child {
+  font-weight: 600;
+  margin-left: 30px;
+}
+#shopify-section-template--22370001387800__verified_buyer .verified img {
+  margin-right: 10px;
+}
+#shopify-section-template--22370001387800__verified_buyer .verified_review p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+#shopify-section-template--22370001387800__verified_buyer
+  .verified_review
+  p
+  span {
+  display: inline-block;
+}
+#shopify-section-template--22370001387800__verified_buyer
+  .verified_review
+  p
+  span:first-child {
+  margin-right: 10px;
+}
+#shopify-section-template--22370001387800__verified_buyer
+  .verified_review
+  p
+  span:last-child {
+  margin-left: 10px;
+}
+#shopify-section-template--22370001387800__aging_control .heading-text h2 {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 62px;
+  text-align: left;
+  text-align: center;
+  text-transform: uppercase;
+}
+#shopify-section-template--22370001387800__aging_control
+  .control-aging
+  .carlos-container {
+  text-align: center;
+}
+#shopify-section-template--22370001387800__aging_control .percent-mnbr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+#shopify-section-template--22370001387800__aging_control .percent-mnbr span {
+  font-family: Space Grotesk;
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 127.6px;
+  text-align: left;
+  color: #175d90;
+}
+#shopify-section-template--22370001387800__aging_control .percent-mnbr p {
+  line-height: 30px;
+  text-align: left;
+  max-width: 607px;
+  margin-left: 30px;
+  color: #242427;
+}
+#shopify-section-template--22370001387800__aging_control .row-flex p {
+  font-size: 20px;
+}
+#shopify-section-template--22370001387800__hallmark_aging {
+  background-color: #175d900d;
+}
+#shopify-section-template--22370001387800__hallmark_aging h2 {
+  font-size: 52px;
+}
+#shopify-section-template--22370001387800__hallmark_aging p {
+  font-size: 18px;
+  max-width: 915px;
+  margin: 0 auto;
+  color: #242427;
+}
+#shopify-section-template--22370001387800__hallmark_aging .mark-content h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+#shopify-section-template--22370001387800__hallmark_aging
+  .icon-block-slide.carlos-text-center {
+  padding: 0;
+}
+#shopify-section-template--22370001387800__hallmark_aging .mark-content {
+  padding: 25px;
+  text-align: start;
+}
+#shopify-section-template--22370001387800__hallmark_aging
+  .slick-dots
+  li.slick-active
+  button {
+  background: #175d90;
+  border-color: #175d90;
+}
+#shopify-section-template--22370001387800__hallmark_aging
+  .slick-dots
+  li
+  button {
+  border-color: #175d90;
+}
+#muscles-function .heading.text h2 {
+  font-size: 38px;
+  line-height: 50px;
+}
+#muscles-function .heading.text p {
+  font-size: 17px;
+  line-height: 28px;
+  color: #242427;
+}
+#shopify-section-template--22370001387800__muscles_function .tab-menu ul {
+  margin: 20px 0;
+  padding: 0 0 0 100px;
+  list-style: none;
+  display: flex;
+  border-bottom: 1px solid rgba(23, 93, 144, 0.3);
+}
+#shopify-section-template--22370001387800__muscles_function .tab-menu ul li {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  text-align: center;
+}
+#shopify-section-template--22370001387800__muscles_function .tab-menu ul li a {
+  text-transform: uppercase;
+  letter-spacing: 0.44px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 10px;
+  /*
+  display: block;
+  */
+  text-decoration: none;
+  transition: 0.5s all;
+  border-bottom: 1px solid transparent;
+}
+#shopify-section-template--22370001387800__muscles_function
+  .tab-menu
+  ul
+  li
+  a.active {
+  text-decoration: none;
+  border-bottom: 3px solid;
+  color: #175d90;
+}
+#shopify-section-template--22370001387800__muscles_function .tab-box {
+  display: none;
+}
+#shopify-section-template--22370001387800__muscles_function .caelos-gif-custom {
+  max-width: 100% !important;
+  height: 100%;
+  width: 100%;
+  padding-right: 42px;
+}
+#shopify-section-template--22370001387800__muscles_function
+  .caelos-gif-custom
+  img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  max-height: unset;
+}
+#shopify-section-template--22370001387800__improvement {
+  background-color: #175d900d;
+}
+#shopify-section-template--22370001387800__improvement
+  .control-aging
+  .carlos-w-half {
+  display: flex;
+  align-items: center;
+}
+#shopify-section-template--22370001387800__improvement .percent-mnbr span {
+  font-size: 100px;
+  color: #175d90;
+}
+#shopify-section-template--22370001387800__improvement .content-aging p {
+  font-size: 18px;
+  text-align: left;
+  margin-left: 17px;
+  max-width: 300px;
+}
+#shopify-section-template--22370001387800__improvement
+  .content-aging
+  .bottom-improve
+  p {
+  text-align: center;
+  font-size: 16px;
+}
+#shopify-section-template--22370001387800__improvement
+  .content-aging
+  .bottom-improve {
+  width: 100%;
+  margin: 20px 0;
+}
+#shopify-section-template--22370001387800__product_ingredient {
+  background-color: #175d900d;
+}
+#shopify-section-template--22370001387800__product_ingredient
+  .carlos-mb-\[15px\] {
+  text-transform: uppercase;
+}
+#shopify-section-template--22370001387800__product_ingredient
+  .ingredients-group
+  img.ingredient-image {
+  mix-blend-mode: darken;
+}
+#shopify-section-template--22370001387800__product_ingredient
+  .carlos-uppercase {
+  font-size: 16px;
+  text-transform: capitalize;
+  margin: 15px 0;
+}
+#shopify-section-template--22370001387800__product_ingredient
+  [style="color: gray;"] {
+  color: #242427 !important;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .feel-the-power
+  .carlos-container {
+  display: flex;
+  align-items: center;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-top-content
+  h2 {
+  font-size: 48px;
+}
+#shopify-section-template--22370001387800__feel_the_power .power-top-content p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #000;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-top-content
+  .power-table
+  p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  color: #242427;
+  font-style: italic;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-table-data
+  thead
+  tr
+  th {
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+  padding: 18px 0px;
+    color: #000;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-table-data
+  tbody
+  tr
+  td
+  img {
+  max-width: 20px;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-table-data
+  tbody
+  tr
+  td {
+  font-size: 20px;
+  font-weight: 700;
+  color: #272724;
+  white-space: nowrap;
+  padding: 12px 0px;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-table-data
+  tbody
+  tr
+  td:first-child {
+  width: 60%;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-table-data
+  tbody
+  tr
+  td:last-child {
+  font-weight: 400;
+  background-color: #175d901a;
+  text-align: center;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-table-data
+  tbody
+  tr
+  td:nth-child(2)
+  img {
+  margin: 0 20px;
+}
+#shopify-section-template--22370001387800__feel_the_power .power-table-data {
+
+  margin-bottom: 10px;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-table-data
+  tfoot
+  tr
+  td {
+  white-space: nowrap;
+  padding: 18px 0px;
+    font-size: 20px;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-table-data
+  tfoot
+  tr
+  td:first-child {
+  font-weight: 700;
+  font-size: 20px;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-table-data
+  tfoot
+  tr
+  td:last-child {
+  text-align: center;
+  background-color: #175d901a;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-table-data
+  tfoot
+  tr
+  td:nth-child(2) {
+  text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+#shopify-section-template--22370001387800__feel_the_power
+  .power-table-data
+  thead {
+    border-bottom: 1px solid #000;
+  }
+#shopify-section-template--22370001387800__feel_the_power
+  .power-table-data
+  tfoot {
+  border-top: 1px solid #000;
+  
+}
+#shopify-section-template--22370001387800__feel_the_power .power_image {
+  padding-right: 60px;
+}
+#shopify-section-template--22370001387800__esperts_reviews {
+  background-color: #175d900d;
+}
+#shopify-section-template--22370001387800__notice_result .notove-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#shopify-section-template--22370001387800__notice_result
+  .slider-notice
+  .notice-wrap {
+  max-width: 20%;
+}
+#shopify-section-template--22370001387800__notice_result .notove-heading h2 {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+#shopify-section-template--22370001387800__notice_result .notove-heading p {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #242427;
+}
+#shopify-section-template--22370001387800__notice_result .slider-notice {
+  display: flex;
+  text-align: center;
+}
+#shopify-section-template--22370001387800__notice_result .notice-wrap h1 {
+  color: #175d90;
+  border-bottom: 1px solid #175d904d;
+  font-size: 48px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+}
+#shopify-section-template--22370001387800__notice_result
+  .notice-wrap
+  h1::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  margin: 0 auto;
+  width: 10px;
+  height: 10px;
+  background-color: #175d90;
+  border-radius: 100%;
+}
+#shopify-section-template--22370001387800__notice_result .notice-wrap p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #000;
+  text-align: left;
+  margin-top: 20px;
+  padding-right: 20px;
+}
+#shopify-section-template--22370001387800__notice_result {
+  background-color: #175d900d;
+}
+#shopify-section-template--22370001387800__esperts_reviews .css-99xs04 {
+  padding: 0;
+}
+#shopify-section-template--22370001387800__notice_result .notice-wrap h1 span {
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+#shopify-section-template--22370001387800__faq_section,
+#shopify-section-template--22370001387800__younger_live,
+#shopify-section-template--22370001387800__verified_buyer,
+#shopify-section-template--22370001387800__aging_control,
+#shopify-section-template--22370001387800__hallmark_aging,
+#shopify-section-template--22370001387800__muscles_function,
+#shopify-section-template--22370001387800__improvement,
+#shopify-section-template--22370001387800__product_ingredient,
+#shopify-section-template--22370001387800__feel_the_power,
+#shopify-section-template--22370001387800__notice_result,
+#shopify-section-template--22370001387800__ugc_slider,
+#shopify-section-template--22370001387800__esperts_reviews,
+#shopify-section-template--22370001387800__testimonial_slider {
+  padding: 20px 0;
+}
+#shopify-section-template--22370001387800__product_ingredient
+  .carlos-section-border {
+  border: 0;
+}
+#shopify-section-template--22370001387800__esperts_reviews
+  section.experts-trust {
+  border: 0;
+}
+div#shopify-section-template--22370001387800__verified_buyer {
+  background-color: #175d900d;
+}
+div#shopify-section-template--22370001387800__verified_buyer
+  section.verified-buyer {
+  background-color: transparent;
+}
+#shopify-section-template--22370001387800__product_detail .product-page-gap {
+  border: 0;
+}
+#shopify-section-template--22370001387800__product_detail {
+  padding: 100px 0 50px;
+}
+#shopify-section-template--22370001387800__product_detail
+  .oke-stars-foreground
+  svg
+  use {
+  color: #175d90 !important;
+}
+#shopify-section-template--22370001387800__product_detail
+  .carlos-subscription[data-checked]
+  .buy-box-button {
+  background-color: #175d90;
+  color: #fff;
+}
+#shopify-section-template--22370001387800__product_detail
+  .carlos-subscription[data-checked]
+  .buy-box-button
+  span.buy-box-price
+  span {
+  color: #fff;
+}
+#shopify-section-template--22370001387800__product_detail .buy-box-checkbox {
+  border-color: #175d90;
+  background-color: #fff;
+}
+#shopify-section-template--22370001387800__product_detail
+  .buy-box-checkbox::before {
+  background-color: #175d90;
+}
+#shopify-section-template--22370001387800__product_detail
+  .carlos-subscription[data-checked],
+#shopify-section-template--22370001387800__product_detail
+  .carlos-onetime[data-checked] {
+  border-color: #175d90;
+}
+#shopify-section-template--22370001387800__testimonial_slider
+  .testimonial-heading
+  h2 {
+  font-size: 52px;
+  line-height: 66.35px;
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+#shopify-section-template--22370001387800__testimonial_slider
+  .testimonial-wrapp
+  p
+  span
+  img {
+  max-width: 30px;
+}
+#shopify-section-template--22370001387800__testimonial_slider
+  .testimonial-wrapp
+  p {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+#shopify-section-template--22370001387800__testimonial_slider
+  .testimonial-wrapp
+  p
+  span {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+#shopify-section-template--22370001387800__testimonial_slider
+  .testimonial-wrapp {
+  border: 1px solid #175d9033;
+  border-radius: 25px;
+  padding: 30px;
+  height: auto;
+  margin: 10px;
+}
+#shopify-section-template--22370001387800__testimonial_slider
+  .testimonial-wrapp
+  .verified
+  p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: #175d90;
+}
+#shopify-section-template--22370001387800__testimonial_slider
+  .testimonial-wrapp
+  .verified
+  p.name-testimonial {
+  font-size: 20px;
+  font-weight: 500;
+}
+#shopify-section-template--22370001387800__testimonial_slider
+  .testimonial-wrapp
+  .verified {
+  gap: 15px;
+  align-items: center;
+}
+#shopify-section-template--22370001387800__testimonial_slider
+  .slider-testimonials
+  .slick-track {
+  display: flex;
+  height: auto;
+}
+#shopify-section-template--22370001387800__testimonial_slider
+  .slick-dots
+  li.slick-active
+  button {
+  background: #175d90;
+  border-color: #175d9033;
+}
+#shopify-section-template--22370001387800__testimonial_slider
+  .slick-dots
+  li
+  button {
+  border-color: #175d9033;
+}
+#shopify-section-template--22370001387800__testimonial_slider
+  .slick-dots
+  li.slick-active
+  button {
+  background: #175d90;
+  border-color: #175d9033;
+}
+#shopify-section-template--22370001387800__testimonial_slider
+  .slick-dots
+  li
+  button {
+  border-color: #175d9033;
+}
+#shopify-section-template--22370001387800__younger_live {
+  background-color: #175d900d;
+}
+#shopify-section-template--22370001387800__younger_live
+  .carlos-text-contain
+  h2 {
+  font-size: 48px;
+  font-weight: 400;
+  text-align: center;
+}
+#shopify-section-template--22370001387800__younger_live a.custom-shop-btn {
+  font-size: 15px;
+  font-weight: 700;
+  background-color: #175d90;
+  display: inline-block;
+  color: #fff;
+  padding: 15px 40px;
+  border-radius: 200px;
+}
+#shopify-section-template--22370001387800__younger_live .shop_enterna {
+  text-align: center;
+  margin-top: 30px;
+}
+#shopify-section-template--22370001387800__faq_section .accordion h2 {
+  font-size: 18px;
+}
+#shopify-section-template--22370001387800__faq_section .accordion-content p {
+  font-size: 14px;
+}
+#shopify-section-sections--22381201129752__footer .landing-footer-head-section {
+  background-color: #175d900d;
+}
+#shopify-section-sections--22381201129752__footer .footer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#shopify-section-sections--22381201129752__footer .footer-head p {
+  margin: 0;
+}
+#shopify-section-sections--22381201129752__footer .footer-head p,
+.footer-head a {
+  font-size: 18px;
+  text-align: center;
+  color: #000000;
+}
+#shopify-section-sections--22381201129752__footer
+  .landing-footer-bottom-section {
+  background-color: #175d90;
+}
+#shopify-section-sections--22381201129752__footer .footer-bottom p {
+  color: #fff;
+  text-align: center;
+}
+#landing-page .carlos-modal-content {
+  max-width: 50%;
+}
+#shopify-section-template--22370001387800__product_detail
+  .buy-box-message
+  p
+  span.buy-box-strong {
+  font-weight: 700;
+  color: #175d90;
+}
+#shopify-section-template--22370001387800__product_detail #addToCartButton {
+  background-color: #175d90;
+  color: #fff;
+  text-transform: uppercase;
+  border-color: transparent;
+}
+#shopify-section-template--22370001387800__product_detail .carlos-custom-tab {
+  border-color: #e1e1e1;
+}
+#shopify-section-template--22370001387800__product_detail
+  .carlos-custom-tab-container::first-child
+  .carlos-custom-tab {
+  border-top: 1px solid #e1e1e1;
+}
+#shopify-section-template--22370001387800__product_detail
+  .carlos-custom-tab-container {
+  margin-top: -1px;
+}
+#shopify-section-template--22370001387800__product_detail
+  .buy-box
+  [data-checked]
+  label[data-checked]
+  .buy-box-option {
+  border-color: #175d90;
+}
+.testimonial-slider-section .slick-arrow,
+#shopify-section-template--22370001387800__hallmark_aging .slick-arrow {
+  display: none !important;
+}
+
+/* 12 April 2024 */
+#shopify-section-template--22370001387800__main {
+  margin: 0px;
+}
+section.landing-header .carlos-x-padding,
+.landing-banner_sec .carlos-x-padding {
+  padding: 2rem 3rem;
+}
+#shopify-section-template--22370001387800__hallmark_aging
+  .text-content-slider.carlos-text-center
+  h2 {
+  margin-bottom: 10px;
+}
+#shopify-section-template--22370001387800__improvement .bottom-improve p {
+  text-align: center;
+}
+#shopify-section-template--22370001387800__esperts_reviews
+  section.experts-trust {
+  padding: 45px 0px;
+}
+#shopify-section-template--22370001387800__faq_section
+  .carlos-container.carlos-flex.carlos-flex-wrap.pb-theme.pt-theme {
+  padding: 45px;
+}
+#shopify-section-template--22370001387800__faq_section
+  .carlos-flex.carlos-space-between.faq-question.accordion
+  svg,
+#shopify-section-template--22370001387800__product_detail
+  .carlos-flex.carlos-space-between.faq-question.accordion
+  svg {
+  display: block;
+}
+#shopify-section-template--22370001387800__hallmark_aging .mark-content h6 {
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 18px;
+}
+#shopify-section-template--22370001387800__hallmark_aging .mark-content ul {
+  list-style: disc;
+  padding-left: 25px;
+}
+#shopify-section-template--22370001387800__hallmark_aging
+  .mark-content
+  ul
+  li {
+  margin-top: 8px;
+}
+.landing-buy-button .custom-cart-button {
+    background-color: #175d90;
+    border-color: #175d90;
+    border-radius: 100px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 15px;
+}
+.landing-footer-head-section .carlos-x-padding, .landing-footer-bottom-section .carlos-x-padding {
+  padding: 2rem;
+}
+.power-table th img {
+    width: 55px;
+    height: 22px;
+}
+  table.power-table-data {
+    width: 100%
+  }
+/*================== Responsive start here ==================*/
+
+@media only screen and (max-width: 991px) {
+  #shopify-section-template--22370001387800__main
+    .landing-banner_sec
+    .text-content {
+    padding-right: 15px;
+  }
+  .text-content h2.product-title {
+    font-size: 42px;
+  }
+  .text-content p.short-detail {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .text-content .custom_buynow_btn {
+    margin: 20px 0;
+  }
+  .rtext-recmnd p.title {
+    font-size: 15px;
+  }
+  .rtext-recmnd p.sb-title {
+    font-size: 13px;
+  }
+  span.number_recomend {
+    padding: 13px;
+    font-size: 30px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-top-content
+    p,
+  #shopify-section-template--22370001387800__verified_buyer .verified_review p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  #shopify-section-template--22370001387800__verified_buyer .verified p {
+    font-size: 18px;
+  }
+  #shopify-section-template--22370001387800__younger_live
+    .carlos-text-contain
+    h2,
+  #shopify-section-template--22370001387800__testimonial_slider
+    .testimonial-heading
+    h2,
+  #shopify-section-template--22370001387800__notice_result .notice-wrap h1,
+  #shopify-section-template--22370001387800__notice_result .notove-heading h2,
+  #shopify-section-template--22370001387800__notice_result
+    .notove-heading
+    p
+    #shopify-section-template--22370001387800__notice_result
+    .notove-heading
+    h2,
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    tbody
+    tr
+    td,
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-top-content
+    h2,
+  #muscles-function .heading.text h2,
+  #shopify-section-template--22370001387800__hallmark_aging h2,
+  #shopify-section-template--22370001387800__aging_control .heading-text h2 {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+  #shopify-section-template--22370001387800__improvement .percent-mnbr span,
+  #shopify-section-template--22370001387800__aging_control .percent-mnbr span {
+    font-size: 70px;
+  }
+  #shopify-section-template--22370001387800__testimonial_slider
+    .testimonial-wrapp
+    p,
+  #shopify-section-template--22370001387800__notice_result .notice-wrap h1 span,
+  #shopify-section-template--22370001387800__notice_result .notove-heading p,
+  #shopify-section-template--22370001387800__improvement .content-aging p,
+  #muscles-function .heading.text p,
+  #shopify-section-template--22370001387800__hallmark_aging p,
+  #shopify-section-template--22370001387800__aging_control .row-flex p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  #shopify-section-template--22370001387800__aging_control .percent-mnbr {
+    margin: 10px 0;
+  }
+  #shopify-section-template--22370001387800__aging_control .row-flex p {
+  }
+  #shopify-section-template--22370001387800__muscles_function .carlos-w-half {
+    max-width: 100% !important;
+    padding: 0 30px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .feel-the-power
+    .carlos-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    tbody
+    tr
+    td {
+    font-size: 15px;
+  }
+  #shopify-section-template--22370001387800__notice_result .notice-wrap p {
+    font-size: 14px;
+    text-transform: math-auto;
+  }
+  #shopify-section-template--22370001387800__testimonial_slider
+    .testimonial-wrapp {
+    padding: 25px;
+  }
+  #shopify-section-template--22370001387800__faq_section,
+  #shopify-section-template--22370001387800__younger_live,
+  #shopify-section-template--22370001387800__main,
+  #shopify-section-template--22370001387800__verified_buyer,
+  #shopify-section-template--22370001387800__aging_control,
+  #shopify-section-template--22370001387800__hallmark_aging,
+  #shopify-section-template--22370001387800__muscles_function,
+  #shopify-section-template--22370001387800__improvement,
+  #shopify-section-template--22370001387800__product_ingredient,
+  #shopify-section-template--22370001387800__feel_the_power,
+  #shopify-section-template--22370001387800__notice_result,
+  #shopify-section-template--22370001387800__ugc_slider,
+  #shopify-section-template--22370001387800__esperts_reviews,
+  #shopify-section-template--22370001387800__testimonial_slider {
+    padding: 40px 0;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging .slick-arrow {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #shopify-section-template--22370001387800__main .carlos-flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .power-table {
+    overflow-x: auto;
+  }
+  #shopify-section-template--22370001387800__notice_result .slider-notice {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .text-content h2.product-title {
+    font-size: 35px;
+    line-height: 1.2;
+  }
+  #shopify-section-template--22370001387800__main
+    .landing-banner_sec
+    .text-content {
+    width: 100%;
+    text-align: center;
+  }
+  #shopify-section-template--22370001387800__main .bg-img {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-top-content
+    p,
+  #shopify-section-template--22370001387800__verified_buyer .verified_review p {
+    font-size: 15px;
+  }
+  #shopify-section-template--22370001387800__verified_buyer .verified p {
+    font-size: 15px;
+  }
+  #shopify-section-template--22370001387800__verified_buyer
+    .verified
+    p:last-child {
+    margin-left: 20px;
+  }
+  #shopify-section-template--22370001387800__younger_live
+    .carlos-text-contain
+    h2,
+  #shopify-section-template--22370001387800__testimonial_slider
+    .testimonial-heading
+    h2,
+  #shopify-section-template--22370001387800__notice_result .notice-wrap h1,
+  #shopify-section-template--22370001387800__notice_result .notove-heading h2,
+  #shopify-section-template--22370001387800__notice_result
+    .notove-heading
+    p
+    #shopify-section-template--22370001387800__notice_result
+    .notove-heading
+    h2,
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-top-content
+    h2,
+  #muscles-function .heading.text h2,
+  #shopify-section-template--22370001387800__hallmark_aging h2,
+  #shopify-section-template--22370001387800__aging_control .heading-text h2 {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+  #shopify-section-template--22370001387800__aging_control .percent-mnbr {
+    flex-direction: row;
+  }
+  #shopify-section-template--22370001387800__improvement .percent-mnbr span,
+  #shopify-section-template--22370001387800__aging_control .percent-mnbr span {
+    font-size: 50px;
+    line-height: 1.5;
+  }
+  #shopify-section-template--22370001387800__aging_control .percent-mnbr p {
+    margin: 0 0 10px;
+    text-align: center;
+  }
+  #shopify-section-template--22370001387800__testimonial_slider
+    .testimonial-wrapp
+    p,
+  #shopify-section-template--22370001387800__notice_result .notice-wrap h1 span,
+  #shopify-section-template--22370001387800__notice_result .notove-heading p,
+  #shopify-section-template--22370001387800__improvement .content-aging p,
+  #muscles-function .heading.text p,
+  #shopify-section-template--22370001387800__hallmark_aging p,
+  #shopify-section-template--22370001387800__aging_control .row-flex p {
+    font-size: 15px;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging .mark-content {
+    padding: 20px;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging .mark-content h2 {
+    font-size: 20px;
+  }
+  .icon-block-slider .slick-slide {
+    padding: 20px 10px;
+  }
+  #shopify-section-template--22370001387800__muscles_function .tab-menu ul {
+    padding: 0;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging .mark-content p {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: justify;
+    padding-top: 15px;
+  }
+  #shopify-section-template--22370001387800__muscles_function
+    .tab-menu
+    ul
+    li
+    a {
+    font-size: 14px;
+    padding: 6px;
+  }
+  #shopify-section-template--22370001387800__younger_live .shop_enterna {
+    margin-top: 20px;
+  }
+  #shopify-section-template--22370001387800__younger_live a.custom-shop-btn {
+    font-size: 14px;
+    padding: 12px 32px;
+  }
+  #shopify-section-template--22370001387800__faq_section .accordion h2 {
+    font-size: 16px;
+  }
+  #shopify-section-sections--22381201129752__footer .footer-head p,
+  .footer-head a {
+    font-size: 13px;
+  }
+  #shopify-section-sections--22381201129752__footer .footer-head {
+    justify-content: space-between;
+  }
+  #shopify-section-template--22370001387800__testimonial_slider
+    .testimonial-heading
+    h2 {
+    margin-bottom: 20px;
+  }
+  #landing-page .carlos-modal-content {
+    max-width: 80%;
+  }
+  #shopify-section-template--22370001387800__faq_section,
+  #shopify-section-template--22370001387800__younger_live,
+  #shopify-section-template--22370001387800__main,
+  #shopify-section-template--22370001387800__verified_buyer,
+  #shopify-section-template--22370001387800__aging_control,
+  #shopify-section-template--22370001387800__hallmark_aging,
+  #shopify-section-template--22370001387800__muscles_function,
+  #shopify-section-template--22370001387800__improvement,
+  #shopify-section-template--22370001387800__product_ingredient,
+  #shopify-section-template--22370001387800__feel_the_power,
+  #shopify-section-template--22370001387800__notice_result,
+  #shopify-section-template--22370001387800__ugc_slider,
+  #shopify-section-template--22370001387800__esperts_reviews,
+  #shopify-section-template--22370001387800__testimonial_slider {
+    padding: 20px 0;
+  }
+  #shopify-section-template--22370001387800__main {
+    background: linear-gradient(
+      180deg,
+      #fff 0% 24.24%,
+      #e8eff4 35%,
+      #175d90 98.8%
+    );
+  }
+
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    tbody
+    tr
+    td {
+    font-size: 16px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    tbody
+    tr
+    td
+    img {
+    max-width: 20px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    tfoot
+    tr
+    td:first-child {
+    font-size: 16px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    tfoot
+    tr
+    td {
+    font-size: 16px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    thead
+    tr
+    th {
+    font-size: 16px;
+      font-weight: 400;
+      color: #000;
+  }
+  /* 12 April 2024 */
+
+  #shopify-section-template--22370001387800__aging_control
+    .row-flex
+    .percent-mnbr
+    p {
+    text-align: left;
+    margin-left: 10px;
+  }
+  #shopify-section-template--22370001387800__aging_control .row-flex p {
+    text-align: center;
+  }
+  section.landing-header .carlos-x-padding,
+  .landing-banner_sec .carlos-x-padding {
+    padding: 2rem 25px;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging
+    .text-content-slider.carlos-text-center {
+    padding-bottom: 12px;
+  }
+  .control-aging .carlos-w-half {
+    padding-bottom: 15px;
+  }
+  .control-aging p {
+    font-size: 12px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-top-content
+    .power-table
+    p {
+    font-size: 14px;
+      line-height: 22px;
+      font-style: italic;
+      width: 100%;
+  }
+  #shopify-section-template--22370001387800__notice_result
+    .slider-notice
+    .notice-wrap {
+    max-width: 100%;
+  }
+  #shopify-section-template--22370001387800__main .community-recmnded {
+    display: flex;
+  }
+  #shopify-section-template--22370001387800__main .rtext-recmnd {
+    margin-top: 10px;
+  }
+  #shopify-section-sections--22370520367384header .carlos-container {
+    padding: 15px;
+  }
+  #shopify-section-sections--22370520367384header
+    .custom_buynow_btn
+    a.buynow-btn {
+    font-size: 14px;
+    padding: 12px 35px;
+  }
+  #shopify-section-sections--22370520367384__header
+    section.landing-header
+    .custom_buynow_btn {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+  #shopify-section-sections--22370520367384__header
+    section.landing-header
+    .custom-logo-image {
+    flex: 0 0 40%;
+    max-width: 40%;
+    margin: auto 0px;
+  }
+  #shopify-section-sections--22370520367384header .header_row {
+    align-items: center;
+  }
+  .custom_buynow_btn a.buynow-btn {
+    font-size: 14px;
+    padding: 12px 40px;
+  }
+  .notice-result .carlos-flex.desktop {
+    display: none;
+  }
+  .notice-result .timeline.mobile-view {
+    display: block;
+  }
+  .timeline li {
+    border: 0 solid #175d90;
+    color: #fff;
+    font-family: "Open Sans";
+    list-style-type: none;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    width: calc(50% + 1px);
+    position: relative;
+  }
+  .timeline li:after {
+    background: #175d90;
+    border-radius: 100%;
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    position: absolute;
+    right: calc(-0.5rem - 1px);
+    width: 1rem;
+    top: 30px;
+  }
+  .timeline li:nth-child(even):after {
+    left: calc(-0.5rem - 1px);
+  }
+  .timeline li:nth-child(odd) {
+    border-right-width: 2px;
+    text-align: right;
+  }
+  .timeline li:nth-child(even) {
+    border-left-width: 2px;
+    left: calc(50% - 1px);
+  }
+
+  .mobile-view .notice-wrap h1 {
+    border: none !important;
+  }
+
+  .mobile-view .notice-wrap h1:after {
+    display: none;
+  }
+  #shopify-section-template--22370001387800__notice_result {
+    display: block;
+  }
+  #shopify-section-template--22370001387800__notice_result .notice-wrap p {
+    padding-right: 0;
+    text-align: end;
+  }
+  .mobile-view ul li:nth-child(3),
+  .mobile-view ul li:last-child,
+  .mobile-view ul li:first-child {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .mobile-view ul li .notice-wrap p {
+    margin-top: 0 !important;
+  }
+  .mobile-view ul li:nth-child(4),
+  .mobile-view ul li:nth-child(2) {
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: start;
+  }
+  .mobile-view ul li:nth-child(4) .notice-wrap p,
+  .mobile-view ul li:nth-child(2) .notice-wrap p {
+    text-align: start !important;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  section.landing-header .carlos-x-padding,
+  .landing-banner_sec .carlos-x-padding {
+    padding: 1rem 3rem;
+  }
+  .carlos-x-padding {
+    padding: 0 3rem !important;
+  }
+  #shopify-section-template--22370001387800__faq_section,
+  #shopify-section-template--22370001387800__younger_live,
+  #shopify-section-template--22370001387800__main,
+  #shopify-section-template--22370001387800__verified_buyer,
+  #shopify-section-template--22370001387800__aging_control,
+  #shopify-section-template--22370001387800__hallmark_aging,
+  #shopify-section-template--22370001387800__muscles_function,
+  #shopify-section-template--22370001387800__improvement,
+  #shopify-section-template--22370001387800__product_ingredient,
+  #shopify-section-template--22370001387800__feel_the_power,
+  #shopify-section-template--22370001387800__notice_result,
+  #shopify-section-template--22370001387800__ugc_slider,
+  #shopify-section-template--22370001387800__esperts_reviews,
+  #shopify-section-template--22370001387800__testimonial_slider {
+    padding: 35px 0;
+  }
+  #shopify-section-template--22370001387800__muscles_function
+    .caelos-gif-custom {
+    padding-right: 0;
+  }
+  #shopify-section-template--22370001387800__muscles_function .carlos-w-half {
+    padding: 0 20px;
+  }
+  #shopify-section-template--22370001387800__product_detail {
+    padding: 50px 0;
+  }
+  .py-theme {
+    padding-bottom: 0 !important;
+  }
+  #shopify-section-template--22370001387800__feel_the_power .power_image {
+    padding-right: 0;
+  }
+  #shopify-section-template--22370001387800__feel_the_power .power-left {
+    display: none;
+  }
+  #shopify-section-template--22370001387800__esperts_reviews
+    section.experts-trust {
+    padding: 0;
+  }
+  #shopify-section-template--22370001387800__faq_section
+    .carlos-container.carlos-flex.carlos-flex-wrap.pb-theme.pt-theme {
+    padding: 0 20px;
+  }
+  #shopify-section-sections--22381201129752__footer
+    .landing-footer-bottom-section
+    .carlos-x-padding,
+  #shopify-section-sections--22381201129752__footer
+    .landing-footer-head-section
+    .carlos-x-padding {
+    padding: 20px 3rem !important;
+  }
+  .text-content h2.product-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .text-content p.short-detail {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  #shopify-section-template--22370001387800__verified_buyer
+    .verified_review
+    img {
+    max-width: 25px;
+    max-height: 25px;
+  }
+  #shopify-section-template--22370001387800__younger_live
+    .carlos-text-contain
+    h2,
+  #shopify-section-template--22370001387800__testimonial_slider
+    .testimonial-heading
+    h2,
+  #shopify-section-template--22370001387800__notice_result .notice-wrap h1,
+  #shopify-section-template--22370001387800__notice_result .notove-heading h2,
+  #shopify-section-template--22370001387800__notice_result
+    .notove-heading
+    p
+    #shopify-section-template--22370001387800__notice_result
+    .notove-heading
+    h2,
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-top-content
+    h2,
+  #muscles-function .heading.text h2,
+  #shopify-section-template--22370001387800__hallmark_aging h2,
+  #shopify-section-template--22370001387800__aging_control .heading-text h2 {
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .ingredients-group.slick-slide > div {
+    padding-top: 30px;
+  }
+  .pb-theme {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  #shopify-section-template--22370001387800__ugc_slider .carlos-text-xl {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+  #shopify-section-template--22370001387800__esperts_reviews .css-k2k23a {
+    font-size: 28px;
+  }
+  #shopify-section-sections--22370520367384__header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .custom-rating img {
+    margin-top: 6px;
+  }
+  .custom-rating p {
+    text-align: start;
+    font-size: 14px;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging
+    .slick-dotted.slick-slider {
+    margin-bottom: 0;
+  }
+
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    tbody
+    tr
+    td:first-child {
+    width: auto;
+  }
+
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    tfoot
+    tr
+    td {
+    font-size: 13px;
+    white-space: pre-wrap;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    tbody
+    tr
+    td:first-child {
+    width: auto;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    tbody
+    tr
+    td {
+    font-size: 16px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    tfoot
+    tr
+    td,
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    thead
+    tr
+    th {
+    font-size: 16px;
+    white-space: pre-wrap;
+    color: #000;
+    font-weight: 400;
+  }
+  #shopify-section-template--22370001387800__notice_result .notice-wrap h1 {
+    font-size: 20px;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+  }
+  .mobile-view ul li:nth-child(3),
+  .mobile-view ul li:last-child,
+  .mobile-view ul li:first-child {
+    padding-left: 0;
+    padding-right: 12px;
+  }
+  .mobile-view ul li:nth-child(4),
+  .mobile-view ul li:nth-child(2) {
+    padding-right: 0;
+    padding-left: 12px;
+  }
+  #shopify-section-template--22370001387800__notice_result .notice-wrap p {
+    font-size: 13px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power
+    .power-table-data
+    tbody
+    tr
+    td
+    img {
+    max-width: 20px;
+  }
+  .testimonial-slider-section .slick-next {
+    right: 0;
+    order: 4;
+    transform: rotate(180deg) !important;
+  }
+  .testimonial-slider-section .slick-prev {
+    left: 0;
+    order: 2;
+  }
+  .testimonial-slider-section .slick-arrow {
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    position: static;
+    transform: translate(0, 0);
+  }
+  #shopify-section-template--22370001387800__testimonial_slider
+    .testimonial-wrapp {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .testimonial-slider-section .slider-testimonials {
+    margin: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 18px;
+  }
+  .testimonial-slider-section .slick-dots {
+    order: 3;
+    position: static;
+    width: auto;
+  }
+  .testimonial-slider-section .slick-list {
+    order: 1;
+  }
+  #shopify-section-template--22370001387800__main .rtext-recmnd {
+    margin-left: 10px;
+    margin-top: 0;
+  }
+  span.number_recomend {
+    font-size: 25px;
+  }
+  #shopify-section-template--22370001387800__main .community-recmnded {
+    justify-content: center;
+  }
+  .timeline li:after {
+    top: 20px;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging
+    .icon-block-slide.carlos-text-center {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: none !important;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging
+    .icon-block-slide.carlos-text-center
+    .mark_image
+    img {
+    border-radius: 200px;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging .mark-content h2 {
+    text-align: center;
+  }
+  .testimonial-slider-section .slick-arrow,
+  #shopify-section-template--22370001387800__hallmark_aging .slick-arrow {
+    display: block !important;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging .slick-prev {
+    left: 15px;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging .slick-next {
+    right: 15px;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging .slick-arrow {
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-image: url(https://cdn.shopify.com/s/files/1/0747/1166/2872/files/Group_1.png?v=1713176795);
+  }
+  #shopify-section-template--22370001387800__hallmark_aging
+    .icon-block-slide.carlos-text-center
+    .mark_image
+    img {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging .mark-content h6 {
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging .mark-content ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  #shopify-section-template--22370001387800__hallmark_aging
+    .mark-content
+    ul
+    li {
+    margin-top: 8px;
+  }
+  .testimonial-slider-section .slick-arrow {
+    background-image: url(https://cdn.shopify.com/s/files/1/0747/1166/2872/files/Group_1.png?v=1713176795);
+    background-size: contain;
+  }
+  .product_thumb_nail_slider {
+    padding-top: 8px;
+    padding-left: 3rem;
+  }
+  #shopify-section-template--22370001387800__main .custom-rating img {
+    width: 23%;
+    max-width: 23%;
+  }
+  .feel-the-power .carlos-x-padding {
+      padding: 0 2rem!important;
+  }
+  #shopify-section-template--22370001387800__feel_the_power .power-table-data {
+    margin-top: 10px;
+  }
+
+  #shopify-section-template--22370001387800__feel_the_power .power-table-data thead tr th:first-child {
+    width: auto;
+  }
+  #shopify-section-template--22370001387800__feel_the_power .power-table-data thead tr th {
+    width: 74px;
+    max-width: 74px;
+    min-width: 74px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power .power-table-data thead tr th.name_aa {
+    font-size: 16px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power .power-table-data thead tr th.cost_bq {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  #shopify-section-template--22370001387800__feel_the_power .power-table-data tbody tr td:last-child, #shopify-section-template--22370001387800__feel_the_power .power-table-data tfoot tr td {
+    font-size: 18px;
+    line-height: 28px;
+    color: #000;
+  }
+  #shopify-section-template--22370001387800__feel_the_power .power-table-data tfoot tr td:first-child {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 700;
+  }
+  #shopify-section-template--22370001387800__feel_the_power .power-table-data tbody tr td:first-child {
+    font-weight: 700;
+    white-space: normal;
+  }
+}
+
+/*================== Responsive start end ==================*/
+
+/* 10-04-2024 start end  */
+.buy-box-discount {
+  color: #175d90 !important;
+}

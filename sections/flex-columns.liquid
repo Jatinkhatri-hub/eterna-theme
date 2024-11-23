@@ -1,0 +1,69 @@
+<div id="{{ section.id }}" class="carlos-w-full pb-theme pt-theme">
+  <div class="carlos-container">
+    {% for block in section.blocks %}
+      <div class="carlos-flex-blocks-3 carlos-flex carlos-flex-gap-[5px] carlos-mb-[15px]">
+        <img
+          class="carlos-x-padding"
+          src="{{ block.settings.image | img_url: "master" }}"
+          width="100%"
+          height="100%"
+          style="object-fit: cover; height: 100px;"
+        >
+        <div class="carlos-x-padding">
+          <div class="carlos-text-md carlos-mb-[15px]">
+            {{ block.settings.heading }}
+          </div>
+          <p>
+            {{ block.settings.content }}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    .carlos-flex-blocks-3 {
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "3 Column Flex",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "3 Column Flex"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,569 @@
+.mp-hero-text-icon {
+  padding-bottom: 15px;
+  padding-left: 3px;
+  width: 25px;
+}
+.mp-hero-text-icon svg path {
+  fill: #fff;
+}
+section.membership-sec .mm-bnr-cta {
+  padding-top: 18px;
+}
+section.membership-sec .icon-title h1 {
+  font-size: 56px;
+  letter-spacing: -.01em;
+  line-height: 1.15em;
+  padding: 0;
+  color: #fff;
+  font-weight: 400;
+  margin: 0;
+  max-width: 400px;
+}
+.mm-faq-bottom a.main-img-btn.carlos-btn-white.carlos-pointer:hover,
+.mp-benefits-cta-btn.tsatc-product-item a:hover,
+.mb-atc-wrap a.main-img-btn.carlos-btn-white.carlos-pointer:hover{
+  background: #011627d9;
+}
+.mm-faq-bottom .mp-benefits-cta-login a.login-mm {
+  text-decoration: underline;
+}
+.mm-faq-bottom .mp-benefits-cta-login{
+  line-height:0;
+}
+
+.membership-sec .menmbership-content a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.membership-sec .menmbership-content a:hover {
+  background: #011627;
+  color: #fff;
+}
+.membership-sec .menmbership-content a:hover span {
+  color: #fff;
+}
+.mm-faq-bottom {
+  padding-top: 61px;
+}
+.mm-faq-bottom a.main-img-btn.carlos-btn-white.carlos-pointer {
+  padding: 17px 19px 14px;
+  border-radius: 10px;
+  background: #011627;
+  color: #fff;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  line-height: 1em;
+  width: 300px;
+  display: inline-flex;
+  justify-content: space-between;
+}
+section.experts-trust .carlos-container {
+    /* max-width: calc(1860px - 60px); */
+}
+section.experts-trust .images-slide .small-imgs .circle-grid-inner .circular-images img {
+    object-fit: cover;
+    object-position: top;
+}
+section.experts-trust .images-slide .main-image {
+    flex: 0 0 33%;
+}
+section.experts-trust .images-slide .main-image span img {
+    border-radius: 3px;
+}
+section.membership-sec .carlos-container {
+    max-width: 1340px;
+}
+section.membership-feature .mp-benifits-image {
+    padding-right: 0px;
+}
+section.membership-feature .mp-benefits-copy {
+    margin-left: 0;
+}
+section.membership-feature .mp-benifits-image ,section.membership-feature .mp-benefits-copy {
+    flex: 0 0 calc(50% - 12px);
+}
+section.membership-feature .carlos-container{
+    gap:24px;
+}
+.mp-benefits-benefit .mp-benefits-benefit-img {
+    flex: 0 0 40px;
+}
+section.membership-feature .mp-benifits-image img {
+    border-radius: 10px;
+}
+.mp-bottom-sectoin .carlos-container .mp-footer-copy {
+    text-align: center;
+}
+.mp-bottom-sectoin .carlos-container .mp-footer-copy .mp-footer-cta .mp-footer-cta-btn a.main-img-btn.carlos-btn-white ,.mb-atc-wrap a.main-img-btn.carlos-btn-white.carlos-pointer {
+    display: inline-block;
+    /* margin: 10px 0;
+    margin-bottom: 0; */
+    /* border: 1px solid #000; */
+    padding: 17px 19px 14px;
+    border-radius: 10px;
+    background: #011627;
+    color: #fff;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    line-height: 1em;
+    width: 300px;  
+    display: inline-flex;
+    justify-content: space-between;
+}
+.mp-bottom-sectoin .carlos-container .mp-footer-copy .mp-footer-cta .mp-footer-cta-btn a.main-img-btn.carlos-btn-white{
+   margin-bottom: 10px;
+}
+.mp-bottom-sectoin .carlos-container .mp-footer-copy .mp-footer-title ,.mp-bottom-sectoin .carlos-container .mp-footer-copy .mp-footer-desc p {
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 1.2em;
+    padding-top: 0;
+    margin: 20px 0;
+}
+.mp_faq_que:last-child {
+    border-bottom: 1px solid #45523e3b;
+}
+section.mp-bottom-sectoin {
+    padding-bottom: 100px;
+}
+
+.mp-benefits-cta-btn.tsatc-product-item a span,.mb-atc-wrap a.main-img-btn span
+,.mp-bottom-sectoin .carlos-container .mp-footer-copy .mp-footer-cta .mp-footer-cta-btn a.main-img-btn.carlos-btn-white span{
+    font-size: 11px!important;
+    color: #fff!important;
+}
+.mp-benefits-cta-btn.tsatc-product-item a {
+    display: inline-flex;
+    justify-content: space-between;
+    font-size: 11px;
+}
+.sticky-mb-main .et-sticky.sticky {
+    height: auto;
+      -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transition-property: transform;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    width: 100%;
+}
+.sticky-mb-main .et-sticky.sticky .section-x-padding.flex.items-stretch {
+    align-items: center;
+}
+.sticky-mb-main .et-sticky.sticky .section-x-padding.flex.items-stretch .mb-title-grid h3 {
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 1em;
+}
+.sticky-mb-main .et-sticky {
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+}
+.sticky-mb-main .et-sticky.sticky {
+    display: block;
+    /* transition: 1s ease-in-out; */
+    transform: translateY(0);
+}
+/* .sticky-mb-main .et-sticky {
+    transform: translateY(-110%);
+} */
+.et-sticky {
+    display: block;
+    position: fixed;
+}
+section.membership-feature .mp-benefits-copy .mp-benefits-title {
+    color: #000;
+}
+.mp-benefits-benefit-copy .mp-benefits-benefit-copy-title {
+    color: #000;
+}
+.mp-benefits-benefit-copy .mp-benefits-benefit-copy-subtitle {
+    color: #000;
+}
+section.membership-feature .mp-benefits-copy .mp-benefits-price {
+    color: #000;
+}
+.membership_faq-wrapper {
+    color: #000;
+}
+.mp_faq_que h2.carlos-text-md span {
+    color: #000;
+}
+section.membership-feature .mp-benefits-copy .mp-benefits-subtitle {
+    color: #000;
+}
+section.membership-sec .mm-bnr-prcing {
+  max-width: 300px;
+}
+section.membership-sec .mm-bnr-prcing .mp-benefits-cta-price{
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: .03em;
+  line-height: 1.2em;
+}
+section.membership-sec .mm-bnr-prcing .mp-benefits-cta-login span, section.membership-sec .mm-bnr-prcing .mp-benefits-cta-login a{
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: .03em;
+  line-height: 1.2em;
+}
+
+section.membership-sec .mm-bnr-prcing .mp-benefits-cta-login a.login-mm {
+  text-decoration: underline;
+}
+section.membership-sec .mm-monthly-price{
+  font-size: 11px; 
+  color: #646464; 
+  text-transform:lowercase;
+}
+.join-membership .mp-perks-content {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.join-membership .mp-perks-content .mp-perks-slider {
+  width: 50%;
+}
+.join-membership .mp-perks-content .mp-perks-text {
+  text-align: right;
+  width: 50%;
+}
+.join-membership .mp-perks-slider .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0;
+}
+.join-membership .mp-perks-slider .swiper-slide.swiper-slide-active {
+  opacity: 1;
+}
+.join-membership .mp-perks-slider .swiper-slide {
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  white-space: nowrap;
+  
+}
+.join-membership .mp-perks-slider .swiper-slide .slides-text{
+  width:100%;
+  word-wrap:break-word;
+  flex-shrink: 0;
+}
+.join-membership .swiper-mem {
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+}
+
+@media screen and (max-width: 1440px) {
+  section.experts-trust .images-slide .main-image {
+    flex: 0 0 26%;
+}
+  section.mp-bottom-sectoin {
+    padding-bottom: 80px;
+}
+}
+
+@media screen and (max-width: 991px) {
+  section.experts-trust .images-slide .main-image {
+    flex: 0 0 100%;
+}
+  section.experts-trust .images-slide {
+    flex-wrap: wrap;
+}
+  section.experts-trust .images-slide .small-imgs .circle-grid-inner .circular-images {
+    width: 54px;
+    height: 54px;
+}
+  section.experts-trust .right-colmn {
+    padding-left: 0;
+}
+  section.experts-trust .small-imgs {
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+  section.experts-trust {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+  section.mp-bottom-sectoin {
+    padding-bottom: 60px;
+}
+}
+@media screen and (max-width: 767px) {
+  section.membership-sec .mm-monthly-price{
+    font-size: 11px; 
+  }
+  section.membership-feature .carlos-container {
+    padding: 0 30px;
+  }
+  section.membership-feature .carlos-container {
+    flex-direction: column;
+  }
+  section.membership-feature .carlos-container .mp-benefits-copy {
+    padding: 45px 20px;
+  }
+  /* section.join-membership .carlos-container {
+    display: flex;
+    flex-direction: column;
+  } */
+  section.join-membership .carlos-container .membership-text {
+    width: 100%;
+    text-align: center;
+  }
+  section.join-membership .carlos-container .mp-perks-slider {
+    text-align: center;
+  }
+  section.join-membership .carlos-container .mp-perks-slider .slick-list {
+    padding-bottom: 0!important;
+  }
+  section.join-membership {
+    padding: 60px 30px;
+  }
+  .mp-benefits-benefit {
+    flex-direction: column;
+    text-align: center;
+    max-width: 300px;
+    margin: auto;
+  }
+  .mp-benefits-benefit .mp-benefits-benefit-img {
+    text-align: -webkit-center;
+    flex: none;
+    margin-bottom: 20px;
+  }
+  .mp-benefits-benefit .mp-benefits-benefit-copy {
+    max-width: 100%;
+    padding-left: 0;
+  }
+  section.membership-feature .mp-benefits-copy .mp-benefits-benefits {
+    padding-top: 20px;
+  }
+  .membership_faq-wrapper {
+    margin-bottom: 41px;
+  }
+  section.membership-feature .mp-benefits-copy .mp-benefits-title {
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 1em;
+    padding-top: 6px;
+  }
+  section.membership-feature .mp-benefits-copy .mp-benefits-subtitle {
+    font-size: 12px;
+    letter-spacing: .05em;
+    line-height: 15px;
+    /* text-transform: capitalize; */
+  }
+  .mp-benefits-benefit-copy .mp-benefits-benefit-copy-subtitle {
+    font-size: 13px;
+  }
+  .mp_faq_que h2.carlos-text-md span {
+    font-size: 13px;
+    font-weight:500;
+  }
+  .mp_faq_que .accordion-content p {
+    font-size: 13px;
+    letter-spacing: .01em;
+    line-height: 20px;
+  }
+  section.join-membership .membership-text {
+    font-size: 22px;
+  }
+  section.join-membership .mp-perks-slider .slides-text {
+    font-size: 22px;
+  }
+  section.join-membership .mp-perks-slider.slick-initialized.slick-slider.slick-vertical {
+    height: 40px;
+  }
+  .membership_faq-sec {
+    padding: 80px 30px;
+  }
+  section.membership-sec {
+    padding: 0 30px;
+  }
+  section.membership-sec .banner_text .menmbership-content h2 {
+    font-size: 48px;
+  }
+  section.membership-sec .background-img img {
+    height: 355px;
+    object-fit: cover;
+  }
+  section.membership-sec .menmbership-content a.main-img-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width:640px){
+  .mp-perks-content {
+    max-width: 1330px;
+  }
+  .membership_faq-wrapper h3 {
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 1.2em;
+  }
+  .membership_faq-wrapper p {
+    font-size: 12px;
+    letter-spacing: .01em;
+    line-height: 20px;
+  }
+  .mm-faq-bottom {
+    padding-top: 41px;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  .mm-faq-bottom a.main-img-btn.carlos-btn-white.carlos-pointer, 
+  section.membership-sec .menmbership-content a.main-img-btn,
+  .mp-benefits-cta-btn.tsatc-product-item a{
+    padding:12px;
+  }
+  section.membership-sec .icon-title h1 {
+    font-size: 34px;
+    letter-spacing: -.01em;
+    line-height: 1.15em;
+    padding: 0;
+  }
+  .menmbership-content p{
+    padding-top:10px;
+  }
+  .join-membership .mp-perks-text {
+    padding-bottom: 7px;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .join-membership .mp-perks-slider {
+    text-align: center !important;
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 575px) {
+  section.membership-sec .background-img img {
+    height: 500px;
+    object-fit: cover;
+  }
+  section.experts-trust h2.expert-text {
+    font-size: 30px;
+  }
+  section.membership-sec .banner_text {
+    position: absolute;
+    left: 27px;
+    bottom: 40px;
+  }
+  
+  section.membership-sec .banner_text .menmbership-content h2 {
+    font-size: 26px;
+  }
+  .menmbership-content a {
+    width: 280px;
+  } 
+  section.join-membership .mp-perks-slider.slick-initialized.slick-slider.slick-vertical {
+    height: 40px;
+  }
+  section.membership-feature .carlos-container{
+    padding:0 20px;
+  }
+  .sticky-mb-main .et-sticky.sticky .section-x-padding.flex.items-stretch .mb-title-grid h3 {
+    display: none;
+  }
+  .sticky-mb-main .et-sticky.sticky .section-x-padding.flex.items-stretch {
+    justify-content: center;
+    padding-bottom: 32px;
+    padding-top: 0;
+    flex-wrap: wrap;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .sticky-mb-main .et-sticky.sticky .section-x-padding.flex.items-stretch .mb-title-grid,
+  .sticky-mb-main .et-sticky.sticky .section-x-padding.flex.items-stretch .mb-atc-wrap{
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .membership_faq-sec {
+    padding: 60px 20px;
+  }
+  section.membership-sec {
+    padding: 0 20px;
+  }
+  section.mp-bottom-sectoin {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .mp-bottom-sectoin .carlos-container .mp-footer-copy .mp-footer-title, .mp-bottom-sectoin .carlos-container .mp-footer-copy .mp-footer-desc p {
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 1.2em;
+    padding-top: 0;
+  }
+  .membership_faq-wrapper {
+    font-size: 24px;
+  }
+  .membership_faq-sec .carlos-container {
+    padding: 50px 20px;
+  }
+  .mp_faq_que .carlos-flex.carlos-space-between.faq-question.accordion {
+    padding-bottom: 21px;
+    padding-top: 24px;
+  }
+  .mp_faq_que .carlos-flex.carlos-space-between.faq-question.accordion .carlos-text-md {
+    font-size: 13px;
+  }
+  section.membership-feature .mp-benefits-copy .mp-benefits-benefits {
+    padding-bottom: 40px;
+  }
+  section.membership-sec .menmbership-content a.main-img-btn,
+  .mp-benefits-cta-btn.tsatc-product-item a,
+  .mm-faq-bottom a.main-img-btn.carlos-btn-white.carlos-pointer,
+  .mb-atc-wrap a.main-img-btn.carlos-btn-white.carlos-pointer{
+    width:100% !important;
+  }
+}
+@media only screen and (max-width:400px){
+  section.membership-sec .background-img img {
+    height: 400px;
+  }
+  section.membership-sec .banner_text {
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+  }
+  section.join-membership {
+    padding: 45px 10px;
+  }
+  section.join-membership .mp-perks-slider .slides-text, 
+  section.join-membership .membership-text{
+    font-size:20px;
+  }
+}
+@media only screen and (max-width:360px){
+  section.membership-sec .banner_text {
+    left: 15px;
+    right:10px;
+  }
+}

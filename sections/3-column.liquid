@@ -1,0 +1,106 @@
+<div id="{{ section.id }}" cllass="carlos-w-full">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme carlos-flex carlos-flex-wrap carlos-flex-gap-[15px]">
+    <div class="carlos-w-32">
+      {% if section.settings.image_1 %}
+      <img src="{{ section.settings.image_1 | img_url: "master" }}" width="100%" height="100%" style="border: 1px solid black; aspect-ratio: 1;">
+      {% endif %}
+      <div class="carlos-text-md carlos-bold carlos-mb-[15px]" style="padding-top: 5px; padding-bottom: 5px; {% if section.settings.underline %}border-bottom: 1px solid black;{% endif %}">
+        {{ section.settings.title_1 }}
+      </div>
+      <div>
+        {{ section.settings.text_1 }}
+      </div>
+    </div>
+    <div class="carlos-w-32">
+      {% if section.settings.image_2 %}
+      <img src="{{ section.settings.image_2 | img_url: "master" }}" width="100%" height="100%" style="border: 1px solid black; aspect-ratio: 1;">
+      {% endif %}
+      <div class="carlos-text-md carlos-bold carlos-mb-[15px]" style="padding-top: 5px; padding-bottom: 5px; {% if section.settings.underline %}border-bottom: 1px solid black;{% endif %}">
+        {{ section.settings.title_2 }}
+      </div>
+      <div>
+        {{ section.settings.text_2 }}
+      </div>
+    </div>
+    <div class="carlos-w-32">
+      {% if section.settings.image_3 %}
+      <img src="{{ section.settings.image_3 | img_url: "master" }}" width="100%" height="100%" style="border: 1px solid black; aspect-ratio: 1;">
+      {% endif %}
+      <div class="carlos-text-md carlos-bold carlos-mb-[15px]" style="padding-top: 5px; padding-bottom: 5px; {% if section.settings.underline %}border-bottom: 1px solid black;{% endif %}">
+        {{ section.settings.title_3 }}
+      </div>
+      <div>
+        {{ section.settings.text_3 }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "3 Column",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "underline",
+      "label": "Underline"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "default": "Heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text_1",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "default": "Heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text_2",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "default": "Heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text_3",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "3 Column"
+    }
+  ]
+}
+{% endschema %}

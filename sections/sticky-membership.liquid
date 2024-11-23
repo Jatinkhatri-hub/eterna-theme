@@ -1,0 +1,177 @@
+<div class="sticky-mb-main">
+  <div class="et-sticky">
+    <div class="sticky-mb-inner">
+      <div class="section-x-padding flex items-stretch justify-between  py-2">
+        <div class="mb-title-grid">
+          <h3>{{ product.title }}</h3>
+        </div>
+        <div class="mb-atc-wrap">
+           <a class="main-img-btn carlos-btn-white carlos-pointer" {% if section.settings.link != blank %}href="{{ section.settings.link }}"{% endif %} data-pid="{{ product.id }}">
+              {{ section.settings.sticky_button_txt }} 
+              {% if section.settings.sticky_product != blank %}
+                {% assign selling_plan = product.metafields.carlos.selling_plan %}
+                <span style="font-size: 14px; color: #646464; text-transform: lowercase;">
+                {% if selling_plan == "m" %}
+                  {{ section.settings.sticky_product.selling_plan_groups[0].selling_plans[0].price_adjustments[0].value | money }}/{{ product.metafields.carlos.selling_plan }}
+                {% endif %}
+                {% if selling_plan == "yr" %}
+                  {{ section.settings.sticky_product.selling_plan_groups[0].selling_plans[1].price_adjustments[0].value | money }}/{{ product.metafields.carlos.selling_plan }}
+                {% endif %}
+                </span>
+              {% endif %}
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .sticky-mb-main .et-sticky {
+    background: #fff;
+    height: 50px;
+    padding: 8px 40px;
+  }
+  /* body:not(.scrolled) .sticky-mb-main{
+    display: none;
+  } */
+  body.scrolled .sticky-mb-main{
+    position: fixed;
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-transition-property: transform;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    width: 100%;
+  }
+  .sticky-mb-main .et-sticky:not(.sticky) {
+    -webkit-transform: translateY(-110%);
+    transform: translateY(-110%);
+  }
+  .sticky-mb-main .et-sticky.sticky {
+    height:auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  body#the-longevity-club div#shopify-section-sections--19352879530264__header {
+    position: sticky;
+    top: 0 !important;
+  }
+  @media only screen and (max-width:640px){
+    .sticky-mb-main .et-sticky.sticky {
+      background-color: #fcfbf6;
+      display: block;
+      width: 100%;
+      box-shadow: 0px -4px 10px #fcfbf6;
+      z-index: 99999999998;
+    }
+    body.scrolled .et-sticky{
+      bottom: 0;
+      left: 0;
+      padding:0 18px;
+    }
+    .sticky-mb-main .et-sticky:not(.sticky) {
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+    }
+  }
+</style>
+<script defer type="text/javascript">
+  $(document).ready(function() {
+    var stickyTop = $('.et-sticky').offset().top;
+    jQuery(window).scroll(function() {
+      var windowTop = $(window).scrollTop();
+      
+      if(windowTop > 0){
+         $('body').addClass('scrolled');
+      }else{
+         $('body').removeClass('scrolled');
+      }
+      if($(window).width() > 640){
+        var header_height = $('div#shopify-section-sections--19352879530264__header').outerHeight();
+        if (windowTop > ($('.membership-sec').outerHeight() + header_height) - $('.join-membership').outerHeight()) {
+          $('.et-sticky').addClass('sticky');
+          $('.et-sticky').css('bottom', 'unset');
+          $('.et-sticky').css('top', header_height+'px');
+          $('.sticky-mb-main').show();
+        }else {
+          $('.et-sticky').removeClass('sticky');
+          $('.et-sticky').css('bottom', 'unset');
+          $('.et-sticky').css('top', '-'+header_height+'px');
+          // $('.sticky-mb-main').hide();
+        }
+      }else{
+        var header_height = $('div#shopify-section-sections--19352879530264__header').outerHeight();
+        if (windowTop < $('div#shopify-section-sections--19352879563032__footer').height() + $('.membership_faq-sec').height()){
+          $('.et-sticky').addClass('sticky');
+          $('.et-sticky').css('bottom', 0);
+          $('.et-sticky').css('top', 'unset');
+          $('.sticky-mb-main').show();
+        }else {
+          $('.et-sticky').removeClass('sticky');
+          // $('.sticky-mb-main').hide();
+        }
+      }
+    })
+
+
+    $(window).resize(function(){
+      var stickyTop = $('.et-sticky').offset().top;
+      var windowTop = $(window).scrollTop();
+      if($(window).width() > 640){
+        var header_height = $('div#shopify-section-sections--21919121080600__header').outerHeight();
+        if (windowTop > ($('.membership-sec').outerHeight() + header_height) - $('.join-membership').outerHeight()) {
+          $('.et-sticky').addClass('sticky');
+          $('.et-sticky').css('bottom', 'unset');
+          $('.et-sticky').css('top', header_height+'px');
+          $('.sticky-mb-main').show();
+        }else {
+          $('.et-sticky').removeClass('sticky');
+          $('.et-sticky').css('bottom', 'unset');
+          $('.et-sticky').css('top', '-'+header_height+'px');
+          $('.sticky-mb-main').hide();
+        }
+      }else{
+        var header_height = $('div#shopify-section-sections--21919121080600__header').outerHeight();
+        if (windowTop < $('div#shopify-section-sections--21919120916760__footer').height() + $('.membership_faq-sec').height()){
+          $('.et-sticky').addClass('sticky');
+          $('.et-sticky').css('bottom', 0);
+          $('.et-sticky').css('top', 'unset');
+          $('.sticky-mb-main').show();
+        }else {
+          $('.et-sticky').removeClass('sticky');
+          $('.sticky-mb-main').hide();
+        }
+      }
+    })
+    
+  })
+
+  
+
+</script>
+
+{% schema %}
+  {
+    "name": "Sticky Add to Cart",
+    "settings":[
+      {
+        "type":"product",
+        "id":"sticky_product",
+        "label":"Select Membership Product"
+      },
+      {
+        "type": "text",
+        "id": "sticky_button_txt",
+        "label": "Button Text"
+      }
+    ]
+  }
+{% endschema %}

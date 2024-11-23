@@ -1,0 +1,47 @@
+body#eterna-reasons-anti-aging .section-announcement-bar {
+  display: none;
+}
+body#eterna-reasons-anti-aging header {
+  display: none;
+}
+#eterna-reasons-anti-aging .logo-img {
+  width: 230px;
+  height: auto;
+}
+#eterna-reasons-anti-aging .logo-flex {
+  display: flex;
+}
+#eterna-reasons-anti-aging .py-theme {
+  padding-bottom: 10px;
+}
+#eterna-reasons-anti-aging .custom-buy-button-now .custom-btn-to-checkout {
+  padding: 50px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  text-align: center;
+}
+#eterna-reasons-anti-aging .custom-buy-button-now {
+  margin-top: auto;
+}
+#eterna-reasons-anti-aging .cutom-text-mobile-btn-checkout {
+  border-radius: 10px;
+}
+#eterna-reasons-anti-aging .cutom-text-mobile-btn-checkout {
+  border-radius: 10px;
+}
+#eterna-reasons-anti-aging .btn-txt-disscount {
+  text-align: center;
+}
+@media only screen and (max-width:1024px){
+  #eterna-reasons-anti-aging .custom-buy-button-now .custom-btn-to-checkout {
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 900;
+    text-align: center;
+    padding: 30px;
+  }
+
+}

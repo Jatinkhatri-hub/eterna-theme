@@ -1,0 +1,130 @@
+{%- liquid
+  assign predictive_search_enabled = settings.predictive_search_enabled
+  assign search_resources = ''
+  if settings.search_products
+    assign search_resources = ' product'
+  endif
+  if settings.search_collections
+    assign search_resources = search_resources | append: ' collection'
+  endif
+  if settings.search_articles
+    assign search_resources = search_resources | append: ' article'
+  endif
+  if settings.search_pages
+    assign search_resources = search_resources | append: ' page'
+  endif
+  if settings.search_suggestions
+    assign search_resources = search_resources | append: ' query'
+  endif
+  assign search_resources = search_resources | strip | split: ' ' | join: ','
+-%}
+
+<a
+  x-ref="search"
+  @click.prevent="openSearch()"
+  @keydown.space="openSearch()"
+  class="inline-block py-2 flex {% if layout contains 'spread'%}h-full{% endif %}"
+  href="{{ routes.search_url }}"
+  data-open-search
+>
+  {%- if show_icons -%}
+    <span class="visually-hidden">{{ 'layout.navigation.search' | t }}</span>
+    <span class="my-auto inline-block w-5 h-5 align-middle">{%- render 'icon-search' -%}</span>
+  {%- else -%}
+    <span class="my-auto">{{ 'layout.navigation.search' | t }}</span>
+  {%- endif -%}
+</a>
+<div
+  class="absolute left-0 bottom-0 w-full transform {% if layout contains 'menu_below' %}translate-y-1{% else %}translate-y-full{% endif %} z-20 bg-scheme-background text-scheme-text border-b-grid border-t-grid border-grid-color py-2 section-x-padding"
+  x-cloak
+  x-show="searchOpen"
+  x-transition:enter="transition ease duration-200"
+  x-transition:enter-start="opacity-0"
+  x-transition:enter-end="opacity-100"
+  x-transition:leave="transition ease duration-00"
+  x-transition:leave-start="opacity-100"
+  x-transition:leave-end="opacity-0"
+  @click.away.prevent="searchOpen = false"
+  data-header-search
+  data-color-scheme="{{ section_color }}"
+  {% unless predictive_search_enabled %}@focusout="searchFocusOut($event)"{%endunless%}
+>
+  <div class="w-full whitespace-normal" {% if predictive_search_enabled %}x-data='ThemeComponent_PredictiveSearch({{ search_resources | json }})' x-init="mounted()" @focusOut="onFocusOut" {% endif %}>
+    <form
+      action="{{ routes.search_url }}"
+      method="get"
+      class="input-group search"
+      role="search"
+    >
+      <input type="hidden" name="options[prefix]" value="last">
+      {%- if predictive_search_enabled == false and settings.search_products or settings.search_articles or settings.search_pages -%}
+        <input type="hidden" name="type" value="{% if settings.search_products %}product{% endif %}{% if settings.search_articles %},article{% endif %}{% if settings.search_pages %},page{% endif %}">
+      {%- endif -%}
+      <label
+        for="search{% if layout != blank %}-{{ layout }}{% endif %}-{{ location | default: 'desktop' }}"
+        class="hidden">
+        {{- 'general.search.submit' | t -}}
+      </label>
+
+      <div class="flex items-center justify-between">
+        <button
+          class="py-2 mr-4"
+          aria-label="{{ 'general.search.submit' | t }}"
+          type="submit"
+        >
+          <span class="inline-block w-5 h-5 align-middle">{%- render 'icon-search' -%}</span>
+          <span class="visually-hidden">{{ 'general.search.submit' | t }}</span>
+        </button>
+        <input
+          id="search{% if layout != blank %}-{{ layout }}{% endif %}-{{ location | default: 'desktop' }}"
+          type="text"
+          name="q"
+          value="{{ search.terms | escape }}"
+          placeholder="{{ 'general.search.placeholder' | t }}"
+          class="placeholder-current font-body w-full block bg-transparent"
+          aria-label="{{ 'general.search.placeholder' | t }}"
+          data-search-input
+          {% if predictive_search_enabled %}
+            aria-expanded="false"
+            aria-owns="predictive-search-results-list"
+            aria-controls="predictive-search-results-list"
+            aria-autocomplete="list"
+            autocorrect="off"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            x-ref="input"
+            x-model="rawQuery"
+            @input.debounce.300="onChange"
+            @focus="onFocus"
+          {% endif %}
+        >
+        <button
+          class="py-2 ml-4"
+          {% if predictive_search_enabled %}@click="close()"{% else %}@click="searchOpen = false"{% endif %}
+          type="button"
+        >
+          <span class="visually-hidden">{{ 'general.accessibility.close_modal' | t }}</span>
+          <span class="inline-block w-5 h-5 align-middle">{%- render 'icon-close' -%}</span>
+        </button>
+      </div>
+
+      {%- if predictive_search_enabled -%}
+        <div id="predictiveSearchResults" tabindex="-1" x-cloak class="predictive-search-results text-scheme-text absolute left-0 right-0 h-screen transition-colors ease-out duration-300 z-50">
+          <template x-if="loading && !results">
+            <div class="bg-scheme-background">
+              <div class="w-6 h-6 pt-12 pb-12 mx-auto" data-predictive-loading>
+                <div class="loading"></div>
+              </div>
+            </div>
+          </template>
+          <template x-if="resultsOpen">
+            <div x-show="resultsOpen" class="border-b-grid border-grid-color max-h-three-quarters-screen-height overflow-hidden overflow-y-auto bg-scheme-background px-section" x-ref="results" @click.away.prevent="searchOpen = false">
+            </div>
+          </template>
+        </div>
+        <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+      {%- endif -%}
+    </form>
+  </div>
+</div>

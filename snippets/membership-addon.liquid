@@ -1,0 +1,30 @@
+{% assign membership = all_products['membership'] %}
+{% assign selling_plan = membership.metafields.carlos.selling_plan %}
+{% if selling_plan == "m" %}
+  {% capture membership_plan %}{{ membership.selling_plan_groups[0].selling_plans[0].price_adjustments[0].value | money }}/{{ membership.metafields.carlos.selling_plan }}{% endcapture %}
+  {% capture plan_id %}{{ membership.selling_plan_groups[0].selling_plans[0].id }}{% endcapture %}
+{% endif %}
+{% if selling_plan == "yr" %}
+  {% capture membership_plan %}{{ membership.selling_plan_groups[0].selling_plans[1].price_adjustments[0].value | money }}/{{ membership.metafields.carlos.selling_plan }}{% endcapture %}
+  {% capture plan_id %}{{ membership.selling_plan_groups[0].selling_plans[1].id }}{% endcapture %}
+{% endif %}
+<div class="carlos-membership-wrapper">
+  <div class="carlos-membership-inner carlos-flex carlos-align-center carlos-relative">
+    <a class="carlos-membership-image carlos-flex carlos-align-center" href="{{ membership.url }}">
+      <img class src="{{ membership.featured_image | img_url: 'master' }}" width="100%" height="100%" loading="lazy">
+    </a>
+    <a class="carlos-block carlos-membership-info" href="{{ membership.url }}">
+      <h3 class="carlos-membership-title carlos-bold">{{ membership.title }} - {{ membership_plan }}</h3>
+      <p class="carlos-membership-description">{{ membership.metafields.carlos.membership_benefits }}</p>
+    </a>
+    <button alt="Add The Eterna Membership to Cart" type="button" class="carlos-membership-button carlos-absolute">
+      <span>Add</span>
+      <input name="product" type="hidden" value="{{ membership.id }}">
+      <input name="variant" type="hidden" value="{{ membership.selected_or_first_available_variant.id }}">
+      <input name="selling_plan" type="hidden" value="{{ plan_id }}">
+    </button>
+  </div>
+  <div class="carlos-w-full carlos-text-right carlos-mt-[5px] carlos-membership-login">
+    Already a Longevity Member? {{ 'Log in' | customer_login_link }}
+  </div>
+</div>

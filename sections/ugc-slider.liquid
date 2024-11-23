@@ -1,0 +1,172 @@
+<style>
+  .results-ugc .slick-track > a{
+    position:relative !important;
+  }
+  @media only screen and (max-width:575px){
+    .results-ugc .slick-list{
+      overflow: visible !important;
+    } 
+  }
+  
+</style>
+
+<div id="{{ section.id }}" class="carlos-w-full">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    {% if section.settings.headline != blank %}
+      <div class="carlos-uppercase carlos-text-xl carlos-mb-[5px] carlos-text-center">{{ section.settings.headline }}</div>
+    {% endif %}
+    {% if section.settings.subheadline != blank %}
+      <div class="carlos-uppercase carlos-text-md carlos-mb-[15px] carlos-text-center" style="letter-spacing: 1px;">{{ section.settings.subheadline }}</div>
+    {% endif %}
+    <div class="results-ugc1">
+      {% for review in shop.metaobjects.ugc_reviews.values %}
+        {% if section.settings.ugc_review_page %}
+          {% assign productID = metaobject.product.value.id %}
+        {% else %}
+          {% assign productID = product.id %}
+        {% endif %}
+        {% if review.type == section.settings.ugc_type and review.product.value.id == productID %}
+          {% assign entry_handle = review.name | downcase | replace: ' ', '-' | replace: '|', '-' | replace: ',', '-' %}
+          <a class="carlos-relative carlos-block" href="/pages/reviews/{{ entry_handle }}" style="aspect-ratio: 2.5/4;">
+            <div class="carlos-absolute carlos-w-full carlos-flex carlos-align-center carlos-justify-center carlos-flex-gap-[5px] carlos-p-sm carlos-top-0" style="z-index: 1;">
+              <img
+                class="carlos-h-full"
+                src="{{ review.profile_picture | img_url: 'master' }}"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                style="width: 5%; min-width: 34px; border-radius: 100%;">
+              <div style="font-weight: 500; color: white; font-size: 16px;">
+                {{ review.name }}
+              </div>
+            </div>
+            <video
+              class="carlos-w-full carlos-h-full"
+              autoplay="true"
+              muted=""
+              playsinline=""
+              loop="true"
+              src="{{ review.short_video | file_url }}"
+              style="object-fit: cover; border-radius: 10px; box-shadow: 5px 9px 10px 0 rgba(0,0,0,.1);"></video>
+            <div class="carlos-absolute carlos-w-full carlos-flex carlos-align-center carlos-flex-gap-[5px] carlos-p-sm carlos-bottom-0" style="background: white; z-index: 1; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+              <div class="carlos-relative cl-image-icon" style="width: 10%; min-width: 80px; height: 35px;">
+                <img
+                  class="carlos-absolute carlos-bottom-0"
+                  src="{{ review.product.value.featured_image | img_url: 'master' }}"
+                  width="100%"
+                  height="auto"
+                  loading="lazy">
+              </div>
+              <div class="carlos-flex-1 cl-cnt-text" style="font-weight: 500; color: black; font-size: 16px;">
+                {{ review.product.value.title }}
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<script defer>
+  $(document).ready(function() {
+     $('.results-ugc1').slick({
+      arrows: true,
+      dots: false,
+      swipeToSlide: true,
+      infinite: false,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      responsive: [
+        {
+           breakpoint: 1024,
+           settings: {
+            slidesToShow: 3.5,
+            slidesToScroll: 1,
+            arrows: false
+          }
+        },
+        {
+          breakpoint: 640,
+          settings: {
+            slidesToShow: 1.75,
+            slidesToScroll: 1,
+            arrows: false
+          }
+        }
+      ]
+    });
+  })
+</script>
+<style>
+  #{{ section.id }} .slick-slide {
+    margin: 20px 12px;
+  }
+
+  @media (min-width: 769px) {
+    .results-ugc {
+      width: calc(100% - 50px);
+      margin: auto;
+    }
+
+    #{{ section.id }} .slick-slide {
+      margin: 20px 15px;
+    }
+  }
+  @media only screen and (max-width:415px){
+    .results-ugc1 .carlos-relative.cl-image-icon {
+      min-width: 50px !important;
+      height: 0 !important;
+    }
+    .results-ugc1 .carlos-flex-1.cl-cnt-text {
+      font-size: 13px !important;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "UGC Slider",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline"
+    },
+    {
+      "type": "text",
+      "id": "subheadline",
+      "label": "Subheadline"
+    },
+    {
+      "type": "select",
+      "id": "ugc_type",
+      "label": "UGC Type",
+      "default": "Normal",
+      "options": [
+        {
+          "value": "Normal",
+          "label": "Normal"
+        },
+        {
+          "value": "Professional",
+          "label": "Professional"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "ugc_review_page",
+      "label": "UGC Review Page",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "UGC Slider"
+    }
+  ]
+}
+{% endschema %}

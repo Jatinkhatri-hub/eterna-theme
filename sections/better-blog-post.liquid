@@ -1,0 +1,254 @@
+<div id="{{ section.id }}" class="carlos-w-full">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    <div class="carlos-flex carlos-flex-wrap">
+      <div class="carlos-w-2/3 carlos-article-left">
+        <div class="carlos-section-border" style="border-color: rgb(221 221 220);"></div>
+        <div class="my-2">{{ article.published_at | date: format: 'abbreviated_date' }}</div>
+        <h1 style="font-size: var(--carlos-fontSizes-xl); font-weight: 300;">{{ article.title }}</h1>
+        <div class="carlos-mt-[20px]" style="color: #747473; font-size: var(--carlos-fontSizes-md);">
+          {{ article.excerpt }}
+        </div>
+        <div class="carlos-flex carlos-mt-[20px] carlos-mb-[20px] carlos-flex-gap-[5px]">
+          <a class="carlos-social-sharing" target="_blank" href="https://www.facebook.com/sharer.php?u={{ shop.url }}{{ article.url }}" >
+            <div>
+              {% render 'icon-facebook' %}
+            </div>
+          </a>
+          <a class="carlos-social-sharing" target="_blank" href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ article.url }}" >
+            <div>
+              {% render 'icon-twitter' %}
+            </div>
+          </a>
+          <a class="carlos-social-sharing" target="_blank" href="https://www.linkedin.com/shareArticle?url={{ shop.url }}{{ article.url }}">
+            <div>
+              {% render 'icon-linkedin' %}
+            </div>
+          </a>
+          <a class="carlos-social-sharing" href="mailto:?body=Here’s a cool article on the Eterna blog &quot;{{ article.title | capitalize }}&quot; {{ shop.url }}{{ article.url }}&amp;subject=Hey, I thought you might be interested in this…">
+            <div>
+              {% render 'icon-email' %}
+            </div>
+          </a>
+        </div>
+        <img class="carlos-mb-[50px]" src="{{ article.image | img_url: 'master' }}" width="100%" height="100%" loading="lazy" style="aspect-ratio: 3/2; object-fit: cover;" >
+        <div class="carlos-hide-desktop" style="padding: 15px 20px; margin: 20px -15px; border-bottom: 1px solid rgb(221 221 220); background: white; position: sticky; top: 0; z-index: 2;">
+          <div class="carlos-flex carlos-space-between faq-question accordion">
+            <div class="carlos-bold" style="font-size: var(--carlos-fontSizes-sm);">Table of contents</div>
+            <svg viewBox="0 0 20 20" focusable="false" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: auto;">
+              <path d="M3 10H17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+              <path class="carlos-up-line" d="M10 3V17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+            </svg>
+          </div>
+          <div class="accordion-content">
+            <div class="carlos-toc">
+              <div class="carlos-blog-headings carlos-mt-[15px]"></div>
+            </div>
+          </div>
+        </div>
+        {% if article.metafields.carlos.what_to_know != blank %}
+          <div class="carlos-p-lg carlos-mb-[50px]" style="background: #f2f2f0; font-size: var(--carlos-fontSizes-sm);">
+            <div class="carlos-bold carlos-mb-[15px]">What to know</div>
+            <ul>
+              {% for items in article.metafields.carlos.what_to_know.value %}
+                <li class="carlos-what-to-know carlos-relative">{{ items }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+        <article class="carlos-block" style="font-size: var(--carlos-fontSizes-md); color: #272724; letter-spacing: 0.005em; line-height: 1.5; font-weight: 300;">{{ article.content }}</article>
+        <div class="carlos-mt-[15px] carlos-hide-desktop">
+          <div style="font-weight: 400; font-size: var(--carlos-fontSizes-xs); letter-spacing: 0.005em; color: rgb(115 115 114);">
+            Authors
+          </div>
+          <div>{{ article.author }}</div>
+        </div>
+      </div>
+      <div class="carlos-w-1/3 carlos-article-right carlos-hide-mobile">
+        <div class="carlos-toc">
+          <h5 class="carlos-pt-[15px] carlos-pb-[15px] carlos-bold" style="font-size: var(--carlos-fontSizes-sm);">Table of contents</h5>
+          <div class="carlos-section-border carlos-mb-[15px]" style="border-color: rgb(221 221 220);"></div>
+          <div class="carlos-blog-headings"></div>
+          <div class="carlos-authors">
+            <h5 class="carlos-pt-[15px] carlos-pb-[15px] carlos-bold" style="font-size: var(--carlos-fontSizes-sm);">Authors</h5>
+            <div class="carlos-section-border carlos-mb-[15px]" style="border-color: rgb(221 221 220);"></div>
+            <div class="carlos-mt-[15px]">
+              <div style="font-weight: 400; font-size: var(--carlos-fontSizes-xs); letter-spacing: 0.005em; color: rgb(115 115 114);">
+                Authors
+              </div>
+              <div>{{ article.author }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script defer>
+  $(document).ready(function() {
+    if ($('article h2').length > 0) {
+      $('article h2').each(function(index, headline) {
+        $(this).attr('id', 'headline-' + index);
+        $('.carlos-blog-headings').append('<a href="#headline-' + index + '">' + headline.innerText + ' </a>');
+      });
+    };
+  });
+</script>
+
+<style>
+  #{{ section.id }} h2 {
+    font-size: var(--carlos-fontSizes-lg);
+    margin-top: clamp(60px, calc(52.72px + 1.94vw), 90px);
+    margin-bottom: 24px;
+  }
+
+  .carlos-up-line {
+    transition: 0.3s;
+  }
+
+  #{{ section.id }} .open-content svg {
+    transform: none;
+  }
+
+  #{{ section.id }} .open-content svg .carlos-up-line {
+    opacity: 0;
+  }
+
+  .carlos-article-right {
+    border-left: 1px solid rgb(221 221 220);
+  }
+
+  .carlos-toc a {
+    display: block;
+    font-size: var(--carlos-fontSizes-sm);
+    line-height: 1.5;
+    letter-spacing: 0.005em;
+    color: rgb(115 115 114);
+  }
+
+  .carlos-toc a:hover {
+    color: black;
+  }
+  
+  .carlos-social-sharing {
+    padding: 7.5px;
+    border-radius: 100%;
+    border: 1px solid #dddddc;
+    transition: 0.3s;
+  }
+
+  .carlos-social-sharing div svg {
+    transition: 0.3s;
+  }
+
+  .carlos-social-sharing:hover {
+    border: 1px solid black;
+  }
+
+  .carlos-social-sharing:hover div svg {
+    fill: black;
+  }
+
+  .carlos-social-sharing div {
+    width: 12px;
+    height: 12px;
+  }
+
+  .carlos-social-sharing svg {
+    fill: #747473;
+  }
+
+  .carlos-what-to-know  {
+    padding-left: 32px;
+  }
+
+  .carlos-what-to-know:not(:first-child) {
+    margin-top: 12px;
+  }
+
+  .carlos-what-to-know:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0.7em;
+    width: 16px;
+    height: 1px;
+    background-color: #6f6f6e;
+  }
+
+  @media (min-width: 769px) {
+    .carlos-toc {
+      position: sticky;
+      top: var(--sticky-header-height);
+      padding-left: clamp(40px, calc(37.57px + 0.65vw), 50px)
+    }
+
+    .carlos-article-left {
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 960px){
+    .carlos-what-to-know  {
+      padding-left: 40px;
+    }
+
+    .carlos-what-to-know:before {
+      width: 24px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .carlos-article-left {
+      padding-right: 3rem;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "articleBody": {{ article.content | strip_html | json }},
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ shop.url | append: page.url | json }}
+    },
+    "headline": {{ article.title | json }},
+    {% if article.excerpt != blank %}
+      "description": {{ article.excerpt | strip_html | json }},
+    {% endif %}
+    {% if article.image %}
+      {% assign image_size = article.image.width | append: 'x' %}
+      "image": [
+        {{ article | img_url: image_size | prepend: "https:" | json }}
+      ],
+    {% endif %}
+    "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "dateModified": {{ article.updated_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "author": {
+      "@type": "Person",
+      "name": {{ article.author | json }}
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ shop.name | json }}
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Better Blog Post",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [],
+  "presets": [
+    {
+      "name": "Better Blog Post"
+    }
+  ]
+}
+{% endschema %}

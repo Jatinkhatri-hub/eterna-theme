@@ -1,0 +1,52 @@
+<div class="carlos-w-full carlos-x-padding" style="overflow: hidden;">
+  <div class="carlos-container">
+    <div class="carlos-flex carlos-flex-gap-[10px] carlos-align-center">
+      <div style="white-space: nowrap;">Filter by</div>
+      <div class="filter carlos-flex carlos-flex-gap-[10px] carlos-bold carlos-uppercase" style="overflow-y: auto; margin-right: -5rem; padding-right: 5rem;">
+        <a class="carlos-btn-white carlos-border"
+          href="/collections/all?filter.p.tag=NUTRITION"
+          style="display: block; white-space: nowrap;">Nutrition</a>
+        <a class="carlos-btn-white carlos-border"
+          href="/collections/all?filter.p.tag=SKIN+HEALTH"
+          style="display: block; white-space: nowrap;">Skin Health</a>
+        <a class="carlos-btn-white carlos-border"
+          href="/collections/all?filter.p.tag=BRAIN+HEALTH"
+          style="display: block; white-space: nowrap;">Brain Health</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .carlos-btn-white {
+    transition: background-color 0.5s, color 0.5s;
+  }
+  .carlos-btn-white:hover, .matched {
+    color: white;
+    background: black;
+  }
+
+  .filter {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .filter::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+  }
+</style>
+
+<script>
+const currentURL = window.location.href;
+
+const elements = document.querySelectorAll('.filter a');
+
+elements.forEach(element => {
+  const href = element.getAttribute('href');
+
+  if (href && currentURL.includes(href)) {
+    element.href = '{{ collection.url }}';
+    element.classList.add('matched');
+  }
+});
+</script>

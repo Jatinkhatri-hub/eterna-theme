@@ -1,0 +1,112 @@
+<div id="{{ section.id }}" class="carlos-w-full" style="background: {{ section.settings.background_color }}">
+  <div
+    class="carlos-container carlos-x-padding pb-theme pt-theme">
+    <div class="carlos-text-xl carlos-uppercase carlos-mb-[15px] carlos-text-center">
+      {{ product.metafields.carlos.icon_blocks_slider.value.headline }}
+    </div>
+    <div class="icon-block-slider">
+      {% for slide in product.metafields.carlos.icon_blocks_slider.value.slides %}
+        <div>
+          <div class="carlos-w-full">
+            <div
+              class="icon-block-slide carlos-text-center"
+              style="box-shadow: 2px 5px 15px 0 rgba(0,0,0,.07000000000000001); border-radius: 12px; background: white;">
+              <img
+                src="{{ slide.image_url }}"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                style="width: 64px; height: 64px; object-fit: contain; margin: auto;">
+              <div class="carlos-text-sm carlos-mb-[5px] carlos-bold carlos-uppercase">{{ slide.title }}</div>
+              <div>{{ slide.text }}</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  #{{ section.id }} .slick-track {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  #{{ section.id }} .slick-slide {
+    display: flex;
+    height: auto;
+  }
+  
+  .icon-block-slide {
+    padding: 30px;
+    height: 100%;
+  }
+
+  @media (min-width: 769px) {
+    .icon-block-slider {
+      width: calc(100% - 50px);
+      margin: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .icon-block-slide {
+      padding: 20px 25px;
+    }
+  }
+</style>
+
+<script defer>
+  $(document).ready(function() {
+    $('#{{ section.id }} .icon-block-slider').slick({
+      arrows: true,
+      dots: true,
+      swipeToSlide: true,
+      infinite: false,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      responsive: [
+        {
+           breakpoint: 992,
+           settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: '15px',
+            arrows: false
+          }
+        }
+      ]
+    });
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Icon Block Slider | JSON",
+  "class": "custom-icon-slider",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon Block Slider | JSON"
+    }
+  ]
+}
+{% endschema %}

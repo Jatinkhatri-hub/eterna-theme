@@ -1,0 +1,123 @@
+<section class="membership-feature">
+  <div class="carlos-container">
+    <div class="mp-benifits-image">
+      <img src="{{ section.settings.image | img_url: 'master' }}" height="100%" width="100%"/>
+    </div>
+    <div class="mp-benefits-copy">
+      <div class="mp-benefits-subtitle">{{ section.settings.sub_title }}</div>
+      <div class="mp-benefits-title">{{ section.settings.heading }}</div>
+      <div class="mp-benefits-price">{{ section.settings.price }}</div>
+          <div class="mp-benefits-benefits">
+            {% for block in section.blocks %}
+            <div class="mp-benefits-benefit">
+              <div class="mp-benefits-benefit-img">
+                <img src="{{ block.settings.img | img_url: 'master' }}" alt="{{ block.settings.title }}">
+              </div>
+              <div class="mp-benefits-benefit-copy">
+                <div class="mp-benefits-benefit-copy-title">{{ block.settings.title }}</div>
+                <div class="mp-benefits-benefit-copy-subtitle">{{ block.settings.detail }}</div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+          <div class="mp-benefits-cta tsatc-product-list">
+              <div class="mp-benefits-cta-btn tsatc-product-item">
+                {% if section.settings.button_txt != blank %}
+                  <a class="main-img-btn carlos-btn-white carlos-pointer" {% if section.settings.link != blank %}href="{{ section.settings.link }}"{% endif %}>
+                    {{ section.settings.button_txt }} 
+                    {% if section.settings.product != blank %}
+                      {% assign selling_plan = product.metafields.carlos.selling_plan %}
+                      <span style="font-size: 14px; color: #646464; text-transform: lowercase;">
+                      {% if selling_plan == "m" %}
+                        {{ section.settings.product.selling_plan_groups[0].selling_plans[0].price_adjustments[0].value | money }}/{{ product.metafields.carlos.selling_plan }}
+                      {% endif %}
+                      {% if selling_plan == "yr" %}
+                        {{ section.settings.product.selling_plan_groups[0].selling_plans[1].price_adjustments[0].value | money }}/{{ product.metafields.carlos.selling_plan }}
+                      {% endif %}
+                      </span>
+                    {% endif %}
+                  </a>
+                  {% endif %}
+              </div>
+              <div class="mp-benefits-cta-price">{{ section.settings.benifit_price }}</div>
+              <div class="mp-benefits-cta-login"><span>{{ section.settings.already_member }}&nbsp;</span><a href="/account/login">Log in</a></div>
+          </div>
+      </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Membership Features",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Main Images"
+      },
+       {
+        "type": "text",
+        "id": "sub_title",
+        "label": "Sub Title"
+      },
+       {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "price",
+        "label": "Price"
+      },
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Membership Product"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "URL"
+      },
+      {
+        "type": "text",
+        "id": "button_txt",
+        "label": "Button Name"
+      },
+      {
+        "type": "text",
+        "id": "benifit_price",
+        "label": "Benefit Price"
+      },
+      {
+        "type": "text",
+        "id": "already_member",
+        "label": "Already Member"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "mp_list",
+        "name": "mp_list",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img",
+            "label": "Icon Images"
+          },
+           {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+           {
+            "type": "text",
+            "id": "detail",
+            "label": "Detail"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

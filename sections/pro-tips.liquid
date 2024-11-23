@@ -1,0 +1,75 @@
+<section class="protips_sec">
+  <div class="container">
+   <div class="carlos-flex carlos-flex-wrap">
+      <div class="carlos-w-half">
+      {% if section.settings.image != blank  %}
+        <div class="right-side-img">
+          <img src="{{ section.settings.image | img_url: 'master' }}" height="100%" width="100%"/>
+        </div>
+      {% endif %}
+      </div>
+      <div class="carlos-w-half" style="text-align: left;">
+        <div class="pro-tips-description">
+        {% for block in section.blocks %}
+          {% if block.settings.description %}
+            <p>{{ block.settings.description }}</p>
+          {% endif %}
+        {% endfor %}
+        </div> 
+        {% if section.settings.title %}
+        <div class="title-pro-tips" style="padding-bottom: 8px;">
+          <p>{{ section.settings.title }}</p>
+          <p>{{ section.settings.description }}</p>
+        </div>
+      {% endif %}
+      </div>     
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "pro-tips-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Left Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "steps",
+        "type": "steps",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon_image",
+            "label": "Icon Image"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "details",
+            "label": "Detail"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

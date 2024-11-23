@@ -1,0 +1,62 @@
+<section class="landing-footer-head-section">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    <div class="footer-head">
+      {% if section.settings.year != blank %}
+        <p>{{ section.settings.year }}</p>
+      {% endif %}
+      {% if section.settings.term != blank %}
+        <a href="{{ section.settings.term_url }}"><p>{{ section.settings.term }}</p></a>
+      {% endif %}
+      {% if section.settings.privacy != blank %}
+         <a href="{{ section.settings.privacy_url }}"><p>{{ section.settings.privacy }}</p></a>
+      {% endif %}
+    </div>
+    
+  </div>
+</section>
+<section class="landing-footer-bottom-section">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    {% if section.settings.details != blank %}
+      <div class="footer-bottom">
+        <p>{{ section.settings.details }}</p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "year",
+        "label": "Text"
+      },
+       {
+        "type": "text",
+        "id": "term",
+        "label": "Term"
+      },
+       {
+        "type": "url",
+        "id": "term_url",
+        "label": "URl"
+      },
+       {
+        "type": "text",
+        "id": "privacy",
+        "label": "Privacy policy"
+      },
+       {
+        "type": "url",
+        "id": "privacy_url",
+        "label": "Url"
+      },
+       {
+        "type": "text",
+        "id": "details",
+        "label": "Content"
+      }     
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,160 @@
+<div id="{{ section.id }}" class="carlos-w-full carlos-text-white carlos-bg-nr carlos-bg-cover carlos-x-padding pt-theme-double pb-theme-double">
+  <div class="carlos-container">
+    {% if section.settings.logo %}
+      <img src="{{ section.settings.logo | img_url: "master" }}" width="100%" height="100%" style="margin-bottom: 5px; object-fit: contain; max-width: 150px; margin-left: 2px;">
+    {% endif %}
+    <div class="carlos-flex carlos-flex-row carlos-flex-gap-[15px] carlos-align-center carlos-justify-center call-to-action">
+      <div>
+      <div class="carlos-text-{{ section.settings.size }} {% if section.settings.bold %} carlos-bold{% endif %} {% if section.settings.uppercase %} carlos-uppercase{% endif %}">
+      {{ section.settings.heading }}
+      </div>
+      {% if section.settings.text %}
+        {{ section.settings.text }}
+      {% endif %}
+      </div>
+      {% if section.settings.cta_text != blank %}
+      <a class="cta-btn carlos-btn-white carlos-pointer {% if section.settings.show_arrow %}carlos-btn-arrow{% endif %} {% if section.settings.bold %} carlos-bold{% endif %} {% if section.settings.uppercase %} carlos-uppercase{% endif %}" {% if section.settings.link != blank %}href="{{ section.settings.link }}"{% endif %} style="display: inline-block; white-space: nowrap;">
+        {{ section.settings.cta_text }} 
+        {% if section.settings.product != blank %}
+          {% assign selling_plan = product.metafields.carlos.selling_plan %}
+          <span style="font-size: 14px; color: #646464; text-transform: lowercase;">
+          {% if selling_plan == "m" %}
+            {{ section.settings.product.selling_plan_groups[0].selling_plans[0].price_adjustments[1].value | money }}/{{ product.metafields.carlos.selling_plan }}
+          {% endif %}
+          {% if selling_plan == "yr" %}
+            {{ section.settings.product.selling_plan_groups[0].selling_plans[1].price_adjustments[1].value | money }}/{{ product.metafields.carlos.selling_plan }}
+          {% endif %}
+          </span>
+        {% endif %}
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  #{{ section.id }} {
+    background-image: url('{{ section.settings.image | img_url: 'master' }}');
+  }
+
+  @media (max-width: 768px) {
+    .call-to-action {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Call to Action",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type":      "header",
+      "content":   "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Call to Action"
+    },
+    {
+      "type": "checkbox",
+      "id": "bold",
+      "label": "Bold",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "uppercase",
+      "label": "Uppercase",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "size",
+      "label": "Font size",
+      "options": [
+        {
+          "value": "sm",
+          "label": "Small"
+        },
+        {
+          "value": "md",
+          "label": "Medium"
+        },
+        {
+          "value": "lg",
+          "label": "Large"
+        },
+        {
+          "value": "xl",
+          "label": "X-Large"
+        }
+      ],
+      "default": "lg"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type":      "header",
+      "content":   "Call to action button"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Membership Product"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "btn_bold",
+      "label": "Bold",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "btn_uppercase",
+      "label": "Uppercase",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrow",
+      "label": "Show arrow",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Call to Action"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,84 @@
+<style>
+ section.why-eterna-sec {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 70px 0px;
+  }
+  .why-eterna-sec .right-side-img img{
+    width: 540px;
+    height: 397px;
+    border: 1px solid #000;
+  }
+  .why-eterna-sec h2 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+</style>
+
+<section class="why-eterna-sec" style="background: rgba(232,255,134,1);">
+  <div class="container">
+    <div class="carlos-flex carlos-flex-wrap">
+      <div class="carlos-w-half">
+      {% if section.settings.image != blank  %}
+        <div class="right-side-img">
+          <img src="{{ section.settings.image | img_url: 'master' }}" height="100%" width="100%"/>
+        </div>
+      {% endif %}
+      </div>
+      <div class="carlos-w-half" style="text-align: left;">
+      {% if section.settings.title %}
+        <div class="title-why-eterna" style="padding-bottom: 8px;">
+          <p>{{ section.settings.title }}</p>
+        </div>
+      {% endif %}
+      {% if section.settings.heading %}
+        <div class="why-text-heading" style="padding-bottom: 30px;">
+          <h2 class="colostrum-heading">{{ section.settings.heading }}</h2>
+        </div>
+      {% endif %}
+        <div class="why-text-description">
+        {% if section.settings.describe1 %}
+          <p>{{ section.settings.describe1 }}</p>
+        {% endif %}
+        {% if section.settings.describe2 != blank %}
+          <p>{{ section.settings.describe2 }}</p>
+        {% endif %}
+        </div> 
+      </div>     
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Why Enterna",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Left Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "describe1",
+        "label": "Description1"
+      },
+      {
+        "type": "textarea",
+        "id": "describe2",
+        "label": "Description2"
+      }
+    ]
+  }
+{% endschema %}

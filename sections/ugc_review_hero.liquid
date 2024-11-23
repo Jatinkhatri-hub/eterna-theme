@@ -1,0 +1,250 @@
+<div id="{{ section.id }}" class="carlos-w-full">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    <div class="carlos-flex carlos-flex-wrap:md">
+      <div class="carlos-w-2/3 carlos-flex carlos-flex-wrap:sm carlos-w-full:md carlos-mb-[20px]:md">
+        <div class="carlos-relative carlos-w-full" style="height: auto;">
+          <div class="carlos-absolute carlos-w-full carlos-full-ugc-video-title carlos-flex carlos-align-center carlos-justify-center carlos-flex-gap-[5px] carlos-p-sm carlos-top-0" style="z-index: 1;">
+            <img class="carlos-h-full" src="{{ metaobject.profile_picture.value | img_url: 'master' }}" width="100%" height="100%" loading="lazy" style="width: 5%; min-width: 34px; border-radius: 100%;">
+            <div style="font-weight: 500; color: white; font-size: 16px;">
+              {{ metaobject.name.value }}
+            </div>
+          </div>
+          <video class="carlos-w-full carlos-h-full carlos-full-ugc-video" autoplay="true" muted="true" playsinline="" controls="true" controlsList="nodownload" src="{{ metaobject.video_review | file_url }}" style="object-fit: cover; border-radius: 10px; box-shadow: 5px 9px 10px 0 rgba(0,0,0,.1);"></video>
+        </div>
+        <div class="carlos-w-full carlos-inner-left-margin" data-color-scheme="primary">
+          {% assign product = metaobject.product.value %}
+          <a href="{{ product.url }}" class="carlos-flex carlos-align-center">
+            <img src="{{ product.featured_image | img_url: 'master' }}" width="100%" height="100%" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: contain; max-width: 125px;">
+            <div class="carlos-flex-1">
+              <div class="carlos-bold carlos-uppercase" style="line-height: 1; font-size: var(--carlos-fontSizes-lg);">{{ product.title }}</div>
+              <div class="carlos-text-xs">{{ product.metafields.carlos.product_info.value }}</div>
+              {% render 'okendo-reviews-product-rating-summary', product: product %}
+            </div>
+          </a>
+          <div class="carlos-text-xs carlos-mb-[15px]">{{ product.description }}</div>
+          <button class="add-to-cart carlos-modal-btn px-2 py-4 w-full bg-scheme-accent text-scheme-accent-overlay carlos-bold carlos-uppercase carlos-flex carlos-justify-center carlos-flex-row carlos-align-center carlos-flex-gap-[5px]" data-modal-id="{{ product.id }}">
+            <span class="add-to-cart-text">Add to cart</span>
+            <span class="add-to-cart-separator"></span>
+            <span class="add-to-cart-price">
+              {% for variant in product.variants %}
+                {% if variant.title contains 'onetime / 1' %}
+                  {{ variant.price | money_without_trailing_zeros }}
+                {% endif %}
+              {% endfor %}
+            </span>
+          </button>
+          {% render 'quick-add-modal', product: product %}
+          <div class="carlos-relative carlos-mt-[20px] carlos-p-sm carlos-mb-[20px]:sm" style="background: #fafafa; border-radius: 12px; overflow: hidden;">
+            <div class="carlos-flex carlos-align-center carlos-mb-[15px]" style="gap: 10px;">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="34" height="34" viewBox="0 0 500.000000 500.000000" style="width: 34px;">
+                <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                  <path d="M3875 4614 c-11 -2 -45 -9 -75 -14 -55 -11 -75 -15 -205 -46 -65 -15 -285 -84 -330 -103 -11 -4 -31 -13 -45 -19 -177 -73 -308 -136 -425 -205 -55 -33 -131 -78 -170 -100 -98 -58 -301 -202 -429 -305 -196 -157 -330 -285 -449 -432 -43 -52 -86 -105 -95 -116 -16 -19 -33 -22 -148 -29 -289 -16 -517 -116 -715 -314 -162 -161 -279 -387 -329 -631 -33 -163 -41 -218 -46 -325 -6 -139 6 -178 66 -207 41 -20 220 -23 525 -9 174 9 215 5 215 -20 0 -13 51 -122 60 -129 4 -3 9 -12 12 -20 11 -31 138 -178 202 -235 68 -60 196 -145 219 -145 6 0 23 -9 36 -19 l24 -18 -8 -264 c-13 -409 -13 -429 8 -471 26 -51 67 -68 169 -68 189 0 392 41 571 116 109 46 130 57 229 120 276 178 451 473 487 822 6 56 11 124 11 150 0 43 3 49 37 72 89 59 263 223 368 345 33 38 66 76 73 84 8 8 32 39 55 70 23 31 44 58 47 61 3 3 23 30 45 60 21 30 62 87 90 125 50 67 140 210 193 305 14 25 42 74 62 110 69 119 201 413 245 545 48 145 97 327 114 430 7 39 17 94 22 124 13 76 11 382 -2 455 -24 125 -38 163 -73 194 -57 50 -137 62 -398 61 -123 -1 -232 -3 -243 -5z m412 -285 c17 -6 23 -19 29 -66 9 -74 -2 -352 -17 -423 -41 -198 -110 -417 -189 -596 -153 -348 -401 -746 -639 -1024 -105 -122 -285 -294 -365 -349 -57 -39 -118 -97 -133 -125 -13 -24 -17 -66 -18 -191 -3 -225 -38 -344 -144 -498 -59 -85 -129 -148 -259 -234 -154 -101 -345 -168 -457 -161 -37 2 -50 7 -50 18 0 8 4 167 9 352 8 308 7 340 -8 363 -30 46 -74 65 -148 65 -57 0 -75 5 -119 31 -73 43 -144 105 -199 174 -68 86 -90 137 -96 225 -7 86 -25 123 -70 145 -28 13 -74 14 -364 5 -231 -7 -337 -7 -345 0 -23 19 5 174 55 309 51 140 120 255 223 372 142 161 411 262 651 245 54 -4 103 -3 118 3 32 12 78 58 113 113 77 121 319 373 467 485 37 28 97 76 135 106 135 109 420 286 623 387 177 89 453 195 590 228 105 25 261 51 335 55 72 5 246 -5 272 -14z"></path>
+                  <path d="M2935 3618 c-31 -11 -72 -37 -114 -73 -36 -31 -116 -157 -133 -212 -49 -154 -45 -336 13 -568 13 -52 18 -56 74 -66 22 -4 81 -15 130 -24 154 -30 330 -24 430 15 112 43 228 140 265 221 51 113 -6 265 -123 325 -46 24 -135 43 -174 37 -18 -3 -34 -2 -34 3 -1 5 -3 41 -5 79 -5 113 -67 212 -154 249 -49 20 -139 27 -175 14z"></path>
+                  <path d="M945 1642 c-82 -29 -212 -140 -266 -227 -75 -121 -150 -332 -180 -510 -17 -100 -28 -321 -20 -375 16 -101 71 -120 297 -101 158 12 202 21 329 61 219 69 393 177 488 302 59 80 92 163 83 213 -15 77 -108 133 -176 105 -33 -14 -100 -83 -123 -126 -9 -16 -33 -45 -54 -65 -41 -39 -145 -109 -163 -109 -5 0 -18 -4 -28 -10 -64 -36 -346 -100 -364 -82 -18 18 5 148 62 357 34 126 95 220 178 276 107 72 130 110 117 195 -5 34 -14 50 -39 69 -34 26 -105 40 -141 27z"></path>
+                </g>
+              </svg>
+              <p class="carlos-bold">Free US shipping on all orders</p>
+            </div>
+            <div class="carlos-flex carlos-align-center carlos-mb-[15px]" style="gap: 10px;">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="34" height="34" viewBox="0 0 500.000000 500.000000" style="width: 34px">
+                <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                  <path d="M3135 4730 c-153 -18 -337 -99 -477 -208 -88 -68 -85 -65 -145 -138 -90 -109 -144 -204 -185 -324 -54 -160 -52 -133 -55 -815 -2 -352 -5 -646 -8 -652 -3 -10 -121 -13 -540 -13 -485 0 -535 1 -535 16 0 9 126 141 281 294 154 152 289 290 300 306 13 20 19 47 19 85 0 52 -3 59 -35 87 -45 40 -88 48 -140 27 -29 -12 -143 -119 -409 -383 -202 -202 -397 -400 -432 -441 -61 -71 -64 -76 -64 -126 0 -51 2 -55 74 -136 40 -46 235 -245 432 -441 262 -260 367 -358 389 -363 17 -4 36 -9 44 -11 27 -9 90 17 110 44 10 15 22 49 26 75 6 41 4 53 -17 85 -14 20 -150 162 -303 314 -157 156 -274 281 -271 287 5 8 169 11 542 11 l534 0 1 -42 c1 -24 3 -293 4 -598 2 -398 6 -568 14 -600 7 -25 17 -63 23 -85 36 -138 153 -334 265 -442 57 -56 182 -153 196 -153 3 0 31 -15 64 -33 67 -38 201 -81 288 -93 77 -11 265 -11 330 0 75 12 214 57 265 85 101 55 117 65 165 99 60 43 159 142 200 197 16 22 31 42 34 45 18 16 101 182 123 244 49 144 48 112 48 1566 0 1470 2 1411 -52 1567 -50 142 -158 310 -263 406 -116 107 -276 194 -440 238 -82 22 -294 32 -400 19z m265 -254 c52 -8 120 -24 151 -35 120 -45 258 -149 332 -250 22 -31 44 -58 47 -61 12 -9 71 -137 82 -176 28 -109 30 -206 31 -1439 2 -1281 1 -1312 -31 -1439 -15 -55 -69 -163 -113 -221 -91 -123 -180 -196 -319 -266 -104 -52 -356 -74 -465 -40 -17 5 -50 15 -75 22 -25 7 -58 21 -75 31 -16 10 -37 21 -45 25 -76 34 -248 197 -289 274 -70 132 -65 118 -99 264 -14 60 -16 149 -16 605 l-1 535 590 5 c668 6 634 1 674 84 21 45 22 53 11 87 -7 21 -27 51 -44 66 l-31 28 -588 5 c-508 4 -589 7 -597 20 -14 22 -13 1111 1 1224 6 50 15 95 20 101 5 5 9 19 9 31 0 13 21 63 46 113 34 65 66 111 122 169 87 89 119 114 212 163 78 42 130 58 230 75 100 16 119 16 230 0z"></path>
+                </g>
+              </svg>
+              <p class="carlos-bold">Free returns</p>
+            </div>
+            <div class="carlos-flex carlos-align-center" style="gap: 10px;">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="34" height="34" viewBox="0 0 500.000000 500.000000" style="&#10;    width: 34px;&#10;">
+                <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                  <path d="M2355 4454 c-304 -17 -610 -114 -897 -285 -159 -95 -366 -278 -493 -437 -27 -34 -55 -62 -61 -62 -15 0 -39 104 -55 232 -13 113 -32 151 -84 168 -44 14 -85 1 -115 -38 -26 -32 -26 -83 0 -253 33 -212 40 -268 50 -364 11 -108 18 -137 33 -147 7 -4 66 -8 132 -8 66 0 203 -5 305 -11 199 -13 266 -8 299 20 29 25 43 70 36 111 -14 72 -40 83 -229 90 -87 3 -151 9 -153 15 -2 6 8 22 22 37 14 15 25 32 25 37 0 14 247 261 261 261 5 0 20 9 32 21 28 26 230 159 243 159 1 0 40 17 86 39 46 21 99 43 118 49 19 6 62 20 95 31 133 43 335 71 509 71 297 -1 564 -77 833 -238 178 -106 356 -262 480 -419 44 -56 144 -217 173 -278 66 -143 104 -243 129 -345 55 -226 55 -604 0 -805 -144 -521 -457 -899 -934 -1129 -95 -46 -98 -47 -195 -79 -189 -62 -289 -77 -521 -77 -232 0 -304 11 -509 77 -41 13 -84 28 -95 32 -478 202 -831 575 -992 1045 -18 54 -40 131 -48 170 -17 84 -45 305 -45 357 0 79 -53 133 -131 133 -50 0 -82 -18 -110 -61 -16 -25 -18 -44 -14 -163 5 -130 16 -224 36 -301 5 -20 9 -46 9 -58 0 -82 179 -506 246 -582 8 -8 14 -19 14 -22 0 -15 122 -177 192 -255 107 -120 272 -259 393 -332 22 -13 42 -26 45 -29 10 -11 172 -94 260 -134 36 -16 142 -53 195 -67 17 -5 55 -15 85 -23 198 -54 601 -68 815 -28 216 40 330 75 492 153 91 44 264 143 298 171 11 8 54 42 95 75 158 124 329 311 417 457 76 125 183 335 183 358 0 8 3 16 6 20 6 6 49 131 72 212 19 66 40 201 53 351 10 113 10 166 0 265 -14 133 -35 272 -51 329 -20 70 -62 206 -71 228 -126 305 -249 494 -453 696 -250 248 -545 415 -891 506 -155 40 -427 64 -620 54z"></path>
+                  <path d="M2448 3423 c-14 -4 -18 -19 -20 -91 l-3 -86 -90 -13 c-157 -23 -290 -103 -347 -210 -14 -26 -31 -78 -38 -114 -12 -59 -11 -74 4 -130 45 -162 134 -238 381 -324 l90 -31 3 -177 c3 -202 5 -198 -85 -155 -78 37 -123 93 -154 197 l-13 43 -50 -6 c-52 -7 -122 -20 -188 -37 -26 -7 -38 -15 -38 -27 0 -69 77 -229 139 -293 56 -56 141 -111 199 -127 73 -21 116 -31 155 -37 l37 -6 0 -99 0 -100 60 0 59 0 3 97 3 98 50 8 c67 10 142 26 185 40 56 18 163 91 196 133 59 75 69 109 69 224 0 97 -2 110 -32 170 -42 88 -107 151 -203 198 -51 25 -205 82 -222 82 -40 0 -48 25 -48 159 0 92 4 132 13 139 27 23 126 -50 156 -114 31 -67 22 -63 101 -44 25 6 71 15 103 20 82 14 100 25 93 58 -12 47 -64 146 -101 189 -68 79 -166 136 -300 172 l-60 16 -3 87 c-3 79 -5 86 -25 92 -24 6 -53 6 -79 -1z m-23 -573 c0 -121 -1 -125 -22 -128 -35 -5 -132 46 -154 82 -34 54 -10 124 51 148 39 16 83 26 105 25 19 -2 20 -9 20 -127z m219 -505 c86 -41 136 -99 136 -159 0 -62 -82 -120 -181 -128 l-44 -3 -3 145 c-1 79 0 150 2 157 8 19 31 16 90 -12z"></path>
+                </g>
+              </svg>
+              <p class="carlos-bold">60 day money-back guarantee</p>
+            </div>
+            <img class="carlos-absolute carlos-h-full"
+              src="{{ product.featured_image | img_url: 'master' }}"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              style="max-width: 30%; aspect-ratio: 1; object-fit: contain; transform: rotate(335deg); right: -7.5%; bottom: -10%; filter: drop-shadow(5px 5px 20px #00000080)">
+          </div>
+        </div>
+      </div>
+      <div class="carlos-w-1/3 carlos-first-order carlos-w-full:md carlos-inner-right-margin carlos-hero-border">
+        <div class="carlos-flex carlos-flex-wrap">
+          <div class="carlos-w-full:sm carlos-w-half:md carlos-w-full:lg">
+            <div class="carlos-flex carlos-flex-gap-[20px] carlos-mb-[15px] carlos-align-center carlos-inner-wrapper carlos-profile-border">
+            <img class="carlos-h-full" src="{{ metaobject.profile_picture.value | img_url: 'master' }}" width="100%" height="100%" loading="lazy" style="width: 100%; max-width: 80px; border-radius: 100%;">
+            <div class="carlos-flex-1">
+              <div class="carlos-bold carlos-text-sm carlos-mb-[5px]">{{ metaobject.name.value }}</div>
+              {% for social_media in metaobject.social_media.value %}
+                <div class="carlos-bold carlos-social-media carlos-mb-[5px]">
+                  {% case social_media.platform %}
+                    {% when 'tiktok' %}
+                      {% render 'icon-tiktok' %}
+                    {% when 'instagram' %}
+                      {% render 'icon-instagram' %}
+                    {% when 'facebook' %}
+                      {% render 'icon-facebook' %}
+                    {% when 'twitter' %}
+                      {% render 'icon-twitter' %}
+                  {% endcase %}
+                  <span>{{ social_media.username }}</span>
+                  <span>•</span>
+                  <span>{{ social_media.followers }} followers</span>
+                </div>
+              {% endfor %}
+              <div>{{ metaobject.about.value }}</div>
+            </div>
+          </div>
+            <div class="carlos-inner-wrapper">
+            <div class="carlos-w-full carlos-p-sm carlos-text-center" style="background: #fafafa; font-weight: 600; border-radius: 12px; font-size: var(--carlos-fontSizes-sm);">"{{ metaobject.quote.value }}"</div>
+          </div>
+          </div>
+          <div class="carlos-w-full:sm carlos-w-half:md carlos-w-full:lg carlos-bg-grey carlos-flex">
+            <div class="ugc-image-slider carlos-p-lg" style="width: calc(100% - 80px); margin: auto;">
+              {% for images in metaobject.review_images.value %}
+                <img src="{{ images | img_url: 'master' }}" width="100%" height="100%" loading="lazy" style="aspect-ratio: 1; border-radius: 12px;">
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #{{ section.id }} .slick-prev {
+    left: -20px;
+    transform: translate(0, -50%);
+  }
+
+  #{{ section.id }} .slick-next {
+    right: -20px;
+    transform: translate(0, -50%) rotate(180deg);
+  }
+  
+  .carlos-inner-wrapper {
+    padding: 20px;
+  }
+
+  .carlos-inner-left-margin {
+    margin-left: 20px;
+  }
+  
+  .carlos-social-media svg {
+    display: inline-block;
+    width: 18px;
+  }
+
+  .carlos-hero-border {
+    border: 1px solid #e9e9e9;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .carlos-full-ugc-video {
+      margin-left: -15px;
+      margin-right: -15px;
+      margin-top: calc(-1 * var(--spacing) / 2);
+      border-radius: 0!important;
+      max-width: none;
+      width: calc(100% + 30px);
+    }
+
+    .carlos-w-full\:sm {
+      width: 100%!important;
+    }
+
+    .carlos-full-ugc-video-title {
+      margin-top: calc(-1 * var(--spacing) / 2);
+    }
+
+    .carlos-flex-wrap\:sm {
+      flex-wrap: wrap;
+    }
+
+    .carlos-inner-left-margin {
+      margin-left: 0;
+    }
+
+    .carlos-mb-\[20px\]\:sm {
+      margin-bottom: 20px;
+    }
+
+    .carlos-mb-\[-40px\] {
+      margin-bottom: -40px;
+    }
+
+    .carlos-bg-grey {
+      border-top-right-radius: 0!important;
+      border-bottom-left-radius: 10px;
+      background: #fafafa
+    }
+  }
+
+  @media (min-width: 769px) {
+    .carlos-mb-\[20px\]\:md {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .carlos-w-half\:md {
+      width: 50%;
+    }
+    
+    .carlos-w-full\:md {
+      width: 100%;
+    }
+
+    .carlos-flex-wrap\:md {
+      flex-wrap: wrap;
+    }
+
+    .carlos-profile-border {
+      border-bottom: 1px solid #e9e9e9;
+    }
+
+    .carlos-bg-grey {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      background: #fafafa
+    }
+  }
+
+  @media (min-width: 1441px) {
+    .carlos-mb-\[20px\]\:md {
+      margin-bottom: 0;
+    }
+    
+    .carlos-inner-right-margin {
+      margin-right: 20px;
+    }
+
+    .carlos-first-order {
+      order: -1;
+    }
+
+    .carlos-w-full\:lg {
+      width: 100%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "UGC Review Hero",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [],
+  "presets": [
+    {
+      "name": "UGC Review Hero"
+    }
+  ]
+}
+{% endschema %}

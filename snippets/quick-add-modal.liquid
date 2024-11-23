@@ -1,0 +1,109 @@
+<div id="{{ product.id }}" class="carlos-modal quick-add-modal" data-open="false" data-sticky="{% if sticky_atc == true %}true{% else %}false{% endif %}">
+  <div class="carlos-modal-content">
+    <span class="carlos-modal-close">&times;</span>
+    <div class="carlos-flex">
+      <a class="carlos-href-image" href="{{ product.url }}">
+        <img src="{{ product.featured_image | img_url: "master" }}" width="100%" height="100%" loading="lazy">
+      </a>
+      <div class="carlos-flex-1 carlos-text-left" style="padding-left: 10px;">
+        <a href="{{ product.url }}">
+          <p class="carlos-text-sm carlos-uppercase">{{ product.title }}</p>
+        </a>
+        {% render 'okendo-reviews-product-rating-summary', product: product %}
+        <p class="mt-2">{{ product.metafields.carlos.product_info }}</p>
+      </div>
+    </div>
+    <div class="quick-add-variants carlos-w-full carlos-flex carlos-flex-column carlos-align-start carlos-justify-start carlos-mb-[15px]">
+      {% for variant in product.variants %}
+      {% if variant.title contains 'onetime / 1' %}
+        <div class="quick-add-variant carlos-w-full">
+        <label class="carlos-relative carlos-flex carlos-flex-row carlos-space-between carlos-align-start carlos-text-left">
+          <div class="radio-wrapper carlos-relative">
+            <input class="carlos-absolute" type="radio" name="quick-add-modal-{{ product.id }}"
+              data-type="onetime"
+              data-price="{{ variant.price | money_without_trailing_zeros }}"
+              data-variant="{{ variant.id }}"
+              data-selling-plan="" checked>
+            <span class="radio-button carlos-relative carlos-block carlos-br-full"></span>
+          </div>
+          <div class="quick-add-price carlos-flex carlos-flex-column carlos-align-end" style="min-width: 35px;">
+            <span data-variant-price>{{ variant.price | money_without_trailing_zeros }}</span>
+            {% if variant.price < variant.compare_at_price %}
+              <del data-variant-price-old>{{ variant.compare_at_price | money_without_trailing_zeros }}</del>
+            {% endif %}
+          </div>
+          <div class="quick-add-variant-info carlos-w-full">
+            <div class="quick-add-title carlos-flex carlos-align-center carlos-space-between carlos-uppercase">
+              <span class="carlos-semibold">{{ variant.metafields.carlos.quick_add_modal_title }}</span>
+              {% if variant.price < variant.compare_at_price %}
+              {% assign percentage_off = variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round %}
+              <span class="quick-add-discount">{{ percentage_off }}% OFF</span>
+              {% endif %}
+            </div>
+            <p class="quick-add-description">{{ variant.metafields.carlos.quick_add_modal_description }}</p>
+          </div>
+        </label>
+      </div>
+      {% endif %}
+    {% endfor %}
+   
+    {% for variant in product.variants %}
+      {% unless variant.title contains 'onetime' %}
+        {% assign selling_plans = product.selling_plan_groups[0].selling_plans %}
+        {% assign supply_size = variant.metafields.carlos.supply_size.value | append: ' month' %}
+
+        <div class="quick-add-variant carlos-w-full">
+        <label class="carlos-relative carlos-flex carlos-flex-row carlos-space-between carlos-align-start carlos-text-left">
+          {% comment %}
+          <div class="radio-wrapper carlos-relative">
+            <input class="carlos-absolute" type="radio" name="quick-add-modal-{{ product.id }}"
+              data-type="subscription"
+              data-price="{{ variant.price | money_without_trailing_zeros }}"
+              data-variant="{{ variant.id }}"
+              data-selling-plan="{% for selling_plan in selling_plans %}{% if selling_plan.name contains supply_size %}{{ selling_plan_id }}{% endif %}{% endfor %}">
+            <span class="radio-button carlos-relative carlos-block carlos-br-full"></span>
+          </div>
+         {% endcomment %}
+          
+          <div class="radio-wrapper carlos-relative">
+            <input class="carlos-absolute" type="radio" name="quick-add-modal-{{ product.id }}"
+              data-type="subscription"
+              data-price="{{ variant.price | money_without_trailing_zeros }}"
+              data-variant="{{ variant.id }}"
+              data-selling-plan="{% for group in product.selling_plan_groups %}{% for selling_plan in group.selling_plans %}{% if selling_plan.name contains supply_size %}{{ selling_plan.id }}{% endif %}{% endfor %}{% endfor %}">
+            <span class="radio-button carlos-relative carlos-block carlos-br-full"></span>
+          </div>
+
+          <div class="quick-add-price carlos-flex carlos-flex-column carlos-align-end" style="min-width: 35px;">
+            <span data-variant-price>{{ variant.price | money_without_trailing_zeros }}</span>
+            {% if variant.price < variant.compare_at_price %}
+              <del data-variant-price-old>{{ variant.compare_at_price | money_without_trailing_zeros }}</del>
+            {% endif %}
+          </div>
+          <div class="quick-add-variant-info carlos-w-full">
+            <div class="quick-add-title carlos-flex carlos-align-center carlos-space-between carlos-uppercase">
+              <span class="carlos-semibold">{{ variant.metafields.carlos.quick_add_modal_title }}</span>
+              {% if variant.price < variant.compare_at_price %}
+              {% assign percentage_off = variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round %}
+              <span class="quick-add-discount">{{ percentage_off }}% OFF</span>
+              {% endif %}
+            </div>
+            <p class="quick-add-description">{{ variant.metafields.carlos.quick_add_modal_description }}</p>
+          </div>
+        </label>
+      </div>
+      {% endunless %}
+    {% endfor %}
+    </div>
+    <button
+      class="add-to-cart add-to-cart-modal px-2 py-4 w-full bg-scheme-accent text-scheme-accent-overlay carlos-bold carlos-uppercase carlos-flex carlos-justify-center carlos-flex-row carlos-align-center carlos-flex-gap-[5px]"
+      data-modal-id="{{ product.id }}">
+      <input name="product" type="hidden" value="{{ product.id }}">
+      <input name="variant" type="hidden" value="{% for variant in product.variants %}{% if variant.title contains 'onetime / 1' %}{{ variant.id }}{% endif %}{% endfor %}">
+      <input name="selling_plan" type="hidden" value="">
+      <span class="add-to-cart-text">Add to cart</span>
+      <span class="add-to-cart-separator"></span>
+      <span class="add-to-cart-price">{{ product.price | money_without_trailing_zeros }}</span>
+    </button>
+  </div>
+</div>

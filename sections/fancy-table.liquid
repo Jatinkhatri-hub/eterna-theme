@@ -1,0 +1,180 @@
+<div id="{{ section.id }}" class="carlos-w-full pb-theme pt-theme">
+  <div class="carlos-container">
+    <div class="carlos-flex carlos-flex-wrap carlos-mb-[50px]">
+      <div class="carlos-w-half carlos-text-md carlos-bold carlos-x-padding">
+        {{ section.settings.title }}
+      </div>
+      <div class="carlos-w-half carlos-x-padding">
+        {{ section.settings.text }}
+      </div>
+    </div>
+    <div class="carlos-x-padding">
+      <div class="carlos-border">
+        <div class="fancy-table-content carlos-flex carlos-text-sm carlos-uppercase carlos-inside-padding carlos-hide-mobile">
+          <div class="carlos-w-full">
+            {{ section.settings.heading_1 }}
+          </div>
+          <div class="carlos-w-full">
+            {{ section.settings.heading_2 }}
+          </div>
+          <div class="carlos-w-full">
+            {{ section.settings.heading_3 }}
+          </div>
+        </div>
+        <div class="fancy-table-slider">
+        {% for block in section.blocks %}
+          <div class="fancy-table-content carlos-flex carlos-inside-padding">
+            <div class="carlos-hide-desktop carlos-bold carlos-uppercase" style="font-size: 0.75rem;">{{ section.settings.heading_1 }}</div>
+            <div class="fancy-table-content-arrow first-fancy-content carlos-flex carlos-w-full">
+              {{ block.settings.text_1 }}
+              <img style="object-fit: contain; margin-right: 20px; width: 30px; height: 30px;" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yMS44ODMgMTJsLTcuNTI3IDYuMjM1LjY0NC43NjUgOS03LjUyMS05LTcuNDc5LS42NDUuNzY0IDcuNTI5IDYuMjM2aC0yMS44ODR2MWgyMS44ODN6Ii8+PC9zdmc+">
+            </div>
+            <div class="carlos-hide-desktop carlos-bold carlos-uppercase" style="font-size: 0.75rem;">{{ section.settings.heading_2 }}</div>
+            <div class="fancy-table-content-arrow carlos-flex carlos-w-full">
+              {{ block.settings.text_2 }}
+              <img style="object-fit: contain; margin-right: 20px; width: 30px; height: 30px;" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yMS44ODMgMTJsLTcuNTI3IDYuMjM1LjY0NC43NjUgOS03LjUyMS05LTcuNDc5LS42NDUuNzY0IDcuNTI5IDYuMjM2aC0yMS44ODR2MWgyMS44ODN6Ii8+PC9zdmc+">
+            </div>
+            <div class="carlos-hide-desktop carlos-bold carlos-uppercase" style="font-size: 0.75rem;">{{ section.settings.heading_3 }}</div>
+            <div class="carlos-flex carlos-w-full">
+              {{ block.settings.text_3 }}
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    var $window = $(window);
+
+    function checkWidth() {
+      var windowsize = $window.width();
+      if (windowsize < 768) {
+        $('.fancy-table-slider').slick({
+          arrows: false,
+          dots: true,
+          swipeToSlide: true,
+          loop: false
+        });
+      } else {
+        $('.fancy-table-slider').slick('unslick');
+      }
+    }
+    checkWidth();
+    $(window).resize(checkWidth);
+  });
+</script>
+
+<style>
+  @media (max-width: 768px) {
+    .fancy-table-content, .fancy-table-content-arrow {
+      flex-direction: column;
+    }
+
+    .fancy-table-content img {
+      transform: rotate(90deg);
+      margin: 20px 0;
+    }
+
+    .first-fancy-content p {
+      font-size: 1.2rem;
+    }
+
+    #{{ section.id }} .carlos-border {
+      border: none;
+    }
+
+    .fancy-table-content {
+      border: 1px solid black;
+      border-radius: 8px;
+      margin: 0 10px;
+    }
+  }
+  
+  .fancy-table-content:not(:last-of-type) {
+    border-bottom: 1px solid black;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Fancy Table",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "I'm a heading."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Heading #1",
+      "default": "Heading #1"
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": "Heading #2",
+      "default": "Heading #2"
+    },
+    {
+      "type": "text",
+      "id": "heading_3",
+      "label": "Heading #3",
+      "default": "Heading #3"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text_1",
+          "label": "Text #1"
+        },
+        {
+          "type": "richtext",
+          "id": "text_2",
+          "label": "Text #2"
+        },
+        {
+          "type": "richtext",
+          "id": "text_3",
+          "label": "Text #3"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fancy Table",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

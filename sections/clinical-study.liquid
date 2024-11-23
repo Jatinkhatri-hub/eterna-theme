@@ -1,0 +1,54 @@
+<div id="{{ section.id }}" class="carlos-w-full carlos-x-padding pb-theme pt-theme clinical-study">
+  <div class="carlos-container">
+    <div class="carlos-inside-padding carlos-flex carlos-flex-wrap carlos-border carlos-align-center" style="aspect-ratio: 2;">
+      <div class="carlos-w-half">
+        <div class="carlos-text-md carlos-mb-[15px] carlos-bold">
+          {{ section.settings.headline }}
+        </div>
+        <div>
+          {{ section.settings.text }}
+        </div>
+      </div>
+      <div class="carlos-w-half">
+        <img src="{{ section.settings.image | img_url: "master" }}" width="100%" height="100%" style="max-width: 430px; width: 100%; margin-left: auto; margin-right: auto; margin-top: 10px; padding: 10px;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .clinical-study a {
+    text-decoration: underline;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Clinical Study",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Clinical Study"
+    }
+  ]
+}
+{% endschema %}

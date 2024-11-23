@@ -1,0 +1,132 @@
+{% assign i = 0 %}
+<div id="{{ section.id }}" class="carlos-x-padding pb-theme pt-theme">
+  <div class="carlos-container">
+    <div class="carlos-text-xl carlos-text-center carlos-uppercase carlos-mb-[15px]">
+      {{ section.settings.title }}
+    </div>
+    <div class="informational-slider carlos-border carlos-br-sm">
+      {% for block in section.blocks %}
+        <div class="informational-slide carlos-x-padding carlos-flex-gap-[20px] pb-theme pt-theme carlos-space-evenly" style="display: flex;">
+          <div>
+            <span style="font-size: 16px; border: 1px solid black; border-radius: 100%; padding: 10px; aspect-ratio: 1;">{% assign i = i | plus: 1 %}0{{ i }}</span>
+            <span class="carlos-text-md carlos-bold carlos-mb-[15px] carlos-hide-desktop">
+              {{ block.settings.title }}
+            </span>
+          </div>
+          <img src="{{ block.settings.image | img_url: "master" }}" width="100%" height="100%" style="aspect-ratio: 1.5; object-fit: cover; border-radius: 8px; max-width: 350px">
+          <div class="informational-text">
+            <div class="carlos-text-md carlos-bold carlos-mb-[15px] carlos-hide-mobile">
+              {{ block.settings.title }}
+            </div>
+            <div>
+              {{ block.settings.text }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script defer>
+  $(document).ready(function() {
+    var $window = $(window);
+
+    function checkWidth() {
+      var windowsize = $window.width();
+      if (windowsize < 768) {
+        $('.informational-slider').slick({
+          arrows: false,
+          dots: true,
+          swipeToSlide: true,
+          infinite: false
+        });
+      } else {
+        $('.informational-slider').slick('unslick');
+      }
+    }
+    checkWidth();
+    $(window).resize(checkWidth);
+  });
+</script>
+
+<style>
+  @media (max-width: 768px) {
+    .informational-slide {
+      flex-direction: column;
+      align-items: center
+    }
+
+    .informational-slide [data-live-text-setting] {
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .informational-slide:not(:last-of-type) {
+      border-bottom: 1px solid black;
+    }
+    .informational-text {
+      width: 50%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Informational Slider",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "I'm a heading."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "limit": 6,
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Background Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "I'm a heading."
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add heading description.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Informational Slider",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

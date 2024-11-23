@@ -1,0 +1,81 @@
+<div id="{{ section.id }}" class="carlos-w-full">
+  <div>
+    <div class="carlos-flex carlos-flex-wrap">
+      <div class="carlos-w-half" style="background-color: #F2FAFE;">
+        <div class="caelos-gif-custom" style="max-width:487px; margin-left: auto; margin-right: auto;">
+        <img class="hiw-img" src="{{ product.metafields.carlos.how_it_works.value.image_url }}" width="100%" height="100%" loading="lazy" style="object-fit: cover;">
+        </div>
+      </div>
+      <div class="carlos-w-half carlos-flex carlos-justify-between carlos-flex-column" style="max-width:552px;">
+        <div class="carlos-text-xl carlos-uppercase carlos-text-left carlos-x-padding carlos-mobile-text-center" style="padding-top: 25px;">
+          {{ section.settings.title }}
+        </div>
+        {% for tab in product.metafields.carlos.how_it_works.value.tabs %}
+          <div class="carlos-w-full carlos-border-black carlos-p-lg accordion" style="border-width: 0.5px; border-left: 0; border-right: 0; border-top: none;">
+            <div class="carlos-flex carlos-space-between">
+              <div class="carlos-flex carlos-lh-1 carlos-text-md">
+                <span style="margin-right: 10px;">{% if forloop.index < 10 %}0{{ forloop.index }}{% else %}{{ forloop.index }}{% endif %}</span>
+                <span style="align-self: center;">{{ tab.title }}</span>
+              </div>
+              <svg
+                viewBox="0 0 20 20"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+                style="width: 24px; height: auto;">
+                <path d="M3 10H17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+                <path class="carlos-up-line" d="M10 3V17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div class="carlos-border-black carlos-text-sm" style="border-width: 0.5px; border-left: 0; border-right: 0;border-bottom: none; padding: 60px;">
+              <p>{{ tab.body }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .carlos-up-line {
+    transition: 0.3s;
+  }
+
+  .open-content .carlos-up-line {
+    opacity: 0;
+  }
+
+  .hiw-img {
+    max-height: 600px;
+  }
+
+  @media (max-width: 768px) {
+    .hiw-img {
+      min-height: 100%;
+      aspect-ratio: 1;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "How It Works | JSON",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works | JSON"
+    }
+  ]
+}
+{% endschema %}

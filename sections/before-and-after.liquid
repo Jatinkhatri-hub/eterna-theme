@@ -1,0 +1,311 @@
+<div id="{{ section.id }}" class="carlos-w-full carlos-section-border">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    <div class="carlos-mb-[50px] carlos-text-xl carlos-text-center carlos-uppercase">{{ section.settings.headline }}</div>
+    <div class="carlos-flex carlos-flex-wrap carlos-mb-[10px]">
+      <div class="carlos-w-half carlos-rp-[2.5px] before-after">
+        {% for slide in product.metafields.carlos.before_and_after.value.slides %}
+          <div>
+            <div class="carlos-flex carlos-flex-gap-[5px] carlos-mb-[5px]">
+              {% if slide.images.size == 2 %}
+              <div class="carlos-relative" style="border-radius: 4px; overflow: hidden;">
+                <img src="{{ slide.images.before }}" width="100%" height="100%" style="aspect-ratio: 3.75/5; object-fit: cover;">
+                <div class="carlos-absolute carlos-uppercase" style="padding: 6px 10px; border-radius: 10px; line-height: 1; background: white; letter-spacing: 1px; font-size: 12px; left: 8px; bottom: 8px;">
+                  Before
+                </div>
+              </div>
+              <div class="carlos-relative" style="border-radius: 4px; overflow: hidden;">
+                <img src="{{ slide.images.after }}" width="100%" height="100%" style="aspect-ratio: 3.75/5; object-fit: cover;">
+                <div class="carlos-absolute carlos-uppercase" style="padding: 6px 10px; border-radius: 10px; line-height: 1; background: white; letter-spacing: 1px; font-size: 12px; left: 8px; bottom: 8px;">
+                  {{ slide.timeframe }}
+                </div>
+              </div>
+              {% else %}
+              <div class="carlos-relative" style="border-radius: 4px; overflow: hidden;">
+                <img src="{{ slide.images.single }}" width="100%" height="100%" style="aspect-ratio: 1.15; object-fit: cover;">
+              </div>
+              {% endif %}
+            </div>
+            <div class="carlos-slide-padding" style="border-top-left-radius: 4px; border-top-right-radius: 4px; background: {{ section.settings.background_color }};">
+              <div class="carlos-bold carlos-uppercase carlos-text-md">{{ slide.name }}</div>
+              <div class="carlos-mb-[15px] carlos-mt-[15px]" style="font-size: var(--carlos-fontSizes-md); line-height: 28px;">“{{ slide.testimonial }}”</div>
+              <div class="carlos-flex carlos-flex-wrap carlos-flex-gap-[10px]">
+              {% for tag in slide.tags %}
+                <div class="carlos-uppercase carlos-ba-tags">{{ tag }}</div>
+              {% endfor %}
+              </div>
+              <div class="carlos-mt-[15px]">Taking <strong>{{ product.title }}</strong></div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="carlos-w-half carlos-lp-[2.5px] carlos-tp-[5px]">
+        <div class="carlos-timeline-padding carlos-h-full carlos-flex carlos-flex-column carlos-justify-center" style="background: {{ section.settings.background_color }};">
+        {% for timeline in product.metafields.carlos.before_and_after.value.timeline %}
+          <div class="carlos-flex">
+          <div class="carlos-timeline-left carlos-relative">
+            <div class="carlos-timeline-line {% if forloop.last %}carlos-timeline-line-last{% endif %}">
+            </div>
+            <div class="carlos-timeline-circle">
+            </div>
+          </div>
+          <div class="carlos-timeline-right">
+            <div class="carlos-uppercase mb-4" style="font-size: var(--carlos-fontSizes-sm); letter-spacing: .06em;">
+              {{ timeline.timeframe }}
+            </div>
+            <div class="pb-8">
+              {{ timeline.description }}
+            </div>
+          </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="carlos-flex carlos-flex-wrap carlos-uppercase carlos-results-stuff carlos-inside-padding">
+      <div class="carlos-w-half carlos-flex carlos-text-center carlos-align-center carlos-inside-padding carlos-border-bottom-mobile">
+        <div style="font-size: var(--carlos-fontSizes-sm); letter-spacing: .06em;">{{ product.metafields.carlos.before_and_after.value.results.text }}</div>
+      </div>
+      <div class="carlos-w-half carlos-flex">
+        <div class="carlos-flex carlos-flex-column carlos-align-center carlos-text-center carlos-inside-padding carlos-flex-gap-[5px] carlos-border-left-desktop">
+          <div class="carlos-bold" style="font-size: var(--carlos-fontSizes-2xl);">{{ product.metafields.carlos.before_and_after.value.results.left_percentage }}</div>
+          <div style="font-size: var(--carlos-fontSizes-xs); letter-spacing: .06em;">{{ product.metafields.carlos.before_and_after.value.results.left_text }}</div>
+        </div>
+        <div class="carlos-flex carlos-flex-column carlos-align-center carlos-text-center carlos-inside-padding carlos-flex-gap-[5px]" style="border-left: 1px solid {{ section.settings.results_text }}66;">
+          <div class="carlos-bold" style="font-size: var(--carlos-fontSizes-2xl);">{{ product.metafields.carlos.before_and_after.value.results.right_percentage }}</div>
+          <div style="font-size: var(--carlos-fontSizes-xs); letter-spacing: .06em;">{{ product.metafields.carlos.before_and_after.value.results.right_text }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .carlos-results-stuff {
+    background: {{ section.settings.results_bg }};
+    color: {{ section.settings.results_text }};
+    border-radius: 4px;
+  }
+  
+  #{{ section.id }} .slick-dotted.slick-slider {
+    margin-bottom: 0px;
+  }
+
+  #{{ section.id }} .slick-dots {
+    bottom: 10px;
+  }
+  
+  .carlos-slide-padding {
+    padding: 24px 16px;
+  }
+
+  .carlos-timeline-padding {
+    padding: 40px 16px;
+  }
+
+  .carlos-timeline-left {
+    width: 48px;
+  }
+
+  .carlos-timeline-line {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    width: 1px;
+    height: calc(100% - 52px);
+    background: #0F3956;
+  }
+
+  .carlos-timeline-line.carlos-timeline-line-last {
+    height: calc(100% - 52px);
+    bottom: 18px;
+    background: linear-gradient(to bottom, rgba(7, 37, 58, 1), rgba(7, 37, 58, 0));
+  }
+
+  .carlos-timeline-circle {
+    position: absolute;
+    top: 5px;
+    left: calc(50% - 6px);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #0F3956;
+  }
+
+  .carlos-timeline-right {
+    width: calc(100% - 48px);
+  }
+
+  .carlos-tp-\[5px\] {
+    padding-top: 5px;
+  }
+  
+  .carlos-ba-tags {
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    letter-spacing: .06em;
+    font-size: var(--carlos-fontSizes-xs);
+    background: {{ section.settings.label_bg_color }};
+    color: {{ section.settings.label_color }};
+  }
+
+  @media (max-width: 768px) {
+    .carlos-border-bottom-mobile {
+      border-bottom: 1px solid {{ section.settings.results_text }}66;
+    }
+  }
+
+  @media (min-width: 769px) {
+    #{{ section.id }} .slick-arrow.slick-prev {
+      top: 45%;
+      left: 20px;
+      transform: translate(0px,-45%);
+      z-index: 2;
+    }
+
+    #{{ section.id }} .slick-arrow.slick-next {
+      top: 45%;
+      right: 20px;
+      transform: translate(0px,-45%) rotate(180deg);
+      z-index: 2;
+    }
+
+    .carlos-border-left-desktop {
+      border-left: 1px solid {{ section.settings.results_text }}66;
+    }
+    
+    .carlos-timeline-left {
+      width: 32px;
+    }
+
+    .carlos-timeline-line {
+      bottom: 0;
+      left: 0;
+      height: calc(100% - 30px);
+    }
+
+    .carlos-timeline-circle {
+      width: 10px;
+      height: 10px;
+      top: 10px;
+      left: -5px;
+    }
+
+    .carlos-timeline-right {
+      width: calc(100% - 32px);
+    }
+    
+    .carlos-slide-padding {
+      padding: 96px 32px 32px;
+    }
+
+    .carlos-timeline-padding {
+      padding: 32px;
+    }
+
+    .carlos-tp-\[5px\] {
+      padding-top: 0px;
+    }
+
+    .carlos-rp-\[2\.5px\] {
+      padding-right: 2.5px;
+    }
+
+    .carlos-lp-\[2\.5px\] {
+      padding-left: 2.5px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #{{ section.id }} .slick-arrow.slick-prev {
+      top: 70%;
+      transform: translate(0px,-70%);
+    }
+
+    #{{ section.id }} .slick-arrow.slick-next {
+      top: 70%;
+      transform: translate(0px,-70%) rotate(180deg);
+    }
+    
+    .carlos-slide-padding {
+      padding: 24px 96px 96px;
+    }
+
+    .carlos-timeline-circle {
+      width: 16px;
+      height: 16px;
+      top: 7px;
+      left: -8px;
+    }
+    
+    .carlos-timeline-padding {
+      padding: 96px 72px 64px 72px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    #{{ section.id }} .slick-arrow.slick-prev {
+      top: 77.5%;
+      transform: translate(0px,-77.5%);
+    }
+
+    #{{ section.id }} .slick-arrow.slick-next {
+      top: 77.5%;
+      transform: translate(0px,-77.5%) rotate(180deg);
+    }
+    
+    .carlos-slide-padding {
+      padding: 64px 134px;
+    }
+
+    .carlos-timeline-padding {
+      padding: 124px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Before and After | JSON",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "label_bg_color",
+      "label": "Label background color"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label text color"
+    },
+    {
+      "type": "color",
+      "id": "results_bg",
+      "label": "Results background color"
+    },
+    {
+      "type": "color",
+      "id": "results_text",
+      "label": "Results text color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before and After | JSON"
+    }
+  ]
+}
+{% endschema %}

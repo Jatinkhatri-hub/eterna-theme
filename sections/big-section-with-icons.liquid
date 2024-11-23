@@ -1,0 +1,208 @@
+<div id="{{ section.id }}" class="carlos-w-full carlos-x-padding pb-theme pt-theme" style="overflow: hidden;">
+  <div class="circle-images-container carlos-full-screen carlos-mb-[15px] carlos-flex carlos-space-between">
+    <div class="carlos-flex circle-images-container carlos-align-center carlos-flex-gap-[20px]">
+      <div class="dotted-circle"></div>
+      <div class="carlos-flex carlos-flex-column carlos-justify-center top-bottom-text" style="padding: 10px; border: 1px solid black; border-radius: 8px; max-width: 250px; background: white; z-index: 2;">
+        <div class="carlos-bold carlos-text-sm">
+          {{ section.settings.text_top }}
+        </div>
+        <div>
+          {{ section.settings.text_bottom }}
+        </div>
+      </div>
+    </div>
+    <div class="carlos-flex carlos-relative">
+      <img class="circle-images" src="{{ section.settings.image_1 | img_url: "master" }}" width="100%" height="100%" style="z-index: 1;" circle-image="1">
+      <div class="dotted-circle carlos-absolute" style="left: -25%; z-index: 1;" circle-dot="2"></div>
+      <img class="circle-images" src="{{ section.settings.image_2 | img_url: "master" }}" width="100%" height="100%" style="z-index: 2;" circle-image="2">
+      <div class="dotted-circle carlos-absolute" style="left: 60%; z-index: 3;" circle-dot="3"></div>
+      <img class="circle-images carlos-hide-desktop" src="{{ section.settings.image_3 | img_url: "master" }}" width="100%" height="100%" circle-image="3">
+    </div>
+    <img class="circle-images carlos-hide-mobile" src="{{ section.settings.image_3 | img_url: "master" }}" width="100%" height="100%" circle-image="4">
+  </div>
+  <div class="carlos-container">
+    <div carlos="carlos-w-3/4">
+      {{ section.settings.text }}
+    </div>
+    <div class="carlos-flex carlos-w-3/4 pb-theme pt-theme carlos-flex-gap-[15px]">
+      {% for block in section.blocks %}
+        <img
+          src="{{ block.settings.icon | img_url: "master" }}"
+          width="100%"
+          height="100%"
+          style="width: 60px; height: 100%; object-fit: contain;">
+      {% endfor %}
+    </div>
+    <div class="carlos-inside-padding carlos-border carlos-br-sm carlos-flex carlos-flex-wrap">
+      <div class="carlos-w-1/6 carlos-bold" style="padding-right: 5px">
+        {{ section.settings.text_left }}
+      </div>
+      <div class="carlos-w-5/6">
+        {{ section.settings.text_right }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dotted-circle:nth-child(1) {
+    margin-left: -15vw;
+  }
+
+  [circle-image="1"],
+  [circle-image="2"] {
+    margin-left: -15vw;
+  }
+
+  [circle-image="4"] {
+    margin-right: -15vw;
+  }
+  
+  .dotted-circle {
+    width: 30vw;
+    height: 30vw;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: 1px dashed black;
+    animation: rotate 30s infinite;
+    min-width: 250px;
+    min-height: 250px;
+    filter: invert(1);
+    mix-blend-mode: difference;
+  }
+
+  .top-bottom-text {
+    margin-left: -60px;
+    margin-right: 150px;
+  }
+
+  @media (max-width: 768px) {
+    .top-bottom-text {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    .circle-images-container {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .circle-images:nth-child(1) {
+      z-index: 4!important;
+    }
+
+    .circle-images:nth-child(3) {
+      z-index: 3!important;
+      margin: 0 -125px;
+    }
+
+    .circle-images:nth-child(5) {
+      z-index: 1!important;
+    }
+    
+    .dotted-circle:nth-child(1) {
+      margin-top: -125px;
+      margin-left: 0;
+    }
+
+    [circle-dot="2"] {
+      left: 0!important;
+      z-index: 5!important;
+    }
+
+    [circle-dot="3"] {
+      left: 33%!important;
+      z-index: 2!important;
+    }
+  }
+
+  .circle-images {
+    border-radius: 100%;
+    aspect-ratio: 1;
+    min-width: 250px;
+    min-height: 250px;
+    width: 30vw;
+    height: 30vw;
+  }
+
+   @keyframes rotate {
+     0% {
+       transform: rotate(0deg);
+     }
+     100% {
+  	transform: rotate(359deg);
+  }
+   }
+</style>
+
+{% schema %}
+{
+  "name": "Big Section with Icons",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "text_top",
+      "label": "Text Top"
+    },
+    {
+      "type": "richtext",
+      "id": "text_bottom",
+      "label": "Text Bottom"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image #1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image #2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image #3"
+    },
+    {
+      "type": "text",
+      "id": "text_left",
+      "label": "Text Left"
+    },
+    {
+      "type": "richtext",
+      "id": "text_right",
+      "label": "Text Right"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Icon",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Big Section with Icons"
+    }
+  ]
+}
+{% endschema %}

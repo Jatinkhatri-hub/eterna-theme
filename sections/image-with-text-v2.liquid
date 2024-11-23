@@ -1,0 +1,46 @@
+<div id="{{ section.id }}" class="carlos-w-full">
+  <div class="carlos-flex carlos-flex-wrap">
+    <div class="carlos-w-half">
+      <img src="{{ section.settings.image | img_url: "master" }}" width="100%" height="100%" loading="lazy" style="aspect-ratio: 1.5; object-fit: cover;">
+    </div>
+    <div class="carlos-w-half carlos-container-half py-8 carlos-x-padding carlos-flex carlos-flex-column carlos-justify-center">
+      <div class="carlos-uppercase carlos-bold carlos-text-lg carlos-mb-[15px]">
+        {{ section.settings.headline }}
+      </div>
+      <div class="carlos-text-sm">
+        {{ section.settings.text }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with text v2",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text v2"
+    }
+  ]
+}
+{% endschema %}

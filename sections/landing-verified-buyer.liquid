@@ -1,0 +1,68 @@
+<section class="verified-buyer">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    <div class="buyer-review">
+      <div class="content-buyer">
+        <div class="verified_review">
+          {% if section.settings.review != blank %}
+          <p>
+            <span>
+              <img class="columnicon-1" src="{{ section.settings.icon_1 | img_url: 'master' }}" width="100%" height="100%"/>
+            </span>{{ section.settings.review }}
+            <span>
+             <img class="columnicon-2" src="{{ section.settings.icon_2 | img_url: 'master' }}" width="100%" height="100%"/>
+            </span>
+          </p>
+            {% endif %}
+        </div>
+        <div class="vefied buyerr">
+          <div class="verified">
+            {% if section.settings.verified != blank %}
+            <img src="{{ section.settings.image | img_url: 'master' }}" width="100%" height="100%"/>
+            <p class="varefied">{{ section.settings.verified }}</p>
+            {% endif %}
+            {% if section.settings.name %}
+              <p class="name-testimonial">{{ section.settings.name }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Verified Buyer",
+    "settings": [
+       {
+        "type": "image_picker",
+        "id": "icon_1",
+        "label": "Image"
+      },
+       {
+        "type": "image_picker",
+        "id": "icon_2",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "review",
+        "label": "Review"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "verified",
+        "label": "Verified Buyer"
+      },
+      {
+        "type": "text",
+        "id": "name",
+        "label": "Name"
+      }
+    ]
+  }
+{% endschema %}

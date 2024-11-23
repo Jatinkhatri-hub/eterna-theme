@@ -1,0 +1,127 @@
+{% assign i = 0 %}
+<div id="{{ section.id }}" class="carlos-w-full carlos-text-white carlos-secondary-bg carlos-border-white">
+  <div class="carlos-container">
+    <div class="carlos-flex carlos-flex-wrap">
+      <div class="benefits-left carlos-x-padding carlos-w-half pt-theme pb-theme carlos-m-auto">
+        <div class="carlos-flex carlos-flex-column">
+          {% for block in section.blocks limit: 3 %}
+            <div class="carlos-flex carlos-row carlos-y-padding carlos-flex-gap-[10px] carlos-align-center carlos-flex-wrap">
+              <div class="carlos-icon carlos-invert hidden">
+                <img src="{{ block.settings.icon | img_url: "master" }}" width="100%" height="100%" alt="ben_imgs">
+              </div>
+              <div class="carlos-flex carlos-row carlos-flex-gap-[10px] carlos-align-center carlos-w-full">
+                <div class="carlos-icon carlos-invert">
+                  <img src="{{ block.settings.icon | img_url: "master" }}" width="100%" height="100%" alt="ben_imgs">
+                </div>
+                <div class="carlos-flex-1 carlos-self-end">
+                  <span class="carlos-float-left">{% assign i = i | plus: 1 %}0{{ i }}</span>
+                  <div class="carlos-text-md {% if block.settings.uppercase %} carlos-uppercase{% endif %}">{{ block.settings.title }}</div>
+                </div>
+              </div>
+              <div>{{ block.settings.text }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="benefits-right carlos-border-left carlos-w-half">
+        <div class="carlos-flex carlos-flex-column">
+          {% for block in section.blocks offset: 3 %}
+            <div class="carlos-flex carlos-inside-padding carlos-row carlos-flex-gap-[10px] carlos-align-center carlos-border-bottom">
+              <div class="carlos-icon carlos-invert">
+                <img src="{{ block.settings.icon | img_url: "master" }}" width="100%" height="100%" alt="ben_imgs">
+              </div>
+              <div class="carlos-flex-1">
+                <span class="carlos-float-left">{% assign i = i | plus: 1 %}0{{ i }}</span>
+                <div class="carlos-text-md {% if block.settings.uppercase %} carlos-uppercase{% endif %}">{{ block.settings.title }}</div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .carlos-icon {
+    width: 50px;
+  }
+  
+  .carlos-secondary-bg {
+    background: var(--color-secondary-background);
+  }
+
+  #{{ section.id }} .carlos-border-bottom:last-of-type {
+    border: none;
+  }
+
+  #{{ section.id }} .carlos-border-bottom:first-of-type {
+    border-top: none;
+  }
+
+  @media (max-width: 768px) {
+    #{{ section.id }} .carlos-border-bottom:first-of-type {
+      border-top: solid;
+    }
+    
+    #{{ section.id }} .carlos-border-left {
+      border: none;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Benefits",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "limit": 9,
+      "settings": [
+        {
+          "id": "icon",
+          "type": "image_picker",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "uppercase",
+          "label": "Make Uppercase"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add heading description.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits",
+      "blocks": [
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

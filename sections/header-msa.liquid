@@ -1,0 +1,102 @@
+
+    <header>
+        <div class="container-fluid">
+            <div class="header_wraper">
+                <div class="header_logo">
+                    <div class="header_icons">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <div class="header_img">
+                        <img src="{{ section.settings.logo_img |img_url: 'master' }}" width="100%" height="100%" alt="">
+                    </div>
+                  <div class="header_img_mob">
+                        <img src="{{ section.settings.mob_img |img_url: 'master' }}" width="100%" height="100%" alt="">
+                    </div>
+                </div>
+                    <div class="right_header">
+                      <div class="search-icon">
+                       <div class="search-field"></div>
+                      </div>
+                      {% comment %}
+                        <form role="search" method="get" class="search-form" action="">
+                          <label>
+                      
+                            <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:" />
+                          </label>
+                          <input type="submit" class="search-submit" value="Search" />
+                        </form>
+                        {% endcomment %}
+                      </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="social_media">
+        <div class="container">
+            <div class="social_wrapper">
+                <div class="social_icon">
+                    <img src="https://www.mysubscriptionaddiction.com/images/social/facebook-black.svg" alt="">
+                </div>
+                <div class="social_icon">
+                    <img src="https://www.mysubscriptionaddiction.com/images/social/twitter-black.svg" alt="">
+                </div>
+
+                <div class="social_icon">
+                    <img src="https://www.mysubscriptionaddiction.com/images/social/reddit-black.svg" alt="">
+                </div>
+
+                <div class="social_icon">
+                    <img src="https://www.mysubscriptionaddiction.com/images/social/pintrest-black.svg" alt="">
+                </div>
+
+                <div class="social_icon">
+                    <img src="https://www.mysubscriptionaddiction.com/images/social/email-black.svg" alt="">
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "side_img",
+        "label": "side Img"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_img",
+        "label": "Logo Img"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob_img",
+        "label": "Logo Img Mobile"
+      },
+    ],
+    "blocks": [
+      {
+        "type": "social-media",
+        "name": "Social Media",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "icon"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

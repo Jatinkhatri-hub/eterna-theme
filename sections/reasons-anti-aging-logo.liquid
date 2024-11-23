@@ -1,0 +1,24 @@
+<section class="top-logo">
+  <div class="carlos-x-padding py-theme text-center justify-center logo-flex">
+    {% if section.settings.logo_img != blank %}
+      <a href = "https://tryeterna.com/">
+    <div class="logo-img">
+      <img src="{{ section.settings.logo_img | img_url: 'master' }}" width="100%" height="100%"/>
+    </div>
+      </a>
+      {% endif %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Logo Image",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo_img",
+        "label": "Logo Iaage"
+      }
+    ]
+  }
+{% endschema %}

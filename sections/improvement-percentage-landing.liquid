@@ -1,0 +1,52 @@
+<section class="control-aging">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    <div class="carlos-flex carlos-flex-wrap">
+      {% for block in section.blocks %}
+      <div class="carlos-w-half">
+        {% if block.settings.number != blank and block.settings.detail != blank %}
+          <div class="percent-mnbr"><span>{{ block.settings.number }}</span></div>          
+          <div class="content-aging">
+            <p>{{ block.settings.detail }}</p>
+          </div>
+          {% endif %}
+      </div>
+        {% endfor %}
+      
+    </div>
+    <div class="bottom-improve">
+        {% if section.settings.subtitle != blank %}
+        <p>{{ section.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Improvement",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Sub Detail"
+      }
+    ],
+    "blocks":[
+      {
+        "name": "Blocks_grid",
+        "type": "blocks_grid",
+        "settings": [
+          {
+            "type": "text",
+            "id": "number",
+            "label": "Percentange"
+          },
+          {
+            "type": "text",
+            "id": "detail",
+            "label": "detail"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,44 @@
+<section class="control-aging">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    {% if section.settings.heading %}
+    <div class="heading-text">
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+      {% endif %}
+    <div class="row-flex">
+      {% if section.settings.detail != blank %}
+      <div class="percent-mnbr"><span>{{ section.settings.number }}</span><p>{{ section.settings.detail }}</p></div>
+        {% endif %}
+      {% if section.settings.subtitle != blank %}
+      <p>{{ section.settings.subtitle }}</p>
+        {% endif %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Aging Control",
+    "settings": [
+       {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "number",
+        "label": "percentage"
+      },
+      {
+        "type": "textarea",
+        "id": "detail",
+        "label": "Detail"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Detail"
+      }
+    ]
+  }
+{% endschema %}

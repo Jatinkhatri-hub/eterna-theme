@@ -1,0 +1,107 @@
+<div id="{{ section.id }}" class="carlos-w-full">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    <div class="carlos-text-lg pb-theme pt-theme">{{ section.settings.headline }}</div>
+    <div class="whats-included carlos-flex">
+{% for product in product.metafields.carlos.whats_included.value %}
+  <a class="whats-included-wrapper" href="{{ product.url }}">
+    <div class="carlos-border-top"></div>
+    <div class="mt-2 mb-2 carlos-flex carlos-space-between">
+      <div class="carlos-bold">{{ product.title }}</div>
+      <div class="carlos-flex" style="gap: 2.5px;">
+        <span>{{ product.metafields.reviews.rating.value }}</span>
+        <span>
+          <svg height="13" viewBox="0 0 20 16" aria-hidden="true" style="width: 18px; height: 18px;">
+            <use x="2" href="#oke-star-filled"></use>
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div class="carlos-flex carlos-relative carlos-product-image">
+      <img class="carlos-absolute" src="{{ product.images[1] | img_url: 'master' }}" width="100%" height="100%" loading="lazy" style="background: #f2f3f0; border-radius: 8px;" >
+      <img src="{{ product.featured_image | img_url: 'master' }}" width="100%" height="100%" loading="lazy" style="background: #f2f3f0; border-radius: 8px;" >
+    </div>
+    <div class="mt-2 mb-2 carlos-text-sm" style="font-size: var(--carlos-fontSizes-xs); color: #0000008a;">
+  {{ product.metafields.carlos.product_info.value }}
+  </div>
+  </a>
+  {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  #{{ section.id }} .carlos-product-image .carlos-absolute {
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  #{{ section.id }} .whats-included-wrapper:hover .carlos-product-image .carlos-absolute {
+    opacity: 1;
+  }
+
+   @media (max-width: 768px) {
+    .whats-included {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-flow: column;
+      -webkit-align-content: start;
+      -ms-flex-line-pack: start;
+      align-content: start;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+      list-style: none;
+      grid-column-gap: 2rem;
+      grid-template-rows: repeat(1,auto);
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .whats-included::-webkit-scrollbar { 
+      display: none;  /* Safari and Chrome */
+    }
+
+    .whats-included-wrapper {
+      scroll-snap-align: start;
+    }
+
+    .carlos-product-image {
+      width: 65vw;
+      height: auto;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .whats-included {
+      gap: 25px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "What's Included",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type":      "header",
+      "content":   "Content"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Heading",
+      "default": "What's Included"
+    }
+  ],
+  "presets": [
+    {
+      "name": "What's Included"
+    }
+  ]
+}
+{% endschema %}

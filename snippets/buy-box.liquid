@@ -1,0 +1,475 @@
+<div class="buy-box mt-8">
+  <div class="carlos-subscription buy-box-inner" data-checked>
+  
+      <button type="button" class="buy-box-button checked-option" data-type="subscription">
+      <span class="buy-box-top">
+        <span class="buy-box-checkbox"></span>
+        <span class="buy-box-type">
+          <span>Subscribe & Save</span>
+        </span>
+        <span class="buy-box-price">
+          <span class="buy-box-variant-price"></span>
+          <span class="buy-box-serving-price">
+            <span class="buy-box-serving-price-inner">
+            </span>
+            / serving
+          </span>
+          <span class="buy-box-discount">
+            Save up to <span class="buy-box-save-up-to"></span>%
+          </span>
+        </span>
+      </span>
+    </button>
+ 
+    <div class="buy-box-bottom-wrapper">
+      <div class="buy-box-bottom">
+        <div class="buy-box-options">
+        {% for variant in product.variants %}
+          {% if variant.title contains 'subscription' %}
+            {% assign selling_plans = product.selling_plan_groups[0].selling_plans %}
+            {% assign supply_size = variant.metafields.carlos.supply_size.value | append: ' month' %}
+            <label>
+            {% comment %}  
+            <input name="type"
+              type="radio"
+              variant-id="{{ variant.id }}"
+              data-supply="{{ variant.option2 }}"
+              data-supply-size="{{ variant.metafields.carlos.supply_size.value }}"
+              data-capsules-amount="{{ variant.metafields.carlos.capsules_amount.value }}"
+              data-serving-size="{{ product.metafields.carlos.serving_size.value }}"
+              data-price="{{ variant.price | money }}"
+              data-serving-unit-price="{{ variant.price | divided_by: variant.metafields.carlos.capsules_amount.value | times: product.metafields.carlos.serving_size.value | round: 2 | money }}"
+              data-selling-plan="{% for selling_plan in selling_plans %}{% if selling_plan.name contains supply_size %}{{ selling_plan.id }}{% endif %}{% endfor %}"
+              style="border: 0; clip: rect(0, 0, 0, 0); height: 1px; width: 1px; margin: -1px; padding: 0; overflow: hidden; white-space: nowrap; position: absolute;">
+              {% endcomment %}
+              
+              <input name="type"
+              type="radio"
+              variant-id="{{ variant.id }}"
+              data-supply="{{ variant.option2 }}"
+              data-supply-size="{{ variant.metafields.carlos.supply_size.value }}"
+              data-capsules-amount="{{ variant.metafields.carlos.capsules_amount.value }}"
+              data-serving-size="{{ product.metafields.carlos.serving_size.value }}"
+              data-price="{{ variant.price | money }}"
+              data-serving-unit-price="{{ variant.price | divided_by: variant.metafields.carlos.capsules_amount.value | times: product.metafields.carlos.serving_size.value | round: 2 | money }}"
+              data-selling-plan="{% for group in product.selling_plan_groups %}{% for selling_plan in group.selling_plans %}{% if selling_plan.name contains supply_size %}{{ selling_plan.id }}{% endif %}{% endfor %}{% endfor %}"
+              style="border: 0; clip: rect(0, 0, 0, 0); height: 1px; width: 1px; margin: -1px; padding: 0; overflow: hidden; white-space: nowrap; position: absolute;">
+              
+            <div class="buy-box-option">
+              <div class="buy-box-option-inner">
+              <p>{{ variant.option2 }}</p>
+              {% assign percentage_off = variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round %}
+              <span class="buy-box-discount" data-discount="{{ percentage_off }}">
+                Save {{ percentage_off }}%
+              </span>
+              </div>
+            </div>
+          </label>
+          {% endif %}
+        {% endfor %}
+        </div>
+        {% if template == 'page.landing-page' %}
+          <div class="buy-box-messages">
+          <div class="buy-box-message">
+            <p><span class="buy-box-strong">Save 15%</span> on your first order </p>
+          </div>
+          <div class="buy-box-message">
+           <p> <span class="buy-box-strong">Save 5%</span> on every following order </p>
+          </div>
+          <div class="buy-box-message">
+           <p> <span class="buy-box-strong">Shipped monthly- </span> pause skip, cancel, </p>
+          </div>
+          <div class="buy-box-message">
+           <p> or modify at any time for any reason every following order </p>
+          </div>
+        </div>
+        {% else %}
+        <div class="buy-box-messages">
+          <div class="buy-box-message">
+            <svg viewBox="0 0 20 20" focusable="false" class="buy-box-message-icon" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.804 4.699a5.737 5.737 0 0 1 6.253 1.244l1.618 1.618h-2.288a.45.45 0 0 0 0 .9h3.375a.446.446 0 0 0 .318-.132.45.45 0 0 0 .13-.357l.002-3.336a.45.45 0 0 0-.9 0v2.289l-1.619-1.619a6.638 6.638 0 0 0-9.386 0 .45.45 0 1 0 .636.637 5.737 5.737 0 0 1 1.861-1.244ZM2.822 11.816a.45.45 0 0 0-.034.173v3.375a.45.45 0 0 0 .9 0v-2.289l1.618 1.618a6.639 6.639 0 0 0 9.387 0 .45.45 0 1 0-.636-.636 5.737 5.737 0 0 1-8.114 0l-1.618-1.618h2.288a.45.45 0 0 0 0-.9H3.238a.449.449 0 0 0-.416.277Z" fill="currentColor"></path>
+            </svg>
+            <p><span class="buy-box-supply-size"></span>-month(s) supply delivered every <span class="buy-box-supply-size"></span> months</p>
+          </div>
+          <div class="buy-box-message">
+            <svg viewBox="0 0 20 20" focusable="false" class="buy-box-message-icon" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 17.5a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15ZM8.125 7.5v5M11.875 7.5v5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <p>Pause or cancel at any time</p>
+          </div>
+        </div>
+          {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="carlos-onetime buy-box-inner">
+    <button type="button" class="buy-box-button" data-type="onetime">
+      <span class="buy-box-top">
+        <span class="buy-box-checkbox"></span>
+        <span class="buy-box-type">
+          <span>One-time purchase</span>
+        </span>
+        <span class="buy-box-price">
+          <span class="buy-box-variant-price"></span>
+          <span class="buy-box-serving-price">
+            <span class="buy-box-serving-price-inner">
+            </span>
+            / serving
+          </span>
+        </span>
+      </span>
+    </button>
+    <div class="buy-box-bottom-wrapper">
+      <div class="buy-box-bottom">
+        <div class="buy-box-options">
+        {% for variant in product.variants %}
+          {% if variant.title contains 'onetime' %}
+            <label>
+            <input name="type"
+              type="radio"
+              variant-id="{{ variant.id }}"
+              data-supply="{{ variant.option2 }}"
+              data-supply-size="{{ variant.metafields.carlos.supply_size.value }}"
+              data-capsules-amount="{{ variant.metafields.carlos.capsules_amount.value }}"
+              data-serving-size="{{ product.metafields.carlos.serving_size.value }}"
+              data-price="{{ variant.price | money }}"
+              data-serving-unit-price="{{ variant.price | divided_by: variant.metafields.carlos.capsules_amount.value | times: product.metafields.carlos.serving_size.value | round: 2 | money }}"
+              data-selling-plan=""
+              style="border: 0; clip: rect(0, 0, 0, 0); height: 1px; width: 1px; margin: -1px; padding: 0; overflow: hidden; white-space: nowrap; position: absolute;">
+            <div class="buy-box-option">
+              <div class="buy-box-option-inner">
+              <p>{{ variant.option2 }}</p>
+              {% assign percentage_off = variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round %}
+              <span class="buy-box-discount {% if percentage_off < 1 %} carlos-hidden{% endif %}" data-discount="{{ percentage_off }}">
+                Save {{ percentage_off }}%
+              </span>
+              </div>
+            </div>
+          </label>
+          {% endif %}
+        {% endfor %}
+        </div>
+        <div class="buy-box-messages">
+          <div class="buy-box-message">
+            <svg viewBox="0 0 20 20" focusable="false" class="buy-box-message-icon" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.43765 0.613391C7.60653 0.517936 7.79722 0.467773 7.99121 0.467773C8.1852 0.467773 8.3759 0.517936 8.54478 0.613391L15.1073 4.32263C15.2781 4.41918 15.4206 4.55871 15.5208 4.7273C15.523 4.73086 15.5251 4.73447 15.5272 4.73811C15.5275 4.73871 15.5279 4.73932 15.5282 4.73992C15.6268 4.91082 15.6787 5.10466 15.6787 5.30201V12.6977C15.6787 12.8969 15.6258 13.0926 15.5254 13.2646C15.425 13.4367 15.2807 13.579 15.1073 13.6771L8.54478 17.3863C8.3806 17.4791 8.19581 17.5291 8.00742 17.5318C8.00033 17.532 7.9932 17.5321 7.98605 17.532L7.97536 17.5318C7.78684 17.5292 7.60192 17.4792 7.43765 17.3863L0.875146 13.6771C0.701709 13.579 0.557415 13.4367 0.457015 13.2646C0.356615 13.0926 0.303711 12.8969 0.303711 12.6977V5.30201C0.303711 5.10279 0.356615 4.90714 0.457015 4.73506C0.557415 4.56299 0.701708 4.42066 0.875146 4.32263L7.43765 0.613391ZM14.167 4.93988L8.05272 1.48395C8.03395 1.47335 8.01277 1.46777 7.99121 1.46777C7.96966 1.46777 7.94847 1.47335 7.9297 1.48395L1.82431 4.93482L8.07132 8.42547L14.167 4.93988ZM1.30371 5.78945V12.6977C1.30371 12.7198 1.30959 12.7416 1.32074 12.7607C1.3319 12.7798 1.34793 12.7956 1.3672 12.8065L7.49903 16.2723L7.57112 9.2915L1.30371 5.78945ZM8.57117 9.29159L14.6787 5.79925V12.6977C14.6787 12.7198 14.6728 12.7416 14.6617 12.7607C14.6505 12.7798 14.6345 12.7956 14.6152 12.8065L8.49918 16.2634L8.57117 9.29159Z" fill="currentColor"></path>            </svg>
+            <p><span class="buy-box-supply-size"></span>-month(s) supply delivered once</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script defer>
+  $(document).ready(function() {
+    var $first_checked = $('.buy-box-button.checked-option');
+    var discount = $('.carlos-subscription .buy-box-option .buy-box-discount').last().attr('data-discount');
+    var selling_plan = $first_checked.siblings('.buy-box-bottom-wrapper').find('label:first-of-type input').attr('data-selling-plan');
+    var price = $first_checked.siblings('.buy-box-bottom-wrapper').find('label:first-of-type input').attr('data-price');
+    $first_checked.siblings('.buy-box-bottom-wrapper').find('label:first-of-type').attr('data-checked', '');
+    $first_checked.siblings('.buy-box-bottom-wrapper').find('label:first-of-type input').click();
+    $('.selling-plan-input').attr('value', selling_plan);
+    $('.buy-box-save-up-to').text(discount);
+    $('.atc-button').append('<span class="atc-price"></span>');
+    $('.atc-price').text(' - ' + price);
+    
+    $('.buy-box-inner').each(function() {
+      var $buy_box = $('.buy-box-options label:first-child input', this);
+      var supply = $buy_box.attr('data-supply');
+      var price = $buy_box.attr('data-price');
+      var serving_price = $buy_box.attr('data-serving-unit-price');
+      var supply_size = $buy_box.attr('data-supply-size');
+      $('.buy-box-variant-price', this).text(price);
+      $('.buy-box-serving-price-inner', this).text(serving_price);
+      $('.buy-box-supply-size', this).text(supply_size);
+    });
+
+    resizebox();
+      
+    $(window).resize(resizebox);
+
+    $('.buy-box-button').click(function() {
+      if (!$(this).hasClass('checked-option')) {
+        var $buyBoxButtons = $('.buy-box-button');
+        $buyBoxButtons.removeClass('checked-option');
+        $buyBoxButtons.siblings('.buy-box-bottom-wrapper').find('label').removeAttr('data-checked');
+        $buyBoxButtons.parent().removeAttr('data-checked');
+        $(this).addClass('checked-option');
+        $(this).parent().attr('data-checked', '');
+        
+        var previous = $('.buy-box-button:not(.checked-option)').siblings('.buy-box-bottom-wrapper').find('label:first-of-type').find('input');
+        $('.buy-box-button:not(.checked-option)').parent().find('.buy-box-variant-price').text(previous.attr('data-price'));
+        $('.buy-box-button:not(.checked-option)').parent().find('.buy-box-serving-price-inner').text(previous.attr('data-serving-unit-price'));
+        $('.buy-box-button:not(.checked-option)').parent().find('.buy-box-supply-size').text(previous.attr('data-supply-size'));
+
+        var $selectedLabel = $(this).siblings('.buy-box-bottom-wrapper').find('label:first-of-type');
+        $selectedLabel.attr('data-checked', '');
+        $selectedLabel.find('input').click();
+
+        var type = $(this).attr('data-type');
+        var supply = $selectedLabel.find('input').attr('data-supply');
+        $(".product-variant-picker-block input[value='" + type + "']").siblings("label").click();
+        $(".product-variant-picker-block input[value='" + supply + "']").siblings("label").click();
+      }
+    });
+      
+     $('.buy-box input').change(function() {
+      var supply = $(this).attr('data-supply');
+      var price = $(this).attr('data-price');
+     
+      var serving_price = $(this).attr('data-serving-unit-price');
+      var supply_size = $(this).attr('data-supply-size');
+      $('.buy-box label').removeAttr('data-checked');
+      $(this).parent().attr('data-checked', '');
+      $(".product-variant-picker-block input[value='"+ supply +"']").siblings("label").click();
+      $(this).closest('.buy-box-inner').find('.buy-box-variant-price').text(price);
+      $(this).closest('.buy-box-inner').find('.buy-box-serving-price-inner').text(serving_price);
+      $(this).closest('.buy-box-inner').find('.buy-box-supply-size').text(supply_size);
+      setTimeout(function(){
+        if($('.rc_container_wrapper').length > 0){
+          var selling_plan = $('.rc-selling-plans.rc_widget__option__plans select[name="selling_plan"]').val();
+        }else{
+          var selling_plan = $(this).attr('data-selling-plan');
+        }
+        $('.selling-plan-input').val(selling_plan);
+        if ($('.atc-price').length) {
+          $('.atc-price').text(' - ' + price);
+        };
+      }, 500);
+    });
+
+    function resizebox() {
+      $('.buy-box .buy-box-bottom').each(function() {
+        var box_height = $(this).prop('scrollHeight');
+        $(this).parent().css('--buy-box-wrapper-height', box_height + 'px');
+      })
+    }
+  })
+</script>
+
+<style>
+  .buy-box p {
+    margin: 0;
+  }
+  
+  .product-variant-picker-block,
+  .rc-container-wrapper,
+  .rc_container_wrapper {
+    display: none;
+  }
+  
+  .carlos-subscription,
+  .carlos-onetime {
+    border-width: 1px;
+    border-color: #0000001f;
+    border-radius: 3px;
+  }
+
+  .carlos-subscription[data-checked],
+  .carlos-onetime[data-checked] {
+    border-color: #272724;;
+  }
+
+  .carlos-onetime {
+    margin-top: 24px;
+  }
+  
+  .buy-box-button {
+    display: flex;
+    width: 100%;
+    align-items: start;
+  }
+
+  .buy-box-button[data-type="subscription"] .buy-box-variant-price,
+  .buy-box-button[data-type="subscription"] .buy-box-serving-price {
+    display: none;
+  }
+
+  .buy-box-button[data-type="subscription"] .buy-box-discount {
+    display: block;
+  }
+  
+  .buy-box-button.checked-option[data-type="subscription"] .buy-box-variant-price,
+  .buy-box-button.checked-option[data-type="subscription"] .buy-box-serving-price {
+    display: block;
+  }
+
+  .buy-box-button.checked-option[data-type="subscription"] .buy-box-discount {
+    display: none;
+  }
+  
+  .buy-box-top {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 16px 20px;
+    height: 100%;
+    min-height: 76px;
+  }
+
+  .buy-box-bottom-wrapper {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 0.35s ease-out, opacity 0.5s ease-out;
+  }
+
+  .buy-box [data-checked] .buy-box-bottom-wrapper {
+    height: var(--buy-box-wrapper-height);
+    opacity: 1;
+  }
+
+  .buy-box-bottom {
+    padding: 8px 16px 16px;
+  }
+
+  .buy-box-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
+    border: 1px solid #272724;
+    border-radius: 100%;
+  }
+
+  .buy-box-checkbox::before {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: #272724;
+    border-radius: 100px;
+    transform: scale(0);
+    transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
+    transition-duration: 0.15s;
+  }
+
+  .carlos-subscription[data-checked] .buy-box-checkbox::before,
+  .carlos-onetime[data-checked] .buy-box-checkbox::before {
+    transform: scale(1);
+  }
+
+  .buy-box-type {
+    font-size: var(--carlos-fontSizes-sm);
+  }
+
+  .buy-box-price {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-left: auto;
+  }
+
+  .buy-box-variant-price {
+    font-size: var(--carlos-fontSizes-sm);
+    color: #272724;
+  }
+
+  .buy-box-serving-price {
+    font-size: var(--carlos-fontSizes-xs);
+    color: #0000008a;
+    text-align: right;
+    line-height: unset;
+  }
+
+  .buy-box-options {
+    display: grid;
+    grid-gap: 4px;
+  }
+
+  .carlos-subscription .buy-box-options {
+    grid-auto-flow: column;
+  }
+
+  .carlos-onetime .buy-box-options {
+    grid-auto-flow: row;
+  }
+
+  .buy-box-option {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    border-width: 1px;
+    border-color: #0000001f;
+    border-radius: 3px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    transition: 0.25s ease-in-out;
+  }
+
+  .buy-box [data-checked] label[data-checked] .buy-box-option {
+    border-color: #272724
+  }
+
+  .buy-box-option-inner {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    line-height: 1;
+  }
+
+  .carlos-subscription .buy-box-option-inner {
+    flex-direction: column;
+    padding-inline-start: 8px;
+    padding-inline-end: 8px;
+  }
+
+  .carlos-onetime .buy-box-option-inner {
+    flex-direction: row;
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+  }
+
+  [data-checked] label[data-checked] .buy-box-option-inner p {
+    color: #272724;
+  }
+
+  .buy-box-option-inner p {
+    color: #0000008a;
+  }
+
+  .buy-box-discount {
+    font-size: var(--carlos-fontSizes-xs);
+    line-height: 1.5;
+    color: #c23f3f;
+  }
+
+  .buy-box-messages {
+    padding-top: 24px;
+  }
+
+  .buy-box-message {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--carlos-fontSizes-xs);
+  }
+
+  .buy-box-message:not(:first-of-type) {
+    margin-top: 8px;
+  }
+
+  .buy-box-message-icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+  }
+
+  @media (max-width: 768px) {
+    .carlos-subscription .buy-box-options {
+      grid-auto-flow: row;
+    }
+    
+    .carlos-subscription .buy-box-option-inner {
+      flex-direction: row;
+      padding-inline-start: 20px;
+      padding-inline-end: 20px;
+    }
+  }
+</style>

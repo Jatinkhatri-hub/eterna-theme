@@ -1,0 +1,63 @@
+<section class="improve-degisetion">
+  <div class="container">
+    <div class="heading">
+     <h3>{{ section.settings.heading }}</h3> 
+    </div>
+    <div class="content-text">
+      <div class="img-contain">
+        <img src="{{ section.settings.img | img_url: 'master' }}" width="100%" height="100%">
+      </div>
+      <p>{{ section.settings.content }}</p>
+      <p>{{ section.settings.content_2 }}</p>
+      <div class="quote-div">
+        <p><i>{{ section.settings.quote }}</i></p>
+      </div>
+      <div class="button-percent">
+        <a href="javascript:void(0)" class="cta btn">{{ section.settings.btn_name }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Radiant Skin",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "img",
+        "label": "Image"
+      },
+      {
+        "type": "html",
+        "id": "content",
+        "label": "Content1"
+      },
+      {
+        "type": "html",
+        "id": "content_2",
+        "label": "Content 2"
+      },
+      {
+        "type": "text",
+        "id": "quote",
+        "label": "Quote"
+      },
+      {
+        "type": "text",
+        "id": "btn_name",
+        "label": "Button Name"
+      },
+      {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Button Link"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,108 @@
+<div id="{{ section.id }}" class="carlos-w-full">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    <div class="carlos-text-lg pb-theme pt-theme carlos-hide-desktop" style="margin-bottom: clamp(12px, calc(9.09px + 0.78vw), 24px);">
+      {{ section.settings.headline }}
+    </div>
+    <div class="better-blog-posts">
+      <div class="carlos-hide-mobile" style="display: flex; align-items: center; justify-content: center; height: auto;">
+        <div>
+        <div class="carlos-text-lg carlos-mb-[10px]">{{ section.settings.headline }}</div>
+        <a class="btn carlos-block" href="{{ section.settings.blog.url }}" style="width: fit-content;">
+          Our Blog
+        </a>
+        </div>
+      </div>
+      {% for blog in section.settings.blog.articles %}
+        <a class="better-blog-posts-wrapper" href="{{ blog.url }}">
+          <div class="carlos-section-border carlos-mb-[15px]"></div>
+          <img src="{{ blog.image | img_url: 'master' }}" width="100%" height="100%" loading="lazy" style="object-fit: cover; aspect-ratio: 1.5;">
+          <div class="carlos-flex" style="font-weight: 400; font-size: var(--carlos-fontSizes-xs); line-height: 1.5; letter-spacing: 0.04em; text-transform: uppercase; margin-top: 20px;">
+            {% for tags in blog.tags %}
+              <div class="carlos-uppercase">{{ tags }}</div>
+              <div style="margin-left: 2.5px; margin-right: 2.5px;">•</div>
+            {% endfor %}
+            <div style="color: rgb(116 116 115);">{{ blog.published_at | date: format: 'abbreviated_date' }}</div>
+          </div>
+          <div style="padding-top: 10px; padding-bottom: 10px; font-size: var(--carlos-fontSizes-lg); font-weight: 300;">
+            {{ blog.title }}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+    <a class="btn carlos-block carlos-hide-desktop mobile-arrow-right carlos-inside-padding" href="{{ section.settings.blog.url }}" style="background: transparent; color: black; margin-top: clamp(12px, calc(9.09px + 0.78vw), 24px);">
+      Our Blog
+    </a>
+  </div>
+</div>
+
+<style>
+  .mobile-arrow-right {
+    position: relative;
+  }
+  
+  .mobile-arrow-right:after {
+    position: absolute;
+    right: 10px;
+  }
+</style>
+
+<style>
+  #{{ section.id }} .slick-track {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .better-blog-posts {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-flow: column;
+      -webkit-align-content: start;
+      -ms-flex-line-pack: start;
+      align-content: start;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+      list-style: none;
+      grid-column-gap: 2rem;
+      grid-template-rows: repeat(1,auto);
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .better-blog-posts::-webkit-scrollbar { 
+      display: none;  /* Safari and Chrome */
+    }
+
+    .better-blog-posts-wrapper {
+      scroll-snap-align: start;
+      width: 65vw;
+    }
+</style>
+
+{% schema %}
+{
+  "name": "Better Blog Posts",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Heading"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Better Blog Posts"
+    }
+  ]
+}
+{% endschema %}

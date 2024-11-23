@@ -1,0 +1,23 @@
+<div id="custom_popup_model" class="carlos-modal" data-open="false">
+  <div class="carlos-modal-content">
+    <span class="carlos-modal-close">&times;</span>
+      <div class="ingrdient-data"></div>
+  </div>
+</div>
+<script defer>
+jQuery('.carlos-modal-btn.carlos-space-between').on('click', function(e) {
+  e.preventDefault();
+  if($('.ingredent_popup_data img').length > 0){
+    var modalHtml = $('.ingredent_popup_data').html();
+    if ($('#custom_popup_model').length > 0 ) {
+      if(modalHtml != ''){
+        $('#custom_popup_model .ingrdient-data').html(modalHtml);
+        $('#custom_popup_model').attr('data-open','true');
+      }
+    }
+  }
+});
+  jQuery('.carlos-modal-close').click(function(){
+    $('#custom_popup_model').attr('data-open','false');
+  });
+</script>

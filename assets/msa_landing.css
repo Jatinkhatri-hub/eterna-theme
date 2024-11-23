@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+.search-form {
+  right: 200px;
+  top: 200px;
+}
+.header_img_mob {
+  display: none;
+}
+.search-icon {
+    padding-left: 20px;
+    border-left: 1px solid #d8d8d8;
+}
+a:after {
+  display: none;
+}
+.search-field {
+  background-color: transparent;
+  background-image: url(https://wp-themes.com/wp-content/themes/twentythirteen/images/search-icon.png);
+  background-position: 5px center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  margin: 3px 0;
+  padding: 0 0 0 34px;
+  position: relative;
+  -webkit-transition: width 400ms ease, background 400ms ease;
+  transition: width 400ms ease, background 400ms ease;
+  width: 0px;
+  cursor: pointer;
+}
+
+.search-field:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #c3c0ab;
+  cursor: text;
+  outline: 0;
+  width: 250px;
+  color: #000;
+  margin-right: 20px;
+}
+.search-form .search-submit {
+  display: none;
+}
+.header_wraper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_icons i {
+  font-size: 32px;
+}
+
+.header_logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header_img img {
+  max-width: 350px;
+  width: 100%;
+}
+form.search-form {
+border-left: 1px solid #d8d8d8;
+padding-left: 10px;
+}
+header {
+padding: 20px 0px;
+}
+.social_wrapper {
+display: flex;
+justify-content: end;
+gap: 10px;
+border-bottom: 3px solid;
+padding-bottom: 10px;
+max-width: 1000px;
+margin: auto;
+}
+
+.social_icon img {
+max-width: 35px;
+}
+
+header {
+border-bottom: 2px solid #d0d0d0;
+}
+
+section.social_media {
+padding-top: 20px;
+}
+
+
+.main_heading h2 {
+  font-size: 42px;
+  line-height: 1.5;
+  font-family: "PT Serif", serif !important;
+  font-weight: 700;
+}
+
+.main_heading {
+  max-width: 700px;
+  padding-top: 1.25rem;
+}
+
+header {
+  padding-right: 90px;
+  padding-left: 90px;
+}
+section.used_amara .container {
+  max-width: 1000px;
+}
+.profile_img img {
+  width: 95px !important;
+  height: 95px !important;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.header_icons i {
+  font-family: 'FontAwesome';
+}
+
+
+.bio-data .row {
+  width: unset !important;
+  display: flex;
+  max-width: unset!important;
+  align-items: center;
+  padding: 20px 0px;
+}
+.bio-data .row>* {
+  width: auto !important;
+  color: #000;
+}
+
+.profile-data h4 {
+  font-weight: 600;
+  margin: 5px 0px;
+}
+
+.profile_img {
+  padding-right: 6px;
+}
+
+.profile-data h5 {
+  margin: 5px 0px;
+  font-weight: 500;
+}
+.content-detail {
+  max-width: 700px;
+  color: #4c4c4c;
+}
+
+.content-detail p {
+  font-size: 18px;
+  line-height: 31px;
+}
+section.arama-colostrum .container {
+  max-width: 1000px;
+}
+
+section.arama-colostrum {
+  padding: 60px 0;
+  padding-bottom: 30px;
+}
+
+.questionrama h3 {
+  font-family: "pt serif", serif !important;
+  font-size: 30px !important;
+  line-height: 39px !important;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.questionrama {
+  max-width: 700px;
+}
+.content-data {
+  margin: 1em 0;
+}
+section.arama-colostrum {
+  padding: 50px 0 30px !important;
+}
+.content-data p {
+  font-size: 18px;
+  line-height: 31px;
+}
+.button-pecent {
+  text-align: center;
+  margin-top: 40px;
+}
+spn.red u {
+  color: rgb(150 0 0);
+  font-weight: bold;
+}
+ a.cta.btn {
+  background-color: #960000;
+  text-align: center;
+  padding: 16px 15px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #fff;
+  width: 100%;
+  border: 2px solid #960000 !important;
+  max-width: 350px;
+}
+.img-contain p {
+  margin: 1em 0 
+}
+
+.img-contain p {
+  margin: 10px !important;
+}
+
+section.improve-degisetion .content-text p {
+  margin: 1em 0 !IMPORTANT;
+}
+
+ a.cta.btn:hover {
+  background-color: #fff;
+  color: #960000 !important;
+}
+
+section.improve-degisetion .container {
+    max-width: 1000px;
+}
+
+section.improve-degisetion h3 {
+    font-family: "pt serif", serif !important;
+    font-size: 30px;
+    line-height: 39px;
+    font-weight: 700;
+    margin: 30px 0px;
+}
+.heading {
+  max-width: 700px;
+}
+
+.content-text {
+  max-width: 700px;
+  color: #4c4c4c;
+}
+
+.content-text p {
+  font-size: 18px;
+  line-height: 31px;
+}
+
+.quote-div p i {
+  color: #807C7C;
+  font-size: 18px;
+  line-height: 31px;
+}
+
+.quote-div {
+  border-left: 2px solid rgb(87 142 158);
+  padding-left: 20px;
+  margin: 30px 0 70px;
+}
+.button-percent {
+  text-align: center;
+}
+span.red {
+  color: #960000;
+  font-weight: 900;
+}
+.button-percent {
+  margin-bottom: 50px !important;
+}
+span.redd{
+  color: #960000;
+  font-weight: 900;
+
+}
+
+section.arama-colostrum .questionrama h3 {
+  margin-bottom: 30px;
+}
+.header_icons i {
+  font-family: FontAwesome !important;
+}
+.btn-check:focus+.btn, .btn:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+section.announsmentbr {
+  background-color: rgb(100, 141, 156);
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.alert.alert-warning.alert-dismissible.fade.show {
+  background-color: rgb(100, 141, 156);
+  border: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  margin: 0;
+}
+
+section.announsmentbr .container-fluid {
+  padding: 0;
+}
+
+.bar-sec h2 {
+  color: #fff;
+  font-size: 36px;
+  font-family: PT Serif !important;
+}
+
+
+
+button.btn-close {background-image: url("https://www.mysubscriptionaddiction.com/images/sticky-footer-x.svg") !important;background-size: 80%;margin-right: 20px;margin-top: 5px;}
+
+
+a.buy-ntn.btn {
+    background-color: #fff;
+    color: rgb(100, 141, 156);
+    width: 240px;
+    border: 0;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+body#msa-landing-page {
+  padding-bottom: 80px;
+}
+
+@media screen and (max-width: 1199px) {
+
+  header {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+header .container {
+    width: 100%;
+    max-width: 100%;
+}
+.container {
+  max-width: 100%;
+  width: 100% !important;
+}
+.main_heading h2 {
+  font-size: 36px;
+  line-height: 1.4;
+}
+.quote-div {
+  margin: 30px 0 30px;
+}
+section.improve-degisetion h3{
+  margin: 20px 0px;
+}
+.alert.alert-warning.alert-dismissible.fade.show {
+  padding: 20px 60px;
+  padding-left: 20px;
+}
+button.btn-close {
+  margin-right: 10px;
+}
+.bar-sec h2{
+  font-size: 32px;
+}
+  section.social_media {
+    display: none;
+}
+}
+@media screen and (max-width: 900px) {
+  .header_img_mob {
+    display: block;
+  }
+  .header_img {
+    display: none;
+  }
+  .header_img_mob img {
+    width: 65px;
+  }
+  .search-icon {
+    padding-right: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+
+  .main_heading h2 {
+    font-size: 30px;
+    line-height: 1.4;
+}
+section.arama-colostrum {
+  padding: 30px 0 30px!important;
+}
+section.improve-degisetion h3 {
+  font-size: 26px;
+}
+.button-percent {
+  margin-bottom: 30px!important;
+}
+section.arama-colostrum {
+  padding: 30px 0 10px!important;
+}
+a.buy-ntn.btn {
+  width: 100%;
+}
+.bar-sec h2 {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+button.btn-close {
+  margin-top: 0px !important;
+  background-size: 65%;
+}
+  .alert.alert-warning.alert-dismissible.fade.show {
+    padding: 5px 60px 5px 20px;
+    display: block;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 575px)   {
+
+.social_icon img {
+    max-width: 30px;
+}
+.header_logo {
+  gap: 15px;
+}
+
+i.fa-solid.fa-bars {
+  font-size: 30px;
+}
+
+input.search-field {
+  background-size: 20px 20px;
+}
+
+form.search-form {
+  border: 0;
+}
+header {
+  padding: 20px 0;
+  padding-bottom: 10px;
+}
+.main_heading h2 {
+  font-size: 27px;
+  line-height: 1.4;
+}
+section.arama-colostrum .questionrama h3 {
+  margin-bottom: 20px;
+  font-size: 24px !important;
+  line-height: normal !important;
+}
+.quote-div {
+  padding-left: 12px;
+}
+.quote-div {
+  margin: 20px 0;
+}
+.bar-sec h2 {
+  font-size: 18px;
+}
+.alert.alert-warning.alert-dismissible.fade.show {
+  padding: 5px 40px 5px 10px;
+  display: block;
+  text-align: center;
+}
+a.buy-ntn.btn {
+  width: 100%;
+  font-size: 12px;
+}
+button.btn-close{
+  background-size: 50%;
+}
+button.btn-close {
+  padding: 15px !important;
+  padding-right: 0px !important;
+  background-size: 70%;
+  padding-top: 0px !important;
+}
+.main_heading br {
+  display: none;
+}
+}

@@ -1,0 +1,181 @@
+{% if section.settings.quiz_code != blank %}
+  <div class="quiz-main">
+    <div class="quiz-container">
+      {% comment %}
+      <div class="custom-quiz-grid">
+        <div class="custom-quiz-inner">
+          <div class="quiz-progress-bar-container">
+            <!-- Progress Tracker v2 -->
+            <ol class="progress" data-steps="4">
+                <li class="done">
+                    <span class="name">Foo</span>
+                    <span class="step"><span>1</span></span>
+                </li>
+                <li class="done">
+                    <span class="name">Bar</span>
+                    <span class="step"><span>2</span></span>
+                </li>
+                <li class="active">
+                    <span class="name">Baz</span>
+                    <span class="step"><span>3</span></span>
+                </li>
+                <li>
+                    <span class="name">Quux</span>
+                    <span class="step"><span>4</span></span>
+                </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      {% endcomment %}
+      <div class="octane-quiz-hidden-grid">
+       {{ section.settings.quiz_code }}
+      </div>
+    </div>
+  </div>
+  <style>
+    .main-footer-wrap {
+      display: none;
+    }
+    .quiz-main .oct-quiz-title[data-display="oct-display"]{
+      display: none;
+    }
+    .quiz-main .oct-quiz-top_content .oct-quiz-title{
+      display: block;
+      font-size: 20px;
+      line-height: 20px;
+      color: #000;
+    }
+    .quiz-main .oct-quiz-collect-text-wrapper input[type="text"]{
+      border-radius: 5px;
+      padding: 0;
+      height: 50px;
+      border: 1px solid #011627;
+    }
+    .quiz-main .oct-quiz-btn-wrapper button.oct-quiz-btn{
+      border-radius: 5px;
+      min-height: 50px;
+      line-height: 40px;
+      padding: 0 65px;
+      background: #011627;
+      color: #fff;
+    }
+    .quiz-main .oct-quiz-multiple-choice-options li {
+      border: 1px solid #011627;
+      border-radius: 5px;
+      box-shadow: -2px 3px 6px #ccc;
+      min-width: 400px;
+      padding: 14px 16px;
+    }
+   .quiz-main .oct-quiz-multiple-choice-options li:hover {
+      color: #333333;
+    } 
+    .quiz-main .oct-quiz-picture-choice-options li {
+      border: 1px solid #011627;
+      box-shadow: -2px 3px 6px #ccc;
+    }
+    .quiz-main button.oct-quiz-btn {
+      background: #011627;
+      color: #fff;
+      padding: 0 65px;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      min-height: 50px;
+      border-radius: 5px;
+    }
+    .quiz-main .oct-quiz-picture-choice-options li:hover * {
+      color: #333333;
+    }
+    .oct-editor-popup .oct-quiz-top_content .oct-quiz-title {
+      color: #000;
+      font-size: 20px;
+      line-height: 20px;
+    }
+    .quiz-main .oct-quiz-btn-wrapper {
+      float: right;
+      width: 50%;
+      text-align: left;
+      padding-left: 35px;
+      margin-left: 35px;
+    }
+    .quiz-main button.oct-quiz-btn.oct-quiz-btn--primary-text.oct-quiz-btn--small {
+      float: right;
+      margin-top: 30px;
+      left: 6px;
+    }
+    .quiz-main .oct-quiz-multiple-choice-options li * {
+      font-size: 15px;
+      line-height: 18px;
+    }
+    .quiz-main .oct-quiz-btn-wrapper.nofloat {
+      float: none;
+      width: auto;
+      text-align: center;
+      padding-left: 0;
+    }
+    .quiz-main .oct-quiz-input input[type="text"]::placeholder {
+      text-align: left;
+    }
+    .quiz-main .oct-quiz-multiple-choice-options li[data-is-option-selected="selected"] {
+      color: #fff;
+    }
+    .quiz-main .oct-quiz-multiple-choice-options li[data-is-option-selected="selected"]:hover {
+      color: #fff;
+      background: #577da5;
+      border: 2px solid #577da5;
+    }
+    .quiz-main .oct-quiz-picture-choice-options li[data-is-option-selected="selected"] {
+      background: #577da5;
+      color: #fff;
+    }
+    .quiz-main .oct-quiz-picture-choice-options li[data-is-option-selected="selected"]:hover {
+      color: #fff;
+    }
+    @media only screen and (max-width: 767px) {
+      .quiz-main .oct-quiz-multiple-choice-options li {
+        min-width: 240px;
+      }
+      .quiz-main .oct-quiz-btn-wrapper {
+        padding: 0 40px;
+        padding-left: 20px;
+        margin-left: 20px;
+      }
+      .quiz-main .oct-quiz-btn-wrapper button.oct-quiz-btn {
+        padding: 0 40px;
+      }
+      .quiz-main button.oct-quiz-btn{
+        padding: 0 40px;
+      }
+      .quiz-main .oct-quiz-btn-wrapper {
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          
+      }
+      .quiz-main button.oct-quiz-btn {
+          position: fixed;
+          bottom: 20px;
+          margin-left: 20px;
+      }
+      .quiz-main .oct-quiz-picture-choice-options,.quiz-main .oct-quiz-multiple-choice-options {
+        margin-bottom: 60px;
+      }
+    }
+    
+  </style>
+
+{% endif %}
+  
+{% schema %}
+  {
+    "name": "Quiz",
+    "settings": [
+      {
+        "type": "liquid",
+        "id": "quiz_code",
+        "label": "Embed Code For Quiz"
+      }
+    ]
+  }
+{% endschema %}

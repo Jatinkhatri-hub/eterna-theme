@@ -1,0 +1,101 @@
+<div id="{{ section.id }}" class="carlos-w-full">
+  <div class="carlos-relative">
+    <img class="background-main-img" src="{{ section.settings.image | img_url: "master" }}" width="100%" height="100%" loading="lazy" style="min-height: 50vh; object-fit: cover;">
+    <div class="carlos-container carlos-absolute carlos-text-white carlos-x-padding" style="top: 50%; left: 0; transform: translate(-0%, -50%);">
+      {% if section.settings.logo %}
+      <img src="{{ section.settings.logo | img_url: "master" }}" width="100%" height="100%" loading="lazy" style="margin-bottom: 5px; object-fit: contain; max-width: 150px; margin-left: 2px;">
+      {% endif %}
+      <div class="carlos-text-lg carlos-mb-[20px] carlos-bold">
+        {{ section.settings.headline }}
+      </div>
+      <div class="carlos-sm">
+        {{ section.settings.text }}
+      </div>
+      {% if section.settings.button_text != blank %}
+      <a class="main-img-btn carlos-btn-white carlos-pointer {% if section.settings.show_arrow %}carlos-btn-arrow{% endif %} {% if section.settings.bold %} carlos-bold{% endif %} {% if section.settings.uppercase %} carlos-uppercase{% endif %}" {% if section.settings.link != blank %}href="{{ section.settings.link }}"{% endif %} style="display: inline-block; margin-top: 15px;">
+        {{ section.settings.button_text }} 
+        {% if section.settings.product != blank %}
+          {% assign selling_plan = product.metafields.carlos.selling_plan %}
+          <span style="font-size: 14px; color: #646464; text-transform: lowercase;">
+          {% if selling_plan == "m" %}
+            {{ section.settings.product.selling_plan_groups[0].selling_plans[0].price_adjustments[0].value | money }}/{{ product.metafields.carlos.selling_plan }}
+          {% endif %}
+          {% if selling_plan == "yr" %}
+            {{ section.settings.product.selling_plan_groups[0].selling_plans[1].price_adjustments[0].value | money }}/{{ product.metafields.carlos.selling_plan }}
+          {% endif %}
+          </span>
+        {% endif %}
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Main Image",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Membership Product"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "URL"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "checkbox",
+      "id": "bold",
+      "label": "Bold",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "uppercase",
+      "label": "Uppercase",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrow",
+      "label": "Show arrow",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Image"
+    }
+  ]
+}
+{% endschema %}

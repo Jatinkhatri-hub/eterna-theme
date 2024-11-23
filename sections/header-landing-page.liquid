@@ -1,0 +1,42 @@
+<section class="landing-header">
+  <div class="carlos-container carlos-x-padding pb-theme pt-theme">
+    <div class="header_row">
+      {% if section.settings.logo_image != blank %}
+        <div class="custom-logo-image">
+          <a href = "https://tryeterna.com/">
+          <img src="{{ section.settings.logo_image | img_url: 'master' }}" width="100%" height="100%"/>
+          </a>
+        </div>
+        {% endif %}
+      {% if section.settings.btn_name !=blank %}
+      <div class="custom_buynow_btn">
+        <a href="{{ section.settings.btn_url }}" class="buynow-btn">{{ section.settings.btn_name }}</a>
+      </div>
+        {% endif %}
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo_image",
+        "label": "Logo Image"
+      },
+      {
+        "type": "text",
+        "id": "btn_name",
+        "label": "Button Name"
+      },
+      {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Btn Url"
+      }
+    ]
+  }
+{% endschema %}

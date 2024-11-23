@@ -1,0 +1,31 @@
+<div id="{{ section.id }}" class="carlos-w-ful carlos-h-full carlos-x-padding pb-theme pt-theme" style="background: url('{{ section.settings.image | img_url: "master" }}')">
+  <div class="carlos-container">
+    {{ section.settings.code }}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Consultation",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "liquid",
+      "id": "code",
+      "label": "Embed Code"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Consultation"
+    }
+  ]
+}
+{% endschema %}
