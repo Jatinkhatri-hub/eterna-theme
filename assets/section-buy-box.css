@@ -158,14 +158,50 @@
   margin-inline: 25px;
   background-color: #F6F6F6;
   border-radius: 5px;
-  text
+  text-transform: uppercase;
 }
 .card__shipping-badge svg {
   width: 32px;
-  height: 32px;
-  
+  height: 32px;  
 }
 
 
 
+.purchase-options {
+  margin-bottom: 20px;
+}
+
+.purchase-option {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.purchase-option:hover {
+  background-color: #f8f8f8;
+}
+
+.purchase-option input[type="radio"] {
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+.option-details {
+  flex-grow: 1;
+}
+
+.option-title {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.option-description {
+  font-size: 0.875rem;
+  color: #666;
+}
 
