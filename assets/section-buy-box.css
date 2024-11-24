@@ -52,7 +52,7 @@
   align-items: center;
   justify-content: center;
   background-color: #35ACBF;
-
+  flex-direction: column;
 }
 
 
