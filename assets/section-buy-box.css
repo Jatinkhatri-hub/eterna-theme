@@ -193,6 +193,7 @@
 .purchase-option input[type="radio"] {
   margin-right: 10px;
   margin-top: 4px;
+  width: 23px;
 }
 
 .option-details {
@@ -200,7 +201,8 @@
 }
 
 .option-title {
-  font: 19px 'Sailec Medium'
+  font: 19px 'Sailec Medium';
+
 }
 
 .option-description {
