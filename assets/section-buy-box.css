@@ -104,8 +104,8 @@
   font: 18px 'Sailec Medium' !important;
   color: #3B3B3B;
   gap: 10px;
-  line-height: 25px !important;
-  text-decoration: line-through;
+  line-height: 25px;
+  tex
 }
 
 .card__value-point svg {
