@@ -81,7 +81,8 @@
 }
 
 .card__product-img {
-  w
+  object-fit: contain;
+  width: ;
 }
 
 
