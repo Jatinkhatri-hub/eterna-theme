@@ -42,7 +42,8 @@
       ],
       "settings": {
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "payment_provider": "shopify://shop_images/package_cards.png_1.png"
       }
     }
   },
