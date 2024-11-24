@@ -130,7 +130,8 @@
 
 .divider {
   display: block;
-  border: 1px;
+  border: 1px solid black;
+  width: 1px;
   height: 100%;
 }
 
