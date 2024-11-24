@@ -71,6 +71,9 @@
   line-height: 24px !important;
 }
 
-.card
+.card__product-img-wrapper {
+  width: 335px;
+  
+}
 
 
