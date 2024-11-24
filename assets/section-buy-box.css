@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-.buy-box__section-badge h2 {
+.section-badge__title {
   font: 29px 'Sailec Bold' !important;
   color: white;
   text-align: center;
