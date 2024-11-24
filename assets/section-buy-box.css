@@ -87,7 +87,9 @@
   height: 255px;
 }
 
-.card
+.card__value-points {
+  display: fle;
+}
 
 .card__value-point {
   display: flex;
