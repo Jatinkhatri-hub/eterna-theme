@@ -21,14 +21,14 @@
   font: 29px 'Sailec Bold' !important;
   color: white;
   text-align: center;
-  line-height: 26px;
+  line-height: 26px !important;
 }
 
 .buy-box__section_bage span {
   font: 19px 'Sailec Light' !important;
   color: white !important;
   text-align: center;
-  line-height: 24px;
+  line-height: 24px !important;
 }
 
 
