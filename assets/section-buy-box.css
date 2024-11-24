@@ -200,8 +200,7 @@
 }
 
 .option-title {
-  font-weight: 500;
-  margin-bottom: 2px;
+  font: 19px 'Sailec Medium'
 }
 
 .option-description {
