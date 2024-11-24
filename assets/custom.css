@@ -1657,3 +1657,9 @@ section.our-story-sec .carlos-story-wrap, section.our-value-sec .carlos-story-wr
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+
+@media screen and (min-width: 750px) {
+  .page-width {
+    padding: 0 2rem;
+  }
+}
