@@ -202,7 +202,7 @@
 }
 
 .option-title {
-  font: 19px 'Sailec Medium';
+  font: 19px 'Sailec Medium' !important;
 
 }
 
