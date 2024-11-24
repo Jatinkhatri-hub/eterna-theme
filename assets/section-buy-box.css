@@ -44,5 +44,12 @@
   flex-direction: column;
 }
 
+.buy-box__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
 
 
