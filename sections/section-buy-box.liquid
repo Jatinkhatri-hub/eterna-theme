@@ -48,6 +48,34 @@
                   <div class="card__shipping-badge">
                    {% render 'icon-truck' %} Free Shipping
                   </div>
+                  <label class="purchase-option">
+                    <input 
+                      type="radio" 
+                      name="purchase_type_{{ variant.id }}" 
+                      value="subscribe" 
+                      class="purchase-radio"
+                      data-variant-id="{{ variant.id }}"
+                    >
+                    <div class="option-details">
+                      <div class="option-title">Subscribe & Save</div>
+                      <div class="option-description">Save 10% and never run out</div>
+                    </div>
+                  </label>
+                  
+                  <label class="purchase-option">
+                    <input 
+                      type="radio" 
+                      name="purchase_type_{{ variant.id }}" 
+                      value="onetime" 
+                      class="purchase-radio" 
+                      checked 
+                      data-variant-id="{{ variant.id }}"
+                    >
+                    <div class="option-details">
+                      <div class="option-title">One-time purchase</div>
+                      <div class="option-description">Single purchase at regular price</div>
+                    </div>
+                  </label>
                 </div>
 
               {% endfor %}
