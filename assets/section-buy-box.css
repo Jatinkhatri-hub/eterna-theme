@@ -39,6 +39,9 @@
 
 .buy-box__card {
   width: 385px;
+  display: flex;
+  align-items: center;
+  
 }
 
 
