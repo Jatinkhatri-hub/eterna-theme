@@ -87,6 +87,8 @@
   height: 255px;
 }
 
+.card
+
 .card__value-point {
   display: flex;
   align-items: center;
