@@ -213,7 +213,10 @@
   color: #666;
 }
 
-.card
+.card__learn-more {
+  display: flex;
+  
+}
 
 .card__learn-more svg {
   width: 19px;
