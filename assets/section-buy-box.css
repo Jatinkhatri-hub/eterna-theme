@@ -16,7 +16,10 @@
 }
 
 .buy-box__section-badge h2 {
-  font: 29px 'Sailec Bold',
-  
+  font: 29px 'Sailec Bold';
+  color: white;
+  text-align: center;
 }
+
+
 
