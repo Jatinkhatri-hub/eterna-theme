@@ -25,7 +25,7 @@
 
 .buy-box__section_bage p {
   font: 19px 'Sailec Light';
-  color: white;
+  color: white !important;
   text-align: center;
 }
 
