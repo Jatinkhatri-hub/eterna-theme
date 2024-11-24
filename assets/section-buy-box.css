@@ -240,10 +240,10 @@
   border-radius: 100px;
   color: #2D1D00;
   text-transform: uppercase;
-  width: 100%;
+  width: 87%;
   display: flex;
-  al
-
+  align-items: center;
+  justify-content: center;
 }
 
 
