@@ -77,14 +77,15 @@
   border-radius: 5px;
   overflow: hidden;
   margin: auto;
+  bac
 
 }
 
 .card__product-img {
-  object-fit: contain;
+  object-fit: cover;
   width: 335px;
   height: 255px;
-  
+
 }
 
 
