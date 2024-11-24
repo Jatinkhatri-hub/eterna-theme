@@ -158,12 +158,11 @@
   margin-inline: 25px;
   background-color: #F6F6F6;
   border-radius: 5px;
-  text
+  text-transform: uppercase;
 }
 .card__shipping-badge svg {
   width: 32px;
-  height: 32px;
-  
+  height: 32px;  
 }
 
 
