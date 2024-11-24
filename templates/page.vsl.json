@@ -26,7 +26,7 @@
           "type": "badge",
           "settings": {
             "title": "BLACK FRIDAY SALE",
-            "sub_info": "Save up to 59% OFF! Biggest Sale of the year!!"
+            "sub_info": "Save up to <strong>59% OFF!</strong> Biggest Sale of the year!!"
           }
         }
       },
