@@ -256,7 +256,10 @@
 
 .card__payment-provider-img-wrapper {
   width: 200px;
-  di
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 
