@@ -262,7 +262,10 @@
   height: 35px;
 }
 
-.car
+.card__payment-provider-img {
+  width: 200px;
+  
+}
 
 
 
