@@ -18,13 +18,13 @@
 }
 
 .buy-box__section-badge h2 {
-  font: 29px 'Sailec Bold';
+  font: 29px 'Sailec Bold' !important;
   color: white;
   text-align: center;
 }
 
 .buy-box__section_bage p {
-  font: 19px 'Sailec Light';
+  font: 19px 'Sailec Light' !important;
   color: white !important;
   text-align: center;
 }
