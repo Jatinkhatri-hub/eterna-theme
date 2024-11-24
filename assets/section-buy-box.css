@@ -53,14 +53,15 @@
   justify-content: center;
   background-color: #35ACBF;
   flex-direction: column;
+  width: 100%;
 }
 
 .card__header-title {
-  font: 27px 'Sailec Bold';
+  font: 27px 'Sailec Bold' !important;
   color: white;
 }
 .card__header-subtitle {
-  font: 17px 'Sailec Medium';
+  font: 17px 'Sailec Medium' !important;
   color: white;
 }
 
