@@ -159,7 +159,8 @@
 }
 .card__shipping-badge svg {
   width: 32px;
-  height: 32;
+  height: 32px;
+  background-color: #F6F6F6;
 }
 
 
