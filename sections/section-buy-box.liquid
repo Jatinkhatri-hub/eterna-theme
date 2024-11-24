@@ -39,7 +39,7 @@
                 </div>
               {% endfor %}
             </div> {% endcomment %}
-            <div class="buy-box__cards-wrapper">
+            {% comment %} <div class="buy-box__cards-wrapper">
               {% assign packageTitles = block.settings.product.metafields.custom.package_subtitle %} 
 
               {% if packageTitles.size > 0 %}
@@ -58,7 +58,7 @@
               {% else %}
                 <p>No package titles available.</p>
               {% endif %}
-            </div>
+            </div> {% endcomment %}
         {% endcase %}
       {% endfor %}
     </div>
