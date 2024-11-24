@@ -88,7 +88,11 @@
 }
 
 .card__value-points {
-  display: fle;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 100%;
+  padding-inline: 25px;
 }
 
 .card__value-point {
