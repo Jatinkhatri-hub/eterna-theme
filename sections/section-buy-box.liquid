@@ -25,7 +25,7 @@
             </div>
           {% when 'buybox' %}
             <div class="buy-box__cards-wrapper">
-              {}
+              {%  assign list = 1 %} 
               {% for variant in block.settings.product.variants %}
                 <div class="buy-box__card">
                   <div class="buy-box__card-header">
