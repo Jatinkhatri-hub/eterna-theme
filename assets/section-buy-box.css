@@ -236,7 +236,7 @@
   padding: 20px;
   font: 20px 'Sailec Bold' !important;
   background-image: linear-gradient(#F3A702, #F4DDA4);
-  border: 1px solid #FFA2005E;
+  border: 2px solid #FFA2005E;
   border-radius: 100px;
   color: #2D1D00;
   text-transform: uppercase;
@@ -249,7 +249,7 @@
 
 .card__atc-btn:hover {
   background: white !important;
-  border
+  
 }
 
 
