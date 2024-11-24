@@ -40,25 +40,25 @@
               {% endfor %}
             </div> {% endcomment %}
             <div class="buy-box__cards-wrapper">
-  {% assign packageTitles = block.settings.product.metafields.custom.package_title %} 
+              {% assign packageTitles = block.settings.product.metafields.custom.package_title %} 
 
-  {% if packageTitles.size > 0 %}
-    {% for variant in block.settings.product.variants %}
-      <div class="buy-box__card">
-        <div class="buy-box__card-header">
-          {% assign index = forloop.index0 %} <!-- Get the current loop index -->
-          {% if index < packageTitles.size %}
-            {{ packageTitles[index] }}
-          {% else %}
-            No title available
-          {% endif %}
-        </div>
-      </div>
-    {% endfor %}
-  {% else %}
-    <p>No package titles available.</p>
-  {% endif %}
-</div>
+              {% if packageTitles.size > 0 %}
+                {% for variant in block.settings.product.variants %}
+                  <div class="buy-box__card">
+                    <div class="buy-box__card-header">
+                      {% assign index = forloop.index0 %} <!-- Get the current loop index -->
+                      {% if index < packageTitles.size %}
+                        {{ packageTitles[index] }}
+                      {% else %}
+                        No title available
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <p>No package titles available.</p>
+              {% endif %}
+            </div>
         {% endcase %}
       {% endfor %}
     </div>
