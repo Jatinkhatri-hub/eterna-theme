@@ -45,7 +45,8 @@
   flex-direction: column;
   border: 1px solid #E7E7E7;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: hidden
+  p;
 }
 
 .buy-box__card-header {
