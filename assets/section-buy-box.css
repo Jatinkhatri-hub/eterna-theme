@@ -87,7 +87,13 @@
   height: 255px;
 }
 
-.card__value-point sv
+.card
+
+.card__value-point svg {
+  width: 15px;
+  height: 15px;
+
+}
 
 
 
