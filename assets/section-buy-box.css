@@ -153,6 +153,8 @@
   justify-content: center;
   gap: 10px;
   font: 20px 'Sailec Medium' !important;
+  padding-block: 8px;
+  
 }
 
 
