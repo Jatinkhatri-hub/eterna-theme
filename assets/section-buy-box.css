@@ -34,7 +34,11 @@
 .buy-box__cards-wrapper {
   display: flex;
   align-items: center;
-  justify-content: ;
+  justify-content: center;
+}
+
+.buy-box__card {
+  width: 340px;
 }
 
 
