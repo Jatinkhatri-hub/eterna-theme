@@ -234,7 +234,8 @@
 
 .card__atc-btn {
   padding: 20px;
-  font: 20px;
+  font: 20px 'Sailec Bold' !important;
+  background-image: linear-gradient();
 }
 
 
