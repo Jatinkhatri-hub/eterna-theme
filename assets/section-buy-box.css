@@ -74,7 +74,10 @@
 .card__product-img-wrapper {
   width: 335px;
   height: 255px;
-  border-radius: ;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: auto;
+  
 }
 
 
