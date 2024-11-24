@@ -82,7 +82,8 @@
 
 .card__product-img {
   object-fit: contain;
-  width: ;
+  width: 335px;
+  height: 255px;
 }
 
 
