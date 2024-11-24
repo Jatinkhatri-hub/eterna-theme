@@ -24,13 +24,11 @@
               <span class="section-badge__subinfo" style="color: white;">{{ block.settings.sub_info }}</span>
             </div>
           {% when 'buybox' %}
-            {% comment %} <div class="buy-box__cards-wrapper">
-              {%  assign list = 1 %} 
-              {%  assign pakageTitle = block.settings.product.metafields.custom.package_title %} 
+            <div class="buy-box__cards-wrapper">
               {% for variant in block.settings.product.variants %}
                 <div class="buy-box__card">
                   <div class="buy-box__card-header">
-                    {%  assign list  = 1 | plus: 1 %} 
+                
                     {% for title in pakageTitle %} 
                       {{ title }}
                     {% endfor %}
@@ -38,7 +36,7 @@
                   </div>
                 </div>
               {% endfor %}
-            </div> {% endcomment %}
+            </div>
             {% comment %} <div class="buy-box__cards-wrapper">
               {% assign packageTitles = block.settings.product.metafields.custom.package_subtitle %} 
 
