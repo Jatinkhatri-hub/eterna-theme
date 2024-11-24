@@ -94,6 +94,7 @@
   width: 100%;
   padding-inline: 25px;
   flex-direction: column;
+
 }
 
 .card__value-point {
@@ -103,6 +104,7 @@
   font: 18px 'Sailec Medium' !important;
   color: #3B3B3B;
   gap: 10px;
+  line-height: 26px;
 }
 
 .card__value-point svg {
