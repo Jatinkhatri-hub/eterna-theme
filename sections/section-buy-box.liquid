@@ -1,4 +1,4 @@
-{{ 'section-buy-box.css' |  asset_url |  stylesheet_tag }}
+{{ 'section-buy-box.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -16,10 +16,11 @@
 <div class="section-{{ section.id }}-padding">
   <div class="page-width">
     <div class="buy-box__section-wrapper">
-      {}
-      <div class="buy-box__section-badge">
-        <h2>{{  }}</h2>
-      </div>
+      {% for block in section.blocks %}
+        <div class="buy-box__section-badge">
+          <h2>{{  }}</h2>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </div>
@@ -62,8 +63,7 @@
             "id": "title",
             "label": "Title",
             "default": "Black Friday Sale"
-          },
-          {
+          }, {
             "type": "text",
             "id": "sub_info",
             "label": "Sub Info",
