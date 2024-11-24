@@ -99,7 +99,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font:
+  font: 18px 'Sailec Medium' !important;
 }
 
 .card__value-point svg {
