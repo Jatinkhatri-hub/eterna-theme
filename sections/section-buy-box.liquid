@@ -25,7 +25,9 @@
             </div>
           {% when 'buybox' %}
             <div class="buy-box__card-wrapper">
-              {}
+              {% for variant in product.variants %}
+                
+              {% endfor %}
             </div>
         {% endcase %}
       {% endfor %}
