@@ -178,7 +178,7 @@
 .purchase-option {
   border: 1px solid #e5e5e5;
   border-radius: 4px;
-  padding: 10px;
+  padding: 16px 10px;
   width: 100%;
   display: flex;
   align-items: flex-start;
