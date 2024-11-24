@@ -229,6 +229,7 @@
 .card__learn-more-anchor {
   font: 15px 'Sailec Medium' !important;
   color: #2A98C4;
+  text-decoration: underline;
 }
 
 
