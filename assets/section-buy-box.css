@@ -247,7 +247,9 @@
   
 }
 
-.card__atc
+.card__atc-btn:hover {
+  background-color: white;
+}
 
 
 
