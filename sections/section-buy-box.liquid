@@ -26,12 +26,16 @@
           {% when 'buybox' %}
             <div class="buy-box__cards-wrapper">
               {%  assign list = 1 %} 
+              {%  assign pakageTitle = product.metafields.custom.package_title %} 
               {% for variant in block.settings.product.variants %}
                 <div class="buy-box__card">
-                  {%  assign list  = 1 |  plus: 1 %} 
                   <div class="buy-box__card-header">
-
+                    {% for title in pakageTitle %} 
+                      {{ title }}
+                    {% endfor %}
+                    
                   </div>
+                  {%  assign list  = 1 | plus: 1 %} 
                 </div>
               {% endfor %}
             </div>
