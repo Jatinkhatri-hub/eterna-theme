@@ -25,7 +25,7 @@
             </div>
           {% when 'buybox' %}
             <div class="buy-box__card-wrapper">
-              {% for variant in product.variants %}
+              {% for variant in block.s %}
                 <div>{{ variant.title }}</div>
               {% endfor %}
             </div>
