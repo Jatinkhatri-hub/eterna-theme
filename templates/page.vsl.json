@@ -28,10 +28,17 @@
             "title": "BLACK FRIDAY SALE",
             "sub_info": "Save up to <strong>59% OFF!</strong> Biggest Sale of the year!!"
           }
+        },
+        "buybox_iLUAGX": {
+          "type": "buybox",
+          "settings": {
+            "product": "eternity-capsules"
+          }
         }
       },
       "block_order": [
-        "badge_fbKGNL"
+        "badge_fbKGNL",
+        "buybox_iLUAGX"
       ],
       "settings": {
         "padding_top": 36,
