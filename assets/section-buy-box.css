@@ -124,7 +124,9 @@
 }
 
 .card__single-value {
-  font: 29px '';
+  font: 29px 'Sailec Medium';
+  color: black;
+  
 }
 
 
