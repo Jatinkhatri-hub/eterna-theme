@@ -148,7 +148,9 @@
 }
 
 .card__shipping-badge {
-  display: f;e
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
