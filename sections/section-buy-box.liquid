@@ -35,10 +35,10 @@
                     <img src="{{ block.settings.product.featured_image |  image_url: width: block.settings.product.featured_image.width  }}" class="card__product-img">
                   </div>
                   <ul class="card__value-points">
-                    <li class="card__value-point">Biggest Discount</li>
-                    <li class="card__value-point">FAST & FREE USA SHIPPING</li>
-                    <li class="card__value-point">Easy Returns</li>
-                    <li>FREE Mystery Gift ($59 VALUE)</li>
+                    <li class="card__value-point"><span>{%  render 'icon-check' %} </span> Biggest Discount</li>
+                    <li class="card__value-point">{% render 'icon-check'  %}FAST & FREE USA SHIPPING</li>
+                    <li class="card__value-point">{% render 'icon-check'  %}Easy Returns</li>
+                    <li class="card__value-point">{% render 'icon-check'  %}FREE Mystery Gift ($59 VALUE)</li>
                   </ul>
                 </div>
 
