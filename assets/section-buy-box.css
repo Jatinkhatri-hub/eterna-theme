@@ -254,7 +254,10 @@
 }
 
 
-.card__payment-provider-img
+.card__payment-provider-img-wrapper {
+  width: 200px;
+  di
+}
 
 
 
