@@ -218,6 +218,7 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
+  font: 16px !important;
 }
 
 .card__learn-more svg {
@@ -225,6 +226,11 @@
   height: 19px;
 }
 
-.card
+.card__learn-more-anchor {
+  font: 15px 'Sailec Medium' !important;
+  color: #2A98C4;
+}
+
+
 
 
