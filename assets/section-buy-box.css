@@ -61,10 +61,12 @@
 .card__header-title {
   font: 27px 'Sailec Bold' !important;
   color: white;
+  line-height: 32px !important;
 }
 .card__header-subtitle {
   font: 17px 'Sailec Medium' !important;
   color: white;
+  line-height: ;
 }
 
 
