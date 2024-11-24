@@ -32,7 +32,7 @@
                     <p class="card__header-subtitle">1-Month Supply (1 Bottle)</p>
                   </div>
                   <div class="card__product-img-wrapper">
-                    <img src="{{ block.settings.product.featured_image | im }}">
+                    <img src="{{ block.settings.product.featured_image |  image_url: width: block.s  }}">
                   </div>
                 </div>
               {% endfor %}
