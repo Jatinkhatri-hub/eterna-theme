@@ -225,6 +225,9 @@
   height: 19px;
 }
 
-.card
+.card__learn-more-anchor {
+  font: 15px 'Sailec Medium';
+  color: #2A98C4;
+}
 
 
