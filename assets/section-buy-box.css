@@ -215,7 +215,8 @@
 
 .card__learn-more {
   display: flex;
-  
+  gap: 10px;
+  align-items: c;
 }
 
 .card__learn-more svg {
