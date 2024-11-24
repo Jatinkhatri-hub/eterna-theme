@@ -124,7 +124,7 @@
 }
 
 .card__single-value {
-  font: 29px 'Sailec Medium';
+  font: 29px 'Sailec Medium' !important;
   color: black;
 }
 
@@ -137,6 +137,8 @@
 .card__single-value-text {
   font: 18px 'Sailec Light' !important;
   color: #333333;
+  display: flex;
+  align-items: center;
 }
 
 
