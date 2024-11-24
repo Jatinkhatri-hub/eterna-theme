@@ -87,7 +87,11 @@
   height: 255px;
 }
 
-.card
+.card__value-point {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 
 .card__value-point svg {
   width: 15px;
