@@ -213,5 +213,8 @@
   color: #666;
 }
 
-.card__learn-more s
+.card__learn-more svg {
+  width: 19px;
+  height: 19px;
+}
 
