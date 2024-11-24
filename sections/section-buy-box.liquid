@@ -18,6 +18,7 @@
     <div class="buy-box__section-wrapper">
       {% for block in section.blocks %}
         {%  case block.type %}  
+          {% when 'badge' %}
           <div class="buy-box__section-badge">
             <h2>{{  }}</h2>
           </div>
