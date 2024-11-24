@@ -237,7 +237,7 @@
   font: 20px 'Sailec Bold' !important;
   background-image: linear-gradient(#F3A702, #F4DDA4);
   border: 1px solid #FFA2005E;
-  
+  border-radius: 100;
 }
 
 
