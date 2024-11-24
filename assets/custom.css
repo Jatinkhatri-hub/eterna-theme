@@ -1651,3 +1651,9 @@ section.our-story-sec .carlos-story-wrap, section.our-value-sec .carlos-story-wr
     padding: 10px 15px 20px 10px !important;
   }
 }
+
+.page-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
