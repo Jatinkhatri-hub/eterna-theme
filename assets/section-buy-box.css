@@ -31,7 +31,11 @@
   line-height: 24px !important;
 }
 
-.buy-box__card
+.buy-box__cards-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: ;
+}
 
 
 
