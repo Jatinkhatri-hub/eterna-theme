@@ -135,7 +135,7 @@
   border: 1px solid black;
   width: 1px;
   height: 100%;
-  padding-inline: 5px;
+  padding-block: 5px;
 }
 
 .card__single-value-text {
