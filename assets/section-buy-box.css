@@ -42,13 +42,15 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  border: ;
 }
 
 .buy-box__card-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+  background-color: #35ACBF;
+
 }
 
 
