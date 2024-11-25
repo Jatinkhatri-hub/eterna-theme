@@ -406,7 +406,11 @@
   flex-direction: column;
 }
 
-.modalBodyPoint 
+.modalBodyPoint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .modalTitle {
   font: 18px 'Sailec Medium' !important;
