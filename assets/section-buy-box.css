@@ -335,7 +335,9 @@
     line-height: normal !important;
   }
 
-  .buy_box-text 
+  .buy_box-text {
+    margin-bottom: 0;
+  }
 
   .buy-box__cards-wrapper {
     flex-direction: column;
