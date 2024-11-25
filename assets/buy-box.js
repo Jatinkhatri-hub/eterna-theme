@@ -71,7 +71,7 @@
   setTimeout(() => {
     document
       .querySelector(".smartplayer-video")
-      .addEventListener("pause", () =>
+      .addEventListener("play", () =>
         [
           ".buy-box__section-wrapper",
           ".mystry-box",
