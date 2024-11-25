@@ -416,10 +416,14 @@
 .modalTitle {
   font: 18px 'Sailec Medium' !important;
   color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modalTitle svg{
-  width: ;
+  width: 15px;
+  height: 15px;
 }
 
 .modalInfo {
