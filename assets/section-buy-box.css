@@ -337,11 +337,12 @@
 
   .buy_box-wrapper {
     padding: 0 10px;
-    
+
   }
 
   .buy_box-text {
     margin-bottom: 0;
+    transform: translate(12%);
   }
 
   .buy-box__cards-wrapper {
