@@ -56,7 +56,7 @@
                         class="card__product-img"
                       >
                       <div class="card__product-img-badge-wrapper">
-                        <img src="{{ block.settings.product_image_badge |  image_url: width: block.settings.product_image_badge.width }}" class="card__product-img-badge-img">
+                        <img src="{{ section.settings.product_image_badge |  image_url: width: section.settings.product_image_badge.width }}" class="card__product-img-badge-img">
                       </div>
                     </div>
                     <ul class="card__value-points">
@@ -306,7 +306,7 @@
       "type": "image_picker",
       "id": "product_image_badge",
       "label": "Image Badge"
-        },
+    },
     {
       "type": "text",
       "id": "box1",
