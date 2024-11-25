@@ -324,6 +324,10 @@
 
 @media screen and (max-width: 789px) {
 
+  .buy-box__section-badge {
+    padding: ;
+  }
+
 
   .section-badge__title {
     font-size: 21px !important;
