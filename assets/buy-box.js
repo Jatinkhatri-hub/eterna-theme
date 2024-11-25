@@ -10,7 +10,7 @@
     );
   };
 
-  const openModalBtn = document.querySelectorAll('openModalBtn');
+  const openModalBtn = document.querySelectorAll('.openModalBtn');
   const modalBackdrop = document.getElementById('modalBackdrop');
   const closeModalBtn = document.getElementById('closeModalBtn');
 
