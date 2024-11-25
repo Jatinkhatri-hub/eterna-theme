@@ -22,7 +22,7 @@
         <div class="testimonial-box">
           <div class="testimonial-img">
             <img src="{{ block.settings.testimonial_img | img_url : 'original'}}">
-            <div class="img-tick-svg">.</div>
+            <div class="img-tick-svg">{% render 'icon-check' %}</div>
           </div>
           <div class="testimonial-content">
             <h3>{{ block.settings.testimonial_title }}</h3>
@@ -99,6 +99,11 @@
     justify-content: center;
     align-items: center;
   }
+
+  .img-tick-svg svg {
+    
+  }
+
   .testimonial-content {
     height: fit-content;
     display: flex;
@@ -176,7 +181,10 @@
       line-height: 23px;
     }
 
-    
+    .review-stars svg {
+      width: 13px;
+      height: 13px;
+    }
 
     .testimonial-content h4 {
       font-size: 12.9px;
