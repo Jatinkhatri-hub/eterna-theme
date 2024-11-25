@@ -27,7 +27,7 @@
 
       <div class="vsl__doctor-card-wrapper">
         <div class="doctor__img-wrapper">
-          <img src="{{ section.settings.doctor_img | i }}"> 
+          <img src="{{ section.settings.doctor_img |  image_url: width: section.settings.doctor_img.width  }}"  class=""> 
         </div>
       </div>
 
