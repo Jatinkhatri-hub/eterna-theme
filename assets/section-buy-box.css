@@ -326,6 +326,10 @@
 
 
   .section-badge__title {
+    font-size: 21px !important;
+  }
+
+  .section-badge__subinfo {
     font-size: ;
   }
 
