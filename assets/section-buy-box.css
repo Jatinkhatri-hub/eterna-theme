@@ -105,8 +105,11 @@
   position: absolute;
   top: 10px;
   left: 15px;
-  width: ;
+  width: 87px;
+  height: 87px;
 }
+
+.card__prod
 
 .card__value-points {
   display: flex;
