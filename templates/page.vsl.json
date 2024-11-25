@@ -91,6 +91,20 @@
     },
     "buy_box_reviews_ct3UrR": {
       "type": "buy-box-reviews",
+      "blocks": {
+        "testimonial_URg6Dc": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_img": "shopify://shop_images/t-img1_jpg.png",
+            "testimonial_title": "Dream Come True",
+            "testimonial_content": "“I’m a very critical person and I must say this ReActivate product is a dream come true. Itactually makes my skin feel tighter. The Ceramides really does want it says, it acts as a filler! And I can definitely tell the difference. This is going to be apart of my daily routine and I’m happy to say a part of my life moving forward!”",
+            "testimonial_name": "- Bethany M"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_URg6Dc"
+      ],
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36,
