@@ -389,6 +389,10 @@
     font-size: 16px !important;
   }
 
+  .purchase-option {
+    padding: ;
+  }
+
   .purchase-option input[type=radio] {
     width: 18px;
     height: 18px;
