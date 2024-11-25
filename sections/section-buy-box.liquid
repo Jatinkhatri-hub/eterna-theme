@@ -58,6 +58,7 @@
                       <div class="card__product-img-badge-wrapper">
                         <img src="{{ section.settings.product_image_badge |  image_url: width: section.settings.product_image_badge.width }}" class="card__product-img-badge-img">
                       </div>
+                      
                     </div>
                     <ul class="card__value-points">
                       <li class="card__value-point {% if i > 1 %} card__value-point--active {% endif %}">
@@ -132,9 +133,6 @@
                         src="{{ section.settings.payment_provider |  image_url: width: section.settings.payment_provider.width }}"
                         class="card__payment-provider-img"
                       >
-                                            <div class="card__product-img-badge-wrapper">
-                        <img src="{{ section.settings.product_image_badge |  image_url: width: section.settings.product_image_badge.width }}" class="card__product-img-badge-img">
-                      </div>
                     </div>
                   </div>
                   {% liquid
