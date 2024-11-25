@@ -23,7 +23,7 @@
   })
 
 
-  .addEventListener('click', () => {
+  close.addEventListener('click', () => {
       modalBackdrop.classList.remove('show');
   });
 
