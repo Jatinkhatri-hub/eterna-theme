@@ -96,6 +96,30 @@
         "guarantee_mail": "mail@suncoastsciences",
         "guarantee_para2": ", and you’ll get a full refund. No questions, no hoops, no qualifications. Make your selection now, and together, let’s get started on the transformation of a lifetime."
       }
+    },
+    "buy_box_reviews_BpiNFn": {
+      "type": "buy-box-reviews",
+      "blocks": {
+        "testimonial_epzME4": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_img": "shopify://shop_images/t-img1_jpg.png",
+            "testimonial_title": "Dream Come True",
+            "testimonial_content": "“I’m a very critical person and I must say this ReActivate product is a dream come true. It actually makes my skin feel tighter. The Ceramides really does want it says, it acts as a filler! And I can definitely tell the difference. This is going to be apart of my daily routine and I’m happy to say a part of my life moving forward!”",
+            "testimonial_name": "- Bethany M"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_epzME4"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "color_scheme": "",
+        "testimonial_heading1": "ReActivate",
+        "testimonial_heading2": "Customer Testimonials"
+      }
     }
   },
   "order": [
@@ -103,6 +127,7 @@
     "buy_box_vsl_Mfr7FL",
     "section_buy_box_mG4ENz",
     "mystery_gift_d9BkCh",
-    "guarantee_section_Dw8nMD"
+    "guarantee_section_Dw8nMD",
+    "buy_box_reviews_BpiNFn"
   ]
 }
