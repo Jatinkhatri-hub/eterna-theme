@@ -388,13 +388,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font: 20px ;
 
 }
 
 .modalHeader svg {
   width: 15px;
   height: 15px;
-  
+
 }
 
 
