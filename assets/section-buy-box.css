@@ -103,7 +103,9 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: ;
+  top: 10px;
+  left: 15px;
+  width: ;
 }
 
 .card__value-points {
