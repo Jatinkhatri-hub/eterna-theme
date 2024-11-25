@@ -354,7 +354,11 @@
 
   .card__product-img {
     width: 250px;
-    height: ;
+    height: 200px;
+  }
+
+  .card__value-points {
+    font-size: ;
   }
   
 }
