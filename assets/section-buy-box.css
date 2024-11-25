@@ -100,7 +100,10 @@
 
 .card__product-img-badge-wrapper {
   display: flex;
-  
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: ;
 }
 
 .card__value-points {
