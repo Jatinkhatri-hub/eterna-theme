@@ -389,6 +389,8 @@
     font-size: 16px !important;
   }
 
-  .purchase-option input[type=]
+  .purchase-option input[type=radio] {
+    
+  }
   
 }
