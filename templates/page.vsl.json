@@ -51,12 +51,17 @@
           "settings": {
             "product": "eternity-capsules"
           }
+        },
+        "popup_zTh7Vn": {
+          "type": "popup",
+          "settings": {}
         }
       },
       "block_order": [
         "badge_XRRwi6",
         "buyboxtimer_AdAnrV",
-        "buybox_jGeARY"
+        "buybox_jGeARY",
+        "popup_zTh7Vn"
       ],
       "settings": {
         "padding_top": 36,
