@@ -27,7 +27,7 @@
 
       <div class="vsl__doctor-card-wrapper">
         <div class="doctor__img-wrapper">
-          <img src="{{ section.settings.doctor_img |  image_url: width: section.settings.doctor_img.width  }}"  class="doctor__img-wrapper-width"> 
+          <img src="{{ section.settings.doctor_img |  image_url: width: section.settings.doctor_img.width  }}"  class="doctor__img"> 
         </div>
         <span class="doctor__name">
           {{ section.settings.doctor_name }}
@@ -120,7 +120,9 @@
     border-radius: 6px;
   }
 
-  .doctore
+  .doctor__img {
+    
+  }
 
 </style>
 
