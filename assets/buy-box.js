@@ -10,6 +10,20 @@
     );
   };
 
+  openModalBtn.addEventListener('click', () => {
+      modalBackdrop.classList.add('show');
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+      modalBackdrop.classList.remove('show');
+  });
+
+  modalBackdrop.addEventListener('click', (event) => {
+      if (event.target === modalBackdrop) {
+          modalBackdrop.classList.remove('show');
+      }
+  });
+
   const handleOrderNow = async (e) => {
     const id = e.target.dataset.variantId;
     await fetch(window.Shopify.routes.root + "cart/add.js", {
