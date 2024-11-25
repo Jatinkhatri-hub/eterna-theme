@@ -27,6 +27,8 @@
 
 
   document.querySelector('#closeModalBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       modalBackdrop.classList.remove('show');
       
   });
