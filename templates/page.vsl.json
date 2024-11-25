@@ -19,6 +19,10 @@
         "override_header_footer_color_scheme": false
       }
     },
+    "buy_box_vsl_c8fw7j": {
+      "type": "buy-box-vsl",
+      "settings": {}
+    },
     "section_buy_box_mG4ENz": {
       "type": "section-buy-box",
       "blocks": {
@@ -27,6 +31,12 @@
           "settings": {
             "title": "Black Friday Sale",
             "sub_info": "Save up to <strong>59% OFF!</strong> Biggest Sale of the year!!"
+          }
+        },
+        "buyboxtimer_HajpVw": {
+          "type": "buyboxtimer",
+          "settings": {
+            "heading": "Stock up on ReActivate today before the next supply chain breakdown"
           }
         },
         "buybox_jGeARY": {
@@ -38,17 +48,24 @@
       },
       "block_order": [
         "badge_XRRwi6",
+        "buyboxtimer_HajpVw",
         "buybox_jGeARY"
       ],
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36,
-        "payment_provider": "shopify://shop_images/package_cards.png_1.png"
+        "payment_provider": "shopify://shop_images/package_cards.png_1.png",
+        "box1": "basic package",
+        "box2": "great value",
+        "box3": "best value",
+        "bottles1": 2,
+        "bottles2": 4
       }
     }
   },
   "order": [
     "main",
+    "buy_box_vsl_c8fw7j",
     "section_buy_box_mG4ENz"
   ]
 }
