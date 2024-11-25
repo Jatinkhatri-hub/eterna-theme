@@ -1651,3 +1651,33 @@ section.our-story-sec .carlos-story-wrap, section.our-value-sec .carlos-story-wr
     padding: 10px 15px 20px 10px !important;
   }
 }
+
+/* Daydreamers Design Studio */
+
+@font-face {
+  font-family: 'Sailec Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0852/8553/6031/files/Sailec_Bold.ttf?v=1732418916');
+}
+
+@font-face {
+  font-family: 'Sailec Light';
+  src: url('https://cdn.shopify.com/s/files/1/0852/8553/6031/files/Sailec_Light.ttf?v=1732419738');
+}
+
+@font-face {
+  font-family: 'Sailec Medium';
+  src: url('https://cdn.shopify.com/s/files/1/0852/8553/6031/files/Sailec_Medium.ttf?v=1732432766');
+}
+
+.page-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+
+@media screen and (min-width: 750px) {
+  .page-width {
+    padding: 0 2rem;
+  }
+}

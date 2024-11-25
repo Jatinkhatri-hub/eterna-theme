@@ -1,0 +1,321 @@
+.buy-box__section-wrapper {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;  
+}
+
+.buy-box__section-badge {
+  padding: 22px 45px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 5px;
+  flex-direction: column;
+}
+
+.section-badge__title {
+  font: 29px 'Sailec Bold' !important;
+  color: white;
+  text-align: center;
+  line-height: 26px !important;
+}
+
+.section-badge__subinfo {
+  font: 19px 'Sailec Light' !important;
+  color: white !important;
+  text-align: center;
+  line-height: 24px !important;
+}
+
+.buy-box__cards-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.buy-box-multi__card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.buy-box__card {
+  width: 385px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #E7E7E7;
+  border-radius: 10px;
+  overflow: hidden;
+  gap: 25px;
+  padding-bottom: 25px;
+}
+
+.buy-box__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #35ACBF;
+  flex-direction: column;
+  width: 100%;
+  padding-block: 15px;
+
+}
+
+.card__header-title {
+  font: 27px 'Sailec Bold' !important;
+  color: white;
+  line-height: 32px !important;
+  text-transform: uppercase;
+}
+.card__header-subtitle {
+  font: 17px 'Sailec Medium' !important;
+  color: white;
+  line-height: 24px !important;
+}
+
+.card__product-img-wrapper {
+  width: 335px;
+  height: 255px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: auto;
+  background: #F5F7F7;
+
+}
+
+.card__product-img {
+  object-fit: cover;
+  width: 335px;
+  height: 255px;
+}
+
+.card__value-points {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 100%;
+  padding-inline: 25px;
+  flex-direction: column;
+  gap: 10px
+}
+
+.card__value-point {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font: 18px 'Sailec Medium' !important;
+  color: #3B3B3B;
+  gap: 10px;
+  line-height: 25px !important;
+  text-decoration: line-through;
+}
+
+.card__value-point--active {
+    text-decoration: none;
+}
+
+.card__value-point svg {
+  width: 15px;
+  height: 15px;
+}
+
+.card__value-point svg rect {
+  fill: #3B3B3B;
+}
+
+.card__value-point--active svg rect  {
+  fill: #35ACBF;
+}
+.card__price-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding-inline-start: 35px;
+}
+
+.card__single-value {
+  font: 29px 'Sailec Medium' !important;
+  color: black;
+}
+
+.divider {
+  display: block;
+  border: 1px solid black;
+  width: 1px;
+  height: 20px;
+  padding-block: 2px;
+}
+
+.card__single-value-text {
+  font: 18px 'Sailec Light' !important;
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+
+.card__shipping-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font: 20px 'Sailec Medium' !important;
+  padding-block: 8px;
+  width: 87%;
+  margin-inline: 25px;
+  background-color: #F6F6F6;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+.card__shipping-badge svg {
+  width: 32px;
+  height: 32px;  
+}
+
+
+
+.purchase-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding-inline: 25px;
+}
+
+.purchase-option {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 16px 10px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.purchase-option:hover {
+  background-color: #F0F7F8;
+}
+
+.purchase-option input[type="radio"] {
+  margin-right: 15px;
+  width: 23px;
+  height: 23px;
+  margin-top: 3px;
+  color: #056777;
+}
+
+.option-details {
+  flex-grow: 1;
+}
+
+.option-title {
+  font: 19px 'Sailec Medium' !important;
+
+}
+
+.option-description {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.card__learn-more {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font: 16px !important;
+}
+
+.card__learn-more svg {
+  width: 19px;
+  height: 19px;
+}
+
+.card__learn-more-anchor {
+  font: 15px 'Sailec Medium' !important;
+  color: #2A98C4;
+  text-decoration: underline;
+}
+
+.card__atc-btn {
+  padding: 20px;
+  font: 20px 'Sailec Bold' !important;
+  background-image: linear-gradient(#F3A702, #F4DDA4);
+  border: 2px solid #FFA2005E;
+  border-radius: 100px;
+  color: #2D1D00;
+  text-transform: uppercase;
+  width: 87%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.card__atc-btn:hover {
+  background: white !important;
+  
+}
+
+
+.card__payment-provider-img-wrapper {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+}
+
+.card__payment-provider-img {
+  width: 200px;
+  height: 35px;
+}
+
+
+
+[data-type="onetime"] .buy-box__card.one-time {
+  display: flex;
+}
+
+[data-type="onetime"] .buy-box__card.subscription {
+  display: none;
+}
+
+[data-type="subscribe"] .buy-box__card.subscription {
+  display: flex;
+}
+[data-type="subscribe"] .buy-box__card.one-time {
+  display: none;
+}
+
+.buy_box-wrapper {
+  border: 1px solid black;
+  padding: 0 30px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buy_box-text {
+  transform: translateY(75%);
+  font-size: 22px;
+}
+
+.buy_box-timer {
+  padding: 0px 22px;
+  background-color: white;
+  transform: translateY(50%);
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+}
