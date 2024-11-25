@@ -108,10 +108,40 @@
             "testimonial_content": "“I’m a very critical person and I must say this ReActivate product is a dream come true. It actually makes my skin feel tighter. The Ceramides really does want it says, it acts as a filler! And I can definitely tell the difference. This is going to be apart of my daily routine and I’m happy to say a part of my life moving forward!”",
             "testimonial_name": "- Bethany M"
           }
+        },
+        "testimonial_Kttixh": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_img": "shopify://shop_images/t-img2_jpg.png",
+            "testimonial_title": "Healthy & Youthful",
+            "testimonial_content": "“I’m a very critical person and I must say this ReActivate product is a dream come true. It actually makes my skin feel tighter. The Ceramides really does want it says, it acts as a filler! And I can definitely tell the difference. This is going to be apart of my daily routine and I’m happy to say a part of my life moving forward!”",
+            "testimonial_name": "- Sandra L"
+          }
+        },
+        "testimonial_XV99ex": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_img": "shopify://shop_images/t-img3_jpg.png",
+            "testimonial_title": "Makes Me Feel Great!",
+            "testimonial_content": "“I’m a very critical person and I must say this ReActivate product is a dream come true. It actually makes my skin feel tighter. The Ceramides really does want it says, it acts as a filler! And I can definitely tell the difference. This is going to be apart of my daily routine and I’m happy to say a part of my life moving forward!”",
+            "testimonial_name": "- Johanna H"
+          }
+        },
+        "testimonial_cLgzHq": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_img": "shopify://shop_images/t-img4_jpg.png",
+            "testimonial_title": "Clearer Skin",
+            "testimonial_content": "“I’m a very critical person and I must say this ReActivate product is a dream come true. It actually makes my skin feel tighter. The Ceramides really does want it says, it acts as a filler! And I can definitely tell the difference. This is going to be apart of my daily routine and I’m happy to say a part of my life moving forward!”",
+            "testimonial_name": "- Johanna H"
+          }
         }
       },
       "block_order": [
-        "testimonial_epzME4"
+        "testimonial_epzME4",
+        "testimonial_Kttixh",
+        "testimonial_XV99ex",
+        "testimonial_cLgzHq"
       ],
       "settings": {
         "padding_top": 36,
