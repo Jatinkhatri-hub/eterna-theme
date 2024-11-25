@@ -344,8 +344,10 @@
     margin-bottom: 0;
     transform: translate(12%);
     font-size: 15px;
-    text-align: ;
+    text-align: center;
   }
+
+  .buy_box-timer 
 
   .buy-box__cards-wrapper {
     flex-direction: column;
