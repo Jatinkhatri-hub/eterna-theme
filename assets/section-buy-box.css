@@ -384,7 +384,9 @@
   opacity: 1;
 }
 
-.
+.modalHeader {
+  
+}
 
 
 @media screen and (max-width: 789px) {
