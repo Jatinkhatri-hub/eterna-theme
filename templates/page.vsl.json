@@ -19,10 +19,6 @@
         "override_header_footer_color_scheme": false
       }
     },
-    "buy_box_vsl_bfNPzV": {
-      "type": "buy-box-vsl",
-      "settings": {}
-    },
     "section_buy_box_mG4ENz": {
       "type": "section-buy-box",
       "blocks": {
@@ -33,104 +29,26 @@
             "sub_info": "Save up to <strong>59% OFF!</strong> Biggest Sale of the year!!"
           }
         },
-        "buyboxtimer_mx4n3D": {
-          "type": "buyboxtimer",
-          "settings": {
-            "heading": "Stock up on ReActivate today before the next supply chain breakdown"
-          }
-        },
         "buybox_jGeARY": {
           "type": "buybox",
           "settings": {
-            "product": "eternity-capsules",
-            "product_image_badge": "shopify://shop_images/guarantee-seal.png_1.png"
+            "product": "eternity-capsules"
           }
         }
       },
       "block_order": [
         "badge_XRRwi6",
-        "buyboxtimer_mx4n3D",
         "buybox_jGeARY"
       ],
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36,
-        "payment_provider": "shopify://shop_images/package_cards.png_1.png",
-        "box1": "basic package",
-        "box2": "great value",
-        "box3": "best value",
-        "bottles1": 2,
-        "bottles2": 4
-      }
-    },
-    "mystery_gift_XdUrMn": {
-      "type": "mystery-gift",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "color_scheme": "",
-        "mystry_box_img": "shopify://shop_images/MysteryGift-mobile-black.png_1.png",
-        "mystry_box_title": "Free Mystry Gift With Six-Bottle Orders",
-        "mystry_box_para": "$59 Value. #1 Best-Seller And Perfect Addition To ReActivate For Improving Moisture, Bounce, and Glow."
-      }
-    },
-    "guarantee_section_xCnXE4": {
-      "type": "guarantee-section",
-      "settings": {
-        "padding_top": 100,
-        "padding_bottom": 36,
-        "color_scheme": "",
-        "guarantee_img": "shopify://shop_images/guarantee-seal.png_1.png",
-        "line_1": "Order with confidence knowing your purchase is protected by our…",
-        "guarantee_title": "365 Day & 100% Money Back",
-        "guarantee_stamp": "Guarantee",
-        "guarantee_para1": "Your ReActivate order is covered for a full year. So give ReActivate a try today, and if you’re not thrilled with how smooth, supple, and firm your skin looks and feels in a matter of days… then simply contact our English-speaking customer support at",
-        "guarantee_no": "1-888-281-6816",
-        "guarantee_mail": "mail@suncoastsciences",
-        "guarantee_para2": ", and you’ll get a full refund. No questions, no hoops, no qualifications. Make your selection now, and together, let’s get started on the transformation of a lifetime."
-      }
-    },
-    "buy_box_reviews_ct3UrR": {
-      "type": "buy-box-reviews",
-      "blocks": {
-        "testimonial_URg6Dc": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial_img": "shopify://shop_images/t-img1_jpg.png",
-            "testimonial_title": "Dream Come True",
-            "testimonial_content": "“I’m a very critical person and I must say this ReActivate product is a dream come true. Itactually makes my skin feel tighter. The Ceramides really does want it says, it acts as a filler! And I can definitely tell the difference. This is going to be apart of my daily routine and I’m happy to say a part of my life moving forward!”",
-            "testimonial_name": "- Bethany M"
-          }
-        },
-        "testimonial_DGX64k": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial_img": "shopify://shop_images/t-img2_jpg.png",
-            "testimonial_title": "Healthy & Youthful",
-            "testimonial_content": "“I’m a very critical person and I must say this ReActivate product is a dream come true. Itactually makes my skin feel tighter. The Ceramides really does want it says, it acts as a filler! And I can definitely tell the difference. This is going to be apart of my daily routine and I’m happy to say a part of my life moving forward!”",
-            "testimonial_name": "- Sandra L"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_URg6Dc",
-        "testimonial_DGX64k"
-      ],
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "color_scheme": "",
-        "testimonial_heading1": "ReActivate",
-        "testimonial_heading2": "Customer Testimonials"
+        "payment_provider": "shopify://shop_images/package_cards.png_1.png"
       }
     }
   },
   "order": [
     "main",
-    "buy_box_vsl_bfNPzV",
-    "section_buy_box_mG4ENz",
-    "mystery_gift_XdUrMn",
-    "guarantee_section_xCnXE4",
-    "buy_box_reviews_ct3UrR"
+    "section_buy_box_mG4ENz"
   ]
 }
