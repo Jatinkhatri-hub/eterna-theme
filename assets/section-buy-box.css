@@ -347,6 +347,13 @@
     line-height: normal !important;
   }
 
-  .card__produc
+  .card__product-img-wrapper {
+    width: 250px;
+    height: 200px;
+  }
+
+  .card__product-img {
+    width: ;
+  }
   
 }
