@@ -98,6 +98,11 @@
   height: 255px;
 }
 
+.card__product-img-badge-wrapper {
+  display: flex;
+  
+}
+
 .card__value-points {
   display: flex;
   align-items: baseline;
