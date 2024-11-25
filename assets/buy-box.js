@@ -15,13 +15,13 @@
   const closeModalBtn = document.getElementById('closeModalBtn');
 
 
-  openModalBtn.forEach(button => {
+  openModalBtn.forEach(Btn => {
+    openModalBtn.addEventListener('click', () => {
+        modalBackdrop.classList.add('show');
+    });
     
   })
 
-  openModalBtn.addEventListener('click', () => {
-      modalBackdrop.classList.add('show');
-  });
 
   closeModalBtn.addEventListener('click', () => {
       modalBackdrop.classList.remove('show');
