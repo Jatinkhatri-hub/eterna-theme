@@ -241,7 +241,8 @@
                 </div>
               {% endfor %}
             </div>
-            {%  when popup %}
+          {%  when 'popup' %}
+            
             {% comment %}
               <div class="buy-box__cards-wrapper">
                 {% assign packageTitles = block.settings.product.metafields.custom.package_subtitle %}
