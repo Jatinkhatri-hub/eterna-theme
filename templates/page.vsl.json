@@ -42,7 +42,8 @@
         "buybox_jGeARY": {
           "type": "buybox",
           "settings": {
-            "product": "eternity-capsules"
+            "product": "eternity-capsules",
+            "product_image_badge": "shopify://shop_images/guarantee-seal.png_1.png"
           }
         }
       },
