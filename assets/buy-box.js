@@ -16,8 +16,10 @@
 
 
   openModalBtn.forEach(Btn => {
-    Btn.addEventListener('click', () => {
+    Btn.addEventListener('click', (e) => {
         modalBackdrop.classList.add('show');
+        e.
+
     });
     
   })
