@@ -35,7 +35,8 @@
 
   modalBackdrop.addEventListener('click', (event) => {
       if (event.target === modalBackdrop) {
-          event
+          event.preventDefault();
+          event.stopPropagation();
           modalBackdrop.classList.remove('show');
 
       }
