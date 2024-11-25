@@ -388,7 +388,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
+}
+
+.modalHeader svg {
+  svg
 }
 
 
