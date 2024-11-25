@@ -325,6 +325,10 @@
 @media screen and (max-width: 789px) {
 
 
+  .section-badge__title {
+    font-size: ;
+  }
+
   .buy-box__cards-wrapper {
     flex-direction: column;
   }
