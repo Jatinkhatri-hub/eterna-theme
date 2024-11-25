@@ -54,7 +54,16 @@
         },
         "popup_zTh7Vn": {
           "type": "popup",
-          "settings": {}
+          "settings": {
+            "modal_title_1": "Unlock 10% Additional Savings",
+            "modal_info_1": "Instantly take an additional 10% off your order!",
+            "modal_title_2": "28-Day Refills - Skip/Cancel Any Time",
+            "modal_info_2": "We’ll send you a reminder - just reply if you want to stop.",
+            "modal_title_3": "20% Off Sitewide While Subscribed",
+            "modal_info_3": "Get a coupon for 20% off everything else in our store.",
+            "modal_title_4": "Reserved Inventory",
+            "modal_info_4": "Protect against supply chain disruptions."
+          }
         }
       },
       "block_order": [
