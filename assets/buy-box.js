@@ -16,14 +16,14 @@
 
 
   openModalBtn.forEach(Btn => {
-    openModalBtn.addEventListener('click', () => {
+    Btn.addEventListener('click', () => {
         modalBackdrop.classList.add('show');
     });
     
   })
 
 
-  closeModalBtn.addEventListener('click', () => {
+  .addEventListener('click', () => {
       modalBackdrop.classList.remove('show');
   });
 
