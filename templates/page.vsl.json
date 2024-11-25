@@ -55,6 +55,7 @@
         "padding_top": 36,
         "padding_bottom": 36,
         "payment_provider": "shopify://shop_images/package_cards.png_1.png",
+        "product_image_badge": "shopify://shop_images/guarantee-seal.png_1.png",
         "box1": "basic package",
         "box2": "great value",
         "box3": "best value",
