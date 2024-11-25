@@ -19,6 +19,10 @@
         "override_header_footer_color_scheme": false
       }
     },
+    "buy_box_vsl_Mfr7FL": {
+      "type": "buy-box-vsl",
+      "settings": {}
+    },
     "section_buy_box_mG4ENz": {
       "type": "section-buy-box",
       "blocks": {
@@ -27,6 +31,12 @@
           "settings": {
             "title": "Black Friday Sale",
             "sub_info": "Save up to <strong>59% OFF!</strong> Biggest Sale of the year!!"
+          }
+        },
+        "buyboxtimer_AdAnrV": {
+          "type": "buyboxtimer",
+          "settings": {
+            "heading": "Stock up on ReActivate today before the next supply chain breakdown"
           }
         },
         "buybox_jGeARY": {
@@ -38,17 +48,51 @@
       },
       "block_order": [
         "badge_XRRwi6",
+        "buyboxtimer_AdAnrV",
         "buybox_jGeARY"
       ],
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36,
-        "payment_provider": "shopify://shop_images/package_cards.png_1.png"
+        "payment_provider": "shopify://shop_images/package_cards.png_1.png",
+        "box1": "basic package",
+        "box2": "great value",
+        "box3": "best value",
+        "bottles1": 2,
+        "bottles2": 4
+      }
+    },
+    "mystery_gift_d9BkCh": {
+      "type": "mystery-gift",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "color_scheme": "",
+        "mystry_box_title": "Free Mystry Gift With Six-Bottle Orders",
+        "mystry_box_para": "$59 Value. #1 Best-Seller And Perfect Addition To ReActivate For Improving Moisture, Bounce, and Glow."
+      }
+    },
+    "guarantee_section_Dw8nMD": {
+      "type": "guarantee-section",
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 36,
+        "color_scheme": "",
+        "line_1": "Order with confidence knowing your purchase is protected by our…",
+        "guarantee_title": "365 Day & 100% Money Back",
+        "guarantee_stamp": "Guarantee",
+        "guarantee_para1": "Your ReActivate order is covered for a full year. So give ReActivate a try today, and if you’re not thrilled with how smooth, supple, and firm your skin looks and feels in a matter of days… then simply contact our English-speaking customer support at",
+        "guarantee_no": "1-888-281-6816",
+        "guarantee_mail": "mail@suncoastsciences",
+        "guarantee_para2": ", and you’ll get a full refund. No questions, no hoops, no qualifications. Make your selection now, and together, let’s get started on the transformation of a lifetime."
       }
     }
   },
   "order": [
     "main",
-    "section_buy_box_mG4ENz"
+    "buy_box_vsl_Mfr7FL",
+    "section_buy_box_mG4ENz",
+    "mystery_gift_d9BkCh",
+    "guarantee_section_Dw8nMD"
   ]
 }
