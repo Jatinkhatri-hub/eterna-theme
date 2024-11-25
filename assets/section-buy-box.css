@@ -391,6 +391,8 @@
   justify-content: center;
   font: 20px 'Sailec Bold' !important;
   color: #2A98C4;
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
 .modalHeader svg {
