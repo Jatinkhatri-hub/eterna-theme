@@ -377,7 +377,11 @@
   }
 
   .card__shipping-badge {
-    font-size: ;
+    font-size: 16px !important;
+  }
+
+  .card__shipping-badge svg {
+    width: ;
   }
   
 }
