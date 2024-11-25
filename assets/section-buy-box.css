@@ -338,7 +338,8 @@
   }
 
   .card__header-title {
-    font: 16px
+    font: 16px !important;
+    lin
   }
   
 }
