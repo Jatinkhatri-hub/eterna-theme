@@ -341,5 +341,9 @@
     font: 16px !important;
     line-height: normal !important;
   }
+
+  .card__header-subtitle {
+    font-size: ;
+  }
   
 }
