@@ -342,12 +342,14 @@
 
   .buy_box-text {
     margin-bottom: 0;
-    transform: translate(12%);
+    transform: translate(%);
     font-size: 15px;
     text-align: center;
   }
 
-  .buy_box-timer 
+  .buy_box-timer {
+    font-size: 20px;
+  }
 
   .buy-box__cards-wrapper {
     flex-direction: column;
