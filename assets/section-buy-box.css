@@ -389,7 +389,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font: 20px 'Sailec Bold';
+  font: 20px 'Sailec Bold' !important;
   color: #2A98C4;
 }
 
@@ -400,7 +400,7 @@
 }
 
 .modalTitle {
-  font: 18px 'Sailec Medium';
+  font: 18px 'Sailec Medium' !important;
 }
 
 
