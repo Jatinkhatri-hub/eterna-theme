@@ -336,5 +336,9 @@
   .buy-box__card-header {
     padding-block: 10px;
   }
+
+  .card__header-title {
+    font: 16px
+  }
   
 }
