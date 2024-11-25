@@ -357,8 +357,13 @@
     height: 200px;
   }
 
+
   .card__value-points {
-    font-size: ;
+    
+  }
+
+  .card__value-point {
+    font-size: 12px !important;
   }
   
 }
