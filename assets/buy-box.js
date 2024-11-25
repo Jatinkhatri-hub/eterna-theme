@@ -15,7 +15,9 @@
   const closeModalBtn = document.getElementById('closeModalBtn');
 
 
-  openModalBtn
+  openModalBtn.forEach(button => {
+    
+  })
 
   openModalBtn.addEventListener('click', () => {
       modalBackdrop.classList.add('show');
