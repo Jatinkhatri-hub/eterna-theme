@@ -324,7 +324,9 @@
 @media screen and (max-width: 789px) {
 
 
-  .buy
+  .buy-box__cards-wrapper {
+    flex-direction: column;
+  }
 
   .buy-box__card {
     width: 320px;
