@@ -366,5 +366,9 @@
   .card__value-point {
     font-size: 12px !important;
   }
+
+  .card__single-value {
+    
+  }
   
 }
