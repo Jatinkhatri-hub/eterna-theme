@@ -369,7 +369,11 @@
 
   .card__single-value {
     font-size: 21px !important;
-    
+
+  }
+
+  .card__single-value-text {
+    font-size: ;
   }
   
 }
