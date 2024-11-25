@@ -373,6 +373,10 @@
   }
 
   .card__single-value-text {
+    font-size: 15px !important;
+  }
+
+  .card__shipping-badge {
     font-size: ;
   }
   
