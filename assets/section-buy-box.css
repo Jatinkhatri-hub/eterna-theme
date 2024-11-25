@@ -381,7 +381,8 @@
   }
 
   .card__shipping-badge svg {
-    width: ;
+    width: 22px;
+    height: 22px;
   }
   
 }
