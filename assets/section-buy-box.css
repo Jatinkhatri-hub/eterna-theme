@@ -110,7 +110,9 @@
 }
 
 .card__product-img-badge-img {
-  width: ;
+  width: 87px;
+  height: 87px;
+  object-fit: cover;
 }
 
 .card__value-points {
@@ -396,7 +398,7 @@
   }
 
   .card__product-img-wrapper {
-    width: 250px;
+    width: 200px;
     height: 200px;
   }
 
