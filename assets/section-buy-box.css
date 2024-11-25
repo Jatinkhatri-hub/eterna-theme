@@ -418,7 +418,9 @@
   color: gray;
 }
 
-.modalBodyPoint
+.modalTitle svg{
+  width: ;
+}
 
 .modalInfo {
   font: 14px 'Sailec Medium' !important;
