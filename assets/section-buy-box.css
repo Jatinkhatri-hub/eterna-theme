@@ -384,5 +384,9 @@
     width: 22px;
     height: 22px;
   }
+
+  .option-title {
+    font-size: 16px !important;
+  }
   
 }
