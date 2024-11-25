@@ -388,8 +388,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font: 20px ;
-
+  font: 20px 'Sailec Bold';
+  color: #2A98C4;
 }
 
 .modalHeader svg {
