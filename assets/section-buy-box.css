@@ -342,7 +342,8 @@
 
   .buy_box-text {
     margin-bottom: 0;
-    tra
+    transform: translate(12%);
+    font-size: 15px;
   }
 
   .buy-box__cards-wrapper {
