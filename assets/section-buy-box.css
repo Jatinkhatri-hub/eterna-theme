@@ -561,5 +561,7 @@
     padding: 14px;
   }
   
-  #mod
+  #modalContainer {
+    margin-inline: 10px;
+  }
 }
