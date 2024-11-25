@@ -22,7 +22,9 @@
     "buy_box_vsl_Mfr7FL": {
       "type": "buy-box-vsl",
       "settings": {
-        "section_heading": "MD: The Number 1 Thing Every Woman <br>Should Use Instead of Moisturizer"
+        "section_heading": "MD: The Number 1 Thing Every Woman Should Use Instead of Moisturizer",
+        "info_heading": "As Seen On",
+        "as_seen": "shopify://shop_images/as-seen_png.png"
       }
     },
     "section_buy_box_mG4ENz": {
