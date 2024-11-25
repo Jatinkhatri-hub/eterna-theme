@@ -331,6 +331,7 @@
 
   .buy-box__card {
     width: 320px;
+    gap: 15px;
   }
 
   .buy-box__card-header {
