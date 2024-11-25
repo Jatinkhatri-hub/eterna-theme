@@ -10,6 +10,10 @@
     );
   };
 
+  const openModalBtn = document.getElementById('openModalBtn');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+
   openModalBtn.addEventListener('click', () => {
       modalBackdrop.classList.add('show');
   });
