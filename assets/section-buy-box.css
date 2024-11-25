@@ -327,10 +327,12 @@
 
   .section-badge__title {
     font-size: 21px !important;
+    line-height: normal !important;
   }
 
   .section-badge__subinfo {
     font-size: 14px !important;
+    line-height: normal !important;
   }
 
   .buy-box__cards-wrapper {
