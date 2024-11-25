@@ -339,7 +339,7 @@
 
   .card__header-title {
     font: 16px !important;
-    lin
+    line-height: normal !important;
   }
   
 }
