@@ -23,7 +23,7 @@
   })
 
 
-  document.querySelector().addEventListener('click', () => {
+  document.querySelector('#closeModalBtn').addEventListener('click', () => {
       modalBackdrop.classList.remove('show');
   });
 
