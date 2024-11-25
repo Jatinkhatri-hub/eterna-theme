@@ -343,7 +343,7 @@
   }
 
   .card__header-subtitle {
-    font-size: ;
+    font-size: 14px !important;
   }
   
 }
