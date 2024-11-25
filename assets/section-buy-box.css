@@ -566,6 +566,10 @@
   }
 
   .modalTitle {
+    font-size: 15px !important;
+  }
+
+  .modalInfo {
     font-size: ;
   }
 }
