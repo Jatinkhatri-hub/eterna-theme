@@ -359,7 +359,7 @@
 
 
   .card__value-points {
-    
+    gap: 0;
   }
 
   .card__value-point {
