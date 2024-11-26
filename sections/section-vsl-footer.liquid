@@ -29,7 +29,7 @@
           <div class="vsl__footer-menu-wrapper">
             {%  for link in block.settings.list.list %} 
               <a href="{{ link.url }}" class="vsl__footer-item">
-                
+                {{ link.title }}
               </a>
             {% endfor %} 
           </div>
