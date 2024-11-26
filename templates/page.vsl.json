@@ -43,12 +43,37 @@
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36,
-        "payment_provider": "shopify://shop_images/package_cards.png_1.png"
+        "payment_provider": "shopify://shop_images/package_cards.png_1.png",
+        "box1": "basic package",
+        "box2": "great value",
+        "box3": "best value",
+        "bottles1": 2,
+        "bottles2": 4
+      }
+    },
+    "section_vsl_footer_T4fMXp": {
+      "type": "section-vsl-footer",
+      "blocks": {
+        "scientific_ref_pzaCq3": {
+          "type": "scientific_ref",
+          "settings": {
+            "title": "Scientific References",
+            "image_mobile": "shopify://shop_images/references-mob_png.png"
+          }
+        }
+      },
+      "block_order": [
+        "scientific_ref_pzaCq3"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "main",
-    "section_buy_box_mG4ENz"
+    "section_buy_box_mG4ENz",
+    "section_vsl_footer_T4fMXp"
   ]
 }
