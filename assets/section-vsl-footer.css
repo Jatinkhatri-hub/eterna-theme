@@ -1,3 +1,5 @@
 .vsl__footer-wrapper {
-  d
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
