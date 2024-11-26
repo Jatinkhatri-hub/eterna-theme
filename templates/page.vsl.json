@@ -66,11 +66,18 @@
           "settings": {
             "list": "jive-footer-menu"
           }
+        },
+        "description_77MHXG": {
+          "type": "description",
+          "settings": {
+            "description": "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease. Use only as directed. Consult your healthcare provider before using supplements or providing supplements to children under the age of 18. The information provided herein is intended for your general knowledge only and is not intended to be, nor is it, medical advice or a substitute for medical advice. If you have or suspect you have, a specific medical condition or disease, please consult your healthcare provider."
+          }
         }
       },
       "block_order": [
         "scientific_ref_pzaCq3",
-        "footer_menu_hUWrXA"
+        "footer_menu_hUWrXA",
+        "description_77MHXG"
       ],
       "settings": {
         "padding_top": 36,
