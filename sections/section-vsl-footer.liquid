@@ -20,7 +20,7 @@
       {% case block.type %}  
         {% when 'scientific_ref' %}
           <div class="vsl__sci-ref-mobile-wrapper">
-            <img src="{{ bl }}">
+            <img src="{{ block.settings.image_mobile }}">
           </div>
       {% endcase %}
     {% endfor %}
