@@ -76,6 +76,8 @@
   }
 
   .vsl__sci-ref-desktop-wrapper {
+    display: flex;
+    align-items: center;
     
   }
 
