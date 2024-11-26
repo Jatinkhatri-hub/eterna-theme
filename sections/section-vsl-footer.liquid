@@ -28,7 +28,9 @@
         {% when 'footer_menu' %}
           <div class="vsl__footer-menu-wrapper">
             {%  for link in block.settings.list.list %} 
-              
+              <a href="{{ link.url }}">
+
+              </a>
             {% endfor %} 
           </div>
       {% endcase %}
