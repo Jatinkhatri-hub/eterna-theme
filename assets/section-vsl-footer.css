@@ -70,7 +70,9 @@
   padding-bottom: 10px ;
 }
 
-
+.vsl__sci-ref-desktop-wrapper {
+  display: none;
+}
 
 @media screen and (min-width: 789px) {
   .vsl__sci-ref-mobile-wrapper {
