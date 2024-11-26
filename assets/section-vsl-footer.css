@@ -71,7 +71,14 @@
 }
 
 @media screen and (min-width: 789px) {
-  .vsl__sci
+  .vsl__sci-ref-mobile-wrapper {
+    display: none;
+  }
+
+  .vsl__sci-ref-desktop-wrapper {
+    
+  }
+
 }
 
 
