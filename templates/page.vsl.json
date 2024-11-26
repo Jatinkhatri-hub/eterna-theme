@@ -60,10 +60,17 @@
             "title": "Scientific References",
             "image_mobile": "shopify://shop_images/references-mob_png.png"
           }
+        },
+        "footer_menu_hUWrXA": {
+          "type": "footer_menu",
+          "settings": {
+            "list": "jive-footer-menu"
+          }
         }
       },
       "block_order": [
-        "scientific_ref_pzaCq3"
+        "scientific_ref_pzaCq3",
+        "footer_menu_hUWrXA"
       ],
       "settings": {
         "padding_top": 36,
