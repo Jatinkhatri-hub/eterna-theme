@@ -5,4 +5,8 @@
   flex-direction: column;
 }
 
-.vsl__footer-tit
+.vsl__footer-title {
+  display: flex;
+  align-items: center;
+  
+}
