@@ -39,5 +39,8 @@
   color: #181818;
   text-decoration: none;
   font: 400 16px "Inter";
+  padding-inline: 10px;
+  border-right: 2px solid #181818;
+  margin-bottom: 10px;
 }
 
