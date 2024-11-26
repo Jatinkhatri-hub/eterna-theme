@@ -16,7 +16,9 @@
 
 <div class="page-width">
   <div class="vsl__footer-wrapper">
-    {% for block in section.blocks %} {% endfor %}
+    {% for block in section.blocks %} 
+      {% case block.type %}  {% endcase %}
+    {% endfor %}
 
   </div>
 </div>
