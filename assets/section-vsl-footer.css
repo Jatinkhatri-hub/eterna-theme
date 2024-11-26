@@ -49,6 +49,9 @@
 }
 
 .vsl__footer-description {
-  di
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex
 }
 
