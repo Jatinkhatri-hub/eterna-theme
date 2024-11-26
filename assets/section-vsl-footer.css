@@ -78,6 +78,9 @@
   .vsl__sci-ref-desktop-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 730px;
+    height: 55px;
     
   }
 
