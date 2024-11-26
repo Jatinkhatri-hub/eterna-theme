@@ -14,4 +14,7 @@
 
 .vsl__sci-ref-mobile-wrapper {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
