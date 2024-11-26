@@ -38,9 +38,9 @@
             {{ block.settings.description }}
           </div>
         {% when 'copyright' %}
-          <div class="vsl__footer-copyright">
-            {{ block }}
-          </div>
+          <p class="vsl__footer-copyright">
+            {{ block.settings }}
+          </p>
       {% endcase %}
     {% endfor %}
 
