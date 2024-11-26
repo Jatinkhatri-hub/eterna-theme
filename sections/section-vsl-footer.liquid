@@ -39,7 +39,7 @@
           </div>
         {% when 'copyright' %}
           <p class="vsl__footer-copyright">
-            {{ block.settings }}
+            {{ block.settings.text }}
           </p>
       {% endcase %}
     {% endfor %}
@@ -117,6 +117,17 @@
             "type": "text",
             "id": "description",
             "label": "Info"
+          }
+        ]
+      },
+      {
+        "name": "Copyright",
+        "type": "copyright",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Copyright"
           }
         ]
       }
