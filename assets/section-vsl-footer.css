@@ -70,6 +70,8 @@
   padding-bottom: 10px ;
 }
 
+
+
 @media screen and (min-width: 789px) {
   .vsl__sci-ref-mobile-wrapper {
     display: none;
@@ -87,7 +89,7 @@
   .vsl__sci-ref-desktop-img {
     width: 730px;
     height: 55px;
-    object-fit: c;
+    object-fit: cover;
   }
 }
 
