@@ -1,0 +1,276 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
+  <div class="testimonials">
+    <div class="heading-div">
+      <h3 class="testimonial-heading">{{ section.settings.testimonial_heading1 }}</h3>
+      <h3 class="testimonial-heading">{{ section.settings.testimonial_heading2 }}</h3>
+    </div>
+    <div class="testimonial-container">
+      {% for block in section.blocks %}
+        <div class="testimonial-box">
+          <div class="testimonial-img">
+            <img src="{{ block.settings.testimonial_img | img_url : 'original'}}">
+            <div class="img-tick-svg">{% render 'icon-check' %}</div>
+          </div>
+          <div class="testimonial-content">
+            <h3>{{ block.settings.testimonial_title }}</h3>
+            <div class="review-stars">
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+            </div>
+            <p>{{ block.settings.testimonial_content }}</p>
+            <h4>{{ block.settings.testimonial_name }}</h4>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<style>
+  .testimonials {
+    width: 100vw;
+    height: fit-content;
+    background-size: cover;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 67.65px;
+  }
+  .heading-div {
+    width: 100%;
+    height: fit-content;
+  }
+  .testimonial-heading {
+    font-size: 56.38px;
+    font-weight: 700;
+    line-height: 55px;
+    color: #000000;
+    text-align: center;
+    margin: 0;
+  }
+  .testimonial-container {
+    width: 947.1px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 69.15px;
+  }
+  .testimonial-box {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 105px 1fr;
+    gap: 40.59px;
+  }
+  .testimonial-img {
+    width: 104.82px;
+    height: 104.82px;
+    border-radius: 50%;
+    position: relative;
+  }
+  .testimonial-img img {
+    height: 100%;
+  }
+  .img-tick-svg {
+    height: 24.81px;
+    width: 24.81px;
+    border-radius: 50%;
+    background-color: green;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-tick-svg svg {
+    height: 24.81px;
+    width: 24.81px;
+  }
+
+  .img-tick-svg svg rect {
+    fill: green;
+  }
+
+  .testimonial-content {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 11.27px;
+  }
+
+  .review-stars {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .review-stars svg {
+      width: 19px;
+      height: 19px;
+  }
+
+  .testimonial-content h3 {
+    font-size: 24.81px;
+    font-weight: 700;
+    line-height: 26px;
+    color: #007386;
+    margin: 0;
+  }
+  .testimonial-content p {
+    font-size: 17.9px;
+    font-weight: 400;
+    line-height: 25px;
+    color: #000000;
+    margin: 0;
+  }
+  .testimonial-content h4 {
+    font-size: 20.3pxpx;
+    font-weight: 500;
+    line-height: 24px;
+    color: #5d5d5d;
+    margin: 0;
+  }
+  @media (min-width: 319px) and (max-width: 480px) {
+    .testimonials {
+      max-width: 316.88px;
+      width: 90%;
+      align-items: center;
+      margin: auto;
+      gap: 28.67px;
+    }
+    .testimonial-container {
+      width: 100%;
+      gap: 26.54px;
+    }
+    .testimonial-box {
+      width: 100%;
+      gap: 12.19px;
+      grid-template-columns: 45px 1fr;
+    }
+    .testimonial-heading {
+      font-size: 22.75px;
+      line-height: 34px;
+    }
+    .testimonial-img {
+      height: 44.69px;
+      width: 44.69px;
+    }
+    .img-tick-svg {
+      height: 12.19px;
+      width: 12.19px;
+    }
+    .testimonial-content h3 {
+      font-size: 16.25px;
+      line-height: 24px;
+    }
+    .testimonial-content p {
+      font-size: 12px;
+      line-height: 23px;
+    }
+
+    .review-stars svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .testimonial-content h4 {
+      font-size: 12.9px;
+      line-height: 24px;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "Customer Testimonials",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "color scheme"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_heading1",
+      "label": "Heading",
+      "default": "ReActivate"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_heading2",
+      "label": "Heading",
+      "default": " Customer Testimonials"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "testimonial",
+      "type": "testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "testimonial_img",
+          "label": "image"
+        },
+        {
+          "type": "text",
+          "id": "testimonial_title",
+          "label": "title"
+        },
+        {
+          "type": "textarea",
+          "id": "testimonial_content",
+          "label": "content"
+        },
+        {
+          "type": "text",
+          "id": "testimonial_name",
+          "label": "name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer Testimonials"
+    }
+  ]
+}
+{% endschema %}

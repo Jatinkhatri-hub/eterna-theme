@@ -1,0 +1,100 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "lg:w-full",
+        "content_position": "lg:justify-start",
+        "color_scheme": "primary",
+        "override_header_footer_color_scheme": false
+      }
+    },
+    "section_buy_box_mG4ENz": {
+      "type": "section-buy-box",
+      "blocks": {
+        "badge_XRRwi6": {
+          "type": "badge",
+          "settings": {
+            "title": "Black Friday Sale",
+            "sub_info": "Save up to <strong>59% OFF!</strong> Biggest Sale of the year!!"
+          }
+        },
+        "buybox_jGeARY": {
+          "type": "buybox",
+          "settings": {
+            "product": "eternity-capsules"
+          }
+        }
+      },
+      "block_order": [
+        "badge_XRRwi6",
+        "buybox_jGeARY"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "payment_provider": "shopify://shop_images/package_cards.png_1.png",
+        "box1": "basic package",
+        "box2": "great value",
+        "box3": "best value",
+        "bottles1": 2,
+        "bottles2": 4
+      }
+    },
+    "section_vsl_footer_T4fMXp": {
+      "type": "section-vsl-footer",
+      "blocks": {
+        "scientific_ref_pzaCq3": {
+          "type": "scientific_ref",
+          "settings": {
+            "title": "Scientific References",
+            "image_mobile": "shopify://shop_images/references-mob_png.png"
+          }
+        },
+        "footer_menu_hUWrXA": {
+          "type": "footer_menu",
+          "settings": {
+            "list": "jive-footer-menu"
+          }
+        },
+        "description_77MHXG": {
+          "type": "description",
+          "settings": {
+            "description": "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease. Use only as directed. Consult your healthcare provider before using supplements or providing supplements to children under the age of 18. The information provided herein is intended for your general knowledge only and is not intended to be, nor is it, medical advice or a substitute for medical advice. If you have or suspect you have, a specific medical condition or disease, please consult your healthcare provider."
+          }
+        },
+        "copyright_4W6LxT": {
+          "type": "copyright",
+          "settings": {
+            "text": "© 2024 Sun Coast Sciences All Rights Reserved"
+          }
+        }
+      },
+      "block_order": [
+        "scientific_ref_pzaCq3",
+        "footer_menu_hUWrXA",
+        "description_77MHXG",
+        "copyright_4W6LxT"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_buy_box_mG4ENz",
+    "section_vsl_footer_T4fMXp"
+  ]
+}

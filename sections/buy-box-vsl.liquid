@@ -1,0 +1,216 @@
+<div class="vsl__banner-wrapper">
+  <div class="vsl__banner-header">
+    {{ section.settings.section_heading }}
+  </div>
+  <div class="vsl__content-wrapper">
+    <div id="vid_6743f9f26fbe5b000a16deeb" style="position: relative; width: 100%; padding: 125% 0 0;">
+      <img
+        id="thumb_6743f9f26fbe5b000a16deeb"
+        src="https://images.converteai.net/aed835e2-ab6e-4849-98d2-739023ca6fe0/players/6743f9f26fbe5b000a16deeb/thumbnail.jpg"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;"
+        alt="thumbnail"
+      >
+      <div
+        id="backdrop_6743f9f26fbe5b000a16deeb"
+        style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "
+      ></div>
+    </div>
+    <div class="vsl__info-wrapper">
+      <div class="vsl__info-header">
+        <div class="vsl__info-vertical-divider"></div>
+        <span class="vsl__info-header-text">{{ section.settings.info_heading }}</span>
+        <div class="vsl__info-vertical-divider"></div>
+      </div>
+      <div class="vsl__featured-on-img-wrapper">
+        <img src="{{ section.settings.as_seen |  image_url: width: section.settings.as_seen.width }}" class="vsl__featured-on-img" >
+      </div>
+
+      <div class="vsl__doctor-card-wrapper">
+        <div class="doctor__img-wrapper">
+          <img src="{{ section.settings.doctor_img |  image_url: width: section.settings.doctor_img.width  }}"  class="doctor__img"> 
+        </div>
+        <span class="doctor__name">
+          {{ section.settings.doctor_name }}
+        </span>
+        <p class="doctor__info">
+          {{ section.settings.doctor_info }}
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .vsl__banner-header {
+    background-color: #147386;
+    color: white;
+    font: 31px 'Sailec Bold' !important;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .vsl__content-wrapper {
+    display: grid;
+    grid-template-columns: 400px 280px;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 22px;
+  }
+
+  .vsl__info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .vsl__info-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .vsl__info-vertical-divider {
+    display: block;
+    border: .7px solid #3C3C3C;
+    width: 80px;
+  }
+
+  .vsl__info-header-text {
+    font: 18px 'Sailec Medium' !important;
+
+  }
+
+  .vsl__featured-on-img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 280px;
+    height: 26px;
+
+  }
+
+  .vsl__feature-on-img {
+    width: 280px;
+    height: 26px;
+    object-fit: cover;
+  }
+
+  .vsl__doctor-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .doctor__img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 210px;
+    height: 210px;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+
+  .doctor__img {
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
+  }
+
+  .doctor__name {
+    font: 400 20px 'Sailec Light' !important;
+    color: #007386;
+  }
+
+  .doctor__info {
+    font: 400 16px 'Sailec Light' !important;
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+  }
+
+  @media screen and (max-width: 789px) {
+  
+  .vsl__banner-header {
+    font-size: 19px !important;
+  }
+
+  .vsl__content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 0;
+  }
+  .vsl__doctor-card-wrapper {
+      display: none;
+    }
+  }
+
+</style>
+
+<script type="text/javascript" id="scr_6743f9f26fbe5b000a16deeb">
+  var s = document.createElement('script');
+  (s.src =
+    'https://scripts.converteai.net/aed835e2-ab6e-4849-98d2-739023ca6fe0/players/6743f9f26fbe5b000a16deeb/player.js'),
+    (s.async = !0),
+    document.head.appendChild(s);
+</script>
+<style>
+  .elementor-element:has(#smartplayer) {
+    width: 100%;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Buy box vsl",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "info_heading",
+      "label": "Info Heading",
+      "default": "As Seen On"
+    },
+    {
+      "type": "image_picker",
+      "id": "as_seen",
+      "label": "Featured On Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "doctor_img",
+      "label": "Doctor Image"
+    },
+    {
+      "type": "text",
+      "id": "doctor_name",
+      "label": "Doctor Name"
+    },
+    {
+      "type": "text",
+      "id": "doctor_info",
+      "label": "Doctor Info"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Buy box vsl"
+    }
+  ]
+}
+{% endschema %}
